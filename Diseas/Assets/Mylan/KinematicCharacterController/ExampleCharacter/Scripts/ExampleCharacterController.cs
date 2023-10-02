@@ -67,7 +67,9 @@ namespace KinematicCharacterController.Examples
         public Material _normalPlayerMaterial;
         public Material _dashingPlayerMaterial;
         public GameObject _playerReference;
+        public float _dashCooldown = 5f;
         public bool _isDashing = false;
+        public bool _canDash = true;
         public float _dashSpeed = 20f;
         public float _dashDuration = 0.2f;
         public float _dashTimer = 0f;
@@ -204,12 +206,13 @@ namespace KinematicCharacterController.Examples
                             _shouldBeCrouching = false;
                         }
                         
-                        if (Input.GetKeyDown(KeyCode.R))
+                        if (Input.GetKeyDown(KeyCode.R) && _canDash)
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
                             _playerReference.GetComponent<Renderer>().material = _dashingPlayerMaterial;
                             print("Je dash");
+                            StartCoroutine(DashCooldown());
                         }
                         break;
                     }
@@ -570,6 +573,13 @@ namespace KinematicCharacterController.Examples
 
         public void OnDiscreteCollisionDetected(Collider hitCollider)
         {
+        }
+
+        public IEnumerator DashCooldown()
+        {
+            _canDash = false;
+            yield return new WaitForSeconds(_dashCooldown);
+            _canDash = true;
         }
     }
 }

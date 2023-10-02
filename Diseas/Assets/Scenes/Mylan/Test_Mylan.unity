@@ -557,7 +557,9 @@ MonoBehaviour:
   _dashingPlayerMaterial: {fileID: 2100000, guid: 40a53db2b9dd2684a948fdb0f4260355,
     type: 2}
   _playerReference: {fileID: 1057638857}
+  _dashCooldown: 1
   _isDashing: 0
+  _canDash: 1
   _dashSpeed: 28
   _dashDuration: 0.25
   _dashTimer: 0
