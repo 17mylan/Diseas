@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController;
 using System;
+using Unity.VisualScripting;
 
 namespace KinematicCharacterController.Examples
 {
@@ -61,6 +62,15 @@ namespace KinematicCharacterController.Examples
         public float JumpScalableForwardSpeed = 10f;
         public float JumpPreGroundingGraceTime = 0f;
         public float JumpPostGroundingGraceTime = 0f;
+
+        [Header("Dashing")]
+        public Material _normalPlayerMaterial;
+        public Material _dashingPlayerMaterial;
+        public GameObject _playerReference;
+        public bool _isDashing = false;
+        public float _dashSpeed = 20f;
+        public float _dashDuration = 0.2f;
+        public float _dashTimer = 0f;
 
         [Header("Misc")]
         public List<Collider> IgnoredColliders = new List<Collider>();
@@ -181,14 +191,11 @@ namespace KinematicCharacterController.Examples
                         if (inputs.CrouchDown)
                         {
                             _shouldBeCrouching = true;
-
                             if (!_isCrouching)
                             {
                                 _isCrouching = true;
                                 Motor.SetCapsuleDimensions(0.5f, CrouchedCapsuleHeight, CrouchedCapsuleHeight * 0.5f);
                                 MeshRoot.localScale = new Vector3(1f, 0.5f, 1f);
-
-                                print("Je m'accroupi");
 
                             }
                         }
@@ -196,8 +203,12 @@ namespace KinematicCharacterController.Examples
                         {
                             _shouldBeCrouching = false;
                         }
-                        else if(Input.GetKeyDown(KeyCode.T))
+                        
+                        if (Input.GetKeyDown(KeyCode.E))
                         {
+                            _isDashing = true;
+                            _dashTimer = 0f;
+                            _playerReference.GetComponent<Renderer>().material = _dashingPlayerMaterial;
                             print("Je dash");
                         }
 
@@ -318,8 +329,24 @@ namespace KinematicCharacterController.Examples
                             {
                                 print("Je suis a l'arrêt"); 
                             }
+                            if (_isDashing)
+                                {
+                                    _dashTimer += deltaTime;
 
+                                    // Calculez la vitesse du dash en fonction de la direction du mouvement actuel du personnage
+                                    Vector3 dashVelocity = _moveInputVector.normalized * _dashSpeed;
 
+                                    // Appliquez la vitesse du dash au personnage
+                                    currentVelocity = dashVelocity;
+
+                                    // Si la durée du dash est écoulée, arrêtez le dash
+                                    if (_dashTimer >= _dashDuration)
+                                    {
+                                        _isDashing = false;
+                                        _playerReference.GetComponent<Renderer>().material = _normalPlayerMaterial;
+                                        print("Je Dash plus");
+                                    }
+                                }
                         }
                         // Air movement
                         else
@@ -356,7 +383,6 @@ namespace KinematicCharacterController.Examples
                                         addedVelocity = Vector3.ProjectOnPlane(addedVelocity, perpenticularObstructionNormal);
                                     }
                                 }
-
                                 // Apply added velocity
                                 currentVelocity += addedVelocity;
                             }
@@ -505,6 +531,11 @@ namespace KinematicCharacterController.Examples
 
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
+            if(hitCollider.gameObject.tag == "Enemy" && _isDashing)
+            {
+                print("J'ai touché un enemy en dash");
+                Destroy(hitCollider.gameObject);
+            }
         }
 
         public void AddVelocity(Vector3 velocity)
