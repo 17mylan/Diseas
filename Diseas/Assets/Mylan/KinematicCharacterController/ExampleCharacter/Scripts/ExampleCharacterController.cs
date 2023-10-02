@@ -204,14 +204,13 @@ namespace KinematicCharacterController.Examples
                             _shouldBeCrouching = false;
                         }
                         
-                        if (Input.GetKeyDown(KeyCode.E))
+                        if (Input.GetKeyDown(KeyCode.R))
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
                             _playerReference.GetComponent<Renderer>().material = _dashingPlayerMaterial;
                             print("Je dash");
                         }
-
                         break;
                     }
             }
@@ -529,12 +528,19 @@ namespace KinematicCharacterController.Examples
         {
         }
 
+        public Enemy _enemy;
+
+        public void Start()
+        {
+            _enemy = FindObjectOfType<Enemy>();
+        }
+
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
             if(hitCollider.gameObject.tag == "Enemy" && _isDashing)
             {
-                print("J'ai touché un enemy en dash");
-                Destroy(hitCollider.gameObject);
+                print("J'ai stun un enemy en dash");
+                _enemy._isStun = true;
             }
         }
 
