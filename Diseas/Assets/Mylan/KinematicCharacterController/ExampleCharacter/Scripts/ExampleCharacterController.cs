@@ -206,14 +206,16 @@ namespace KinematicCharacterController.Examples
                             _shouldBeCrouching = false;
                         }
                         
-                        if (Input.GetKeyDown(KeyCode.R) && _canDash)
+                        if (Input.GetKeyDown(KeyCode.R) && _canDash || Input.GetMouseButtonDown(1) && _canDash)
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
                             _playerReference.GetComponent<Renderer>().material = _dashingPlayerMaterial;
-                            print("Je dash");
+                            //print("Je dash");
                             StartCoroutine(DashCooldown());
                         }
+
+
                         break;
                     }
             }
@@ -325,30 +327,24 @@ namespace KinematicCharacterController.Examples
 
                             if (currentVelocity.magnitude > 0f)
                             {
-                                print("Je marche");
+                                //print("Je marche");
                             }
                             else
                             {
-                                print("Je suis a l'arrêt"); 
+                                //print("Je suis a l'arrêt"); 
                             }
                             if (_isDashing)
+                            {
+                                _dashTimer += deltaTime;
+                                Vector3 dashVelocity = _moveInputVector.normalized * _dashSpeed;
+                                currentVelocity = dashVelocity;
+                                if (_dashTimer >= _dashDuration)
                                 {
-                                    _dashTimer += deltaTime;
-
-                                    // Calculez la vitesse du dash en fonction de la direction du mouvement actuel du personnage
-                                    Vector3 dashVelocity = _moveInputVector.normalized * _dashSpeed;
-
-                                    // Appliquez la vitesse du dash au personnage
-                                    currentVelocity = dashVelocity;
-
-                                    // Si la durée du dash est écoulée, arrêtez le dash
-                                    if (_dashTimer >= _dashDuration)
-                                    {
-                                        _isDashing = false;
-                                        _playerReference.GetComponent<Renderer>().material = _normalPlayerMaterial;
-                                        print("Je Dash plus");
-                                    }
+                                    _isDashing = false;
+                                    _playerReference.GetComponent<Renderer>().material = _normalPlayerMaterial;
+                                    //print("Je Dash plus");
                                 }
+                            }
                         }
                         // Air movement
                         else
@@ -422,7 +418,7 @@ namespace KinematicCharacterController.Examples
                                 _jumpConsumed = true;
                                 _jumpedThisFrame = true;
 
-                                print("Je saute");
+                                //print("Je saute");
 
                             }
                         }
@@ -532,18 +528,45 @@ namespace KinematicCharacterController.Examples
         }
 
         public Enemy _enemy;
-
+        public Animator _animator;
         public void Start()
         {
             _enemy = FindObjectOfType<Enemy>();
         }
-
+        public void Update()
+        {
+        if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckForStunnedEnemies();
+            }
+        }
+        private void CheckForStunnedEnemies()
+        {
+            Vector3 center = transform.position;
+            float radius = 1.5f;
+            Collider[] colliders = Physics.OverlapSphere(center, radius);
+            foreach (var collider in colliders)
+            {
+                Enemy enemy = collider.GetComponent<Enemy>();
+                if (enemy != null && enemy._isStun)
+                {
+                    StartCoroutine(PlayerAnimationEat());
+                    Destroy(enemy.gameObject);
+                }
+            }
+        }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
-            if(hitCollider.gameObject.tag == "Enemy" && _isDashing)
+            RaycastHit hitInfo;
+    
+            if (Physics.Raycast(transform.position, hitPoint - transform.position, out hitInfo))
             {
-                print("J'ai stun un enemy en dash");
-                _enemy._isStun = true;
+                GameObject hitObject = hitInfo.collider.gameObject;
+                
+                if (hitObject.CompareTag("Enemy") && _isDashing)
+                {
+                    hitObject.GetComponent<Enemy>().SetEnemyStunned(true);
+                }
             }
         }
 
@@ -580,6 +603,12 @@ namespace KinematicCharacterController.Examples
             _canDash = false;
             yield return new WaitForSeconds(_dashCooldown);
             _canDash = true;
+        }
+        public IEnumerator PlayerAnimationEat()
+        {
+            _animator.SetBool("MouthStatus", true);
+            yield return new WaitForSeconds(0.3f);
+             _animator.SetBool("MouthStatus", false);
         }
     }
 }

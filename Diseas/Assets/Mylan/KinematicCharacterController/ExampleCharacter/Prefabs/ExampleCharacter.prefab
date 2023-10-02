@@ -233,6 +233,15 @@ MonoBehaviour:
   JumpScalableForwardSpeed: 10
   JumpPreGroundingGraceTime: 0
   JumpPostGroundingGraceTime: 0
+  _normalPlayerMaterial: {fileID: 0}
+  _dashingPlayerMaterial: {fileID: 0}
+  _playerReference: {fileID: 0}
+  _dashCooldown: 5
+  _isDashing: 0
+  _canDash: 1
+  _dashSpeed: 20
+  _dashDuration: 0.2
+  _dashTimer: 0
   IgnoredColliders:
   - {fileID: 0}
   - {fileID: 0}
@@ -242,6 +251,7 @@ MonoBehaviour:
   MeshRoot: {fileID: 4036232530805280}
   CameraFollowPoint: {fileID: 4718917724592500}
   CrouchedCapsuleHeight: 1
+  _enemy: {fileID: 0}
 --- !u!114 &114967586934651944
 MonoBehaviour:
   m_ObjectHideFlags: 0
