@@ -70,6 +70,7 @@ namespace KinematicCharacterController.Examples
         public float _dashCooldown = 5f;
         public bool _isDashing = false;
         public bool _canDash = true;
+        public bool _canDashBecausePlayerIsMoving = false;
         public float _dashSpeed = 20f;
         public float _dashDuration = 0.2f;
         public float _dashTimer = 0f;
@@ -206,7 +207,7 @@ namespace KinematicCharacterController.Examples
                             _shouldBeCrouching = false;
                         }
                         
-                        if (Input.GetKeyDown(KeyCode.R) && _canDash)// || Input.GetMouseButtonDown(1) && _canDash)
+                        if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving)// || Input.GetMouseButtonDown(1) && _canDash)
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
@@ -214,8 +215,16 @@ namespace KinematicCharacterController.Examples
                             //print("Je dash");
                             StartCoroutine(DashCooldown());
                         }
-
-
+                        if(Input.GetMouseButtonDown(1))
+                        {
+                            Cursor.lockState = CursorLockMode.None;
+                            Cursor.visible = true;
+                        }
+                        else if(Input.GetMouseButtonUp(1))
+                        {
+                            Cursor.lockState = CursorLockMode.Locked;
+                            Cursor.visible = false;
+                        }
                         break;
                     }
             }
@@ -327,10 +336,12 @@ namespace KinematicCharacterController.Examples
 
                             if (currentVelocity.magnitude > 0f)
                             {
+                                _canDashBecausePlayerIsMoving = true;
                                 //print("Je marche");
                             }
                             else
                             {
+                                _canDashBecausePlayerIsMoving = false;
                                 //print("Je suis a l'arrêt"); 
                             }
                             if (_isDashing)

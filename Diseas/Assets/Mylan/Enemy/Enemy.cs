@@ -30,4 +30,27 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(_waitTimerStunBeforeBack);
         SetEnemyStunned(false);
     }
+    public BulletInstantiate _bulletInstantiate;
+    public void Start()
+    {
+        _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
+    }
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider == GetComponent<Collider>())
+                {
+                    Debug.Log("Object Clicked!");
+                    _bulletInstantiate.enemyTarget = hit.collider.gameObject;
+                    _bulletInstantiate.CreateBullet();
+                }
+            }
+        }
+    }
 }
