@@ -206,7 +206,7 @@ namespace KinematicCharacterController.Examples
                             _shouldBeCrouching = false;
                         }
                         
-                        if (Input.GetKeyDown(KeyCode.R) && _canDash || Input.GetMouseButtonDown(1) && _canDash)
+                        if (Input.GetKeyDown(KeyCode.R) && _canDash)// || Input.GetMouseButtonDown(1) && _canDash)
                         {
                             _isDashing = true;
                             _dashTimer = 0f;

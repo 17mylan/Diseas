@@ -122,3 +122,4 @@ MonoBehaviour:
   _originalMaterial: {fileID: 2100000, guid: 0b8075f7971a75b41a666c5ac294c357, type: 2}
   _stunMaterial: {fileID: 2100000, guid: 146eb6d59b743b3468e95fd796971cdf, type: 2}
   _enemyReference: {fileID: 4311389146360946717}
+  _waitTimerStunBeforeBack: 3
