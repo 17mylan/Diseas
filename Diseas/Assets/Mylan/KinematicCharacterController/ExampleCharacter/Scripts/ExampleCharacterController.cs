@@ -98,7 +98,7 @@ namespace KinematicCharacterController.Examples
         private Vector3 _internalVelocityAdd = Vector3.zero;
         private bool _shouldBeCrouching = false;
         private bool _isCrouching = false;
-
+        public bool _isAiming = false;
         private Vector3 lastInnerNormal = Vector3.zero;
         private Vector3 lastOuterNormal = Vector3.zero;
 
@@ -219,11 +219,13 @@ namespace KinematicCharacterController.Examples
                         {
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
+                            _isAiming = true;
                         }
                         else if(Input.GetMouseButtonUp(1))
                         {
                             Cursor.lockState = CursorLockMode.Locked;
                             Cursor.visible = false;
+                            _isAiming = false;
                         }
                         break;
                     }
@@ -539,10 +541,12 @@ namespace KinematicCharacterController.Examples
         }
 
         public Enemy _enemy;
+        public BulletInstantiate _bulletInstantiate;
         public Animator _animator;
         public void Start()
         {
             _enemy = FindObjectOfType<Enemy>();
+            _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
         }
         public void Update()
         {

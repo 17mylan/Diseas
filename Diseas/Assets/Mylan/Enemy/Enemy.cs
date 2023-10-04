@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using KinematicCharacterController.Examples;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -31,9 +33,11 @@ public class Enemy : MonoBehaviour
         SetEnemyStunned(false);
     }
     public BulletInstantiate _bulletInstantiate;
+    public ExampleCharacterController _exampleCharacterController;
     public void Start()
     {
         _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
+        _exampleCharacterController = FindObjectOfType<ExampleCharacterController>();
     }
     public void Update()
     {
@@ -44,11 +48,19 @@ public class Enemy : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider == GetComponent<Collider>())
+                if(_exampleCharacterController._isAiming)
                 {
-                    //Debug.Log("Object Clicked!");
-                    _bulletInstantiate.enemyTarget = hit.collider.gameObject;
-                    _bulletInstantiate.CreateBullet();
+                    if (hit.collider == GetComponent<Collider>() && hit.collider.gameObject.tag == "Enemy")
+                    {
+                        print("With Enemy");
+                        _bulletInstantiate.enemyTarget = hit.collider.gameObject;
+                        _bulletInstantiate.CreateBullet("WithEnemy");
+                    }
+                    else if(hit.collider.gameObject.tag != "Enemy")
+                    {
+                        _bulletInstantiate.noEnemyTarget = hit.transform;
+                        _bulletInstantiate.CreateBullet("WithoutEnemy");
+                    }
                 }
             }
         }
