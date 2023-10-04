@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _AI: {fileID: 4375761274283528498}
   _playerReference: {fileID: 0}
+  _linkToPlayer: {fileID: 0}
+  _navMeshLink: {fileID: 0}
 --- !u!136 &2330213427556291024
 CapsuleCollider:
   m_ObjectHideFlags: 0

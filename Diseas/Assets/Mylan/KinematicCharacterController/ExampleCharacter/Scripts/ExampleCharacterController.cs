@@ -220,18 +220,20 @@ namespace KinematicCharacterController.Examples
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
                             _isAiming = true;
+                            Cursor.SetCursor(cursorTexture,Vector2.zero, CursorMode.Auto);
                         }
                         else if(Input.GetMouseButtonUp(1))
                         {
                             Cursor.lockState = CursorLockMode.Locked;
                             Cursor.visible = false;
                             _isAiming = false;
+                            Cursor.SetCursor(null,Vector2.zero, CursorMode.Auto);
                         }
                         break;
                     }
             }
         }
-
+        public Texture2D cursorTexture;
         /// <summary>
         /// This is called every frame by the AI script in order to tell the character what its inputs are
         /// </summary>

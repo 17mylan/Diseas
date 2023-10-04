@@ -8,7 +8,7 @@ using UnityEngine.AI;
 public class CompanionAI : MonoBehaviour
 {
     public NavMeshAgent _AI;
-    public Transform _playerReference, _nativeNavMeshLinkPoint, _linkToPlayer;
+    public Transform _playerReference, _linkToPlayer;
     public NavMeshLink _navMeshLink;
     Vector3 _dest;
 
@@ -17,12 +17,17 @@ public class CompanionAI : MonoBehaviour
 
         _dest = _playerReference.position;
         _AI.destination = _dest;
-
-        _linkToPlayer.position = _playerReference.position;
-        _navMeshLink.endPoint = _linkToPlayer.localPosition;
-        /*if(_AI.remainingDistance <= _AI.stoppingDistance)
+        
+        if(_AI.remainingDistance <= _AI.stoppingDistance)
         {
-            print("Je suis pas loin de toi arrété.");
-        }*/
+            //print("Companion do not move anymore.");
+        }
+
+
+        //Auto jump du player qui fonctionne a moitié
+        //_linkToPlayer.transform.position = _playerReference.localPosition;
+        //_navMeshLink.endPoint = _linkToPlayer.localPosition;   
+        
+        
     }
 }
