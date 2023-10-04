@@ -56,11 +56,6 @@ public class Enemy : MonoBehaviour
                         _bulletInstantiate.enemyTarget = hit.collider.gameObject;
                         _bulletInstantiate.CreateBullet("WithEnemy");
                     }
-                    else if(hit.collider.gameObject.tag != "Enemy")
-                    {
-                        _bulletInstantiate.noEnemyTarget = hit.transform;
-                        _bulletInstantiate.CreateBullet("WithoutEnemy");
-                    }
                 }
             }
         }

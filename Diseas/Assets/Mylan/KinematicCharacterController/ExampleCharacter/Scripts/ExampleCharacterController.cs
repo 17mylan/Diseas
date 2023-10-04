@@ -550,9 +550,23 @@ namespace KinematicCharacterController.Examples
         }
         public void Update()
         {
-        if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 CheckForStunnedEnemies();
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if(_isAiming && hit.collider.gameObject.tag != "Enemy")
+                    {
+                        _bulletInstantiate.noEnemyTarget = hit.transform;
+                        _bulletInstantiate.CreateBullet("WithoutEnemy");
+                    }
+                }
             }
         }
         private void CheckForStunnedEnemies()
