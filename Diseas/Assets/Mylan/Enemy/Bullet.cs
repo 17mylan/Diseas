@@ -7,10 +7,10 @@ public class Bullet : MonoBehaviour
 {
     public void OnCollisionEnter(Collision collision)
     {
+        Destroy(gameObject);
         if(collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().SetEnemyStunned(true);
-            Destroy(gameObject);
         }
     }
     public void Start()
