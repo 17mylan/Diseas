@@ -688,7 +688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864530761}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,9 +917,9 @@ GameObject:
   - component: {fileID: 945098829}
   - component: {fileID: 945098831}
   - component: {fileID: 945098832}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: ExampleCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,7 +1096,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5374742621348116703, guid: ca11e959084a8904c9c7270d3224898a,
     type: 3}
   enemyTarget: {fileID: 0}
-  bulletSpeed: 200
+  bulletSpeed: 100
 --- !u!1001 &947119601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1176,7 +1176,7 @@ GameObject:
   - component: {fileID: 1057638858}
   - component: {fileID: 1057638860}
   - component: {fileID: 1057638859}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1587,7 +1587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1572228080}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   - component: {fileID: 1780491634}
   - component: {fileID: 1780491636}
   - component: {fileID: 1780491635}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 1912230537}
   - component: {fileID: 1912230536}
   - component: {fileID: 1912230538}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: PlayerMouthAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1875,7 +1875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005056413}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2133,10 +2133,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1260890557364868331, guid: 935afb483c4b5f745be4421e7f09366f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717754504464891805, guid: 935afb483c4b5f745be4421e7f09366f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3718441929437071323, guid: 935afb483c4b5f745be4421e7f09366f,
         type: 3}
       propertyPath: m_Name
       value: Companion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3718441929437071323, guid: 935afb483c4b5f745be4421e7f09366f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5051604560673108951, guid: 935afb483c4b5f745be4421e7f09366f,
         type: 3}

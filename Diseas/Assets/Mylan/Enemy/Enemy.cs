@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
             {
                 if (hit.collider == GetComponent<Collider>())
                 {
-                    Debug.Log("Object Clicked!");
+                    //Debug.Log("Object Clicked!");
                     _bulletInstantiate.enemyTarget = hit.collider.gameObject;
                     _bulletInstantiate.CreateBullet();
                 }

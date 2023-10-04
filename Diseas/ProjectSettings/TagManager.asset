@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Companion
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IgnoreBulelt
   - Water
   - UI
-  - 
+  - Bullet
   - 
   - 
   - 
