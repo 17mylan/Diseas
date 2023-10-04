@@ -542,7 +542,6 @@ namespace KinematicCharacterController.Examples
 
         public Enemy _enemy;
         public BulletInstantiate _bulletInstantiate;
-        public Animator _animator;
         public void Start()
         {
             _enemy = FindObjectOfType<Enemy>();
@@ -550,10 +549,6 @@ namespace KinematicCharacterController.Examples
         }
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                CheckForStunnedEnemies();
-            }
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -569,21 +564,6 @@ namespace KinematicCharacterController.Examples
                 }
             }
         }
-        private void CheckForStunnedEnemies()
-        {
-            Vector3 center = transform.position;
-            float radius = 1.5f;
-            Collider[] colliders = Physics.OverlapSphere(center, radius);
-            foreach (var collider in colliders)
-            {
-                Enemy enemy = collider.GetComponent<Enemy>();
-                if (enemy != null && enemy._isStun)
-                {
-                    StartCoroutine(PlayerAnimationEat());
-                    Destroy(enemy.gameObject);
-                }
-            }
-        }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
             RaycastHit hitInfo;
@@ -592,9 +572,10 @@ namespace KinematicCharacterController.Examples
             {
                 GameObject hitObject = hitInfo.collider.gameObject;
                 
-                if (hitObject.CompareTag("Enemy") && _isDashing)
+                if (hitObject.CompareTag("Enemy") && _isDashing && hitObject.GetComponent<Enemy>()._isStun)
                 {
-                    hitObject.GetComponent<Enemy>().SetEnemyStunned(true);
+                    Destroy(hitCollider.gameObject);
+                    print("J'ai récupéré le pouvoir de l'énemie");
                 }
             }
         }
@@ -632,12 +613,6 @@ namespace KinematicCharacterController.Examples
             _canDash = false;
             yield return new WaitForSeconds(_dashCooldown);
             _canDash = true;
-        }
-        public IEnumerator PlayerAnimationEat()
-        {
-            _animator.SetBool("MouthStatus", true);
-            yield return new WaitForSeconds(0.3f);
-             _animator.SetBool("MouthStatus", false);
         }
     }
 }

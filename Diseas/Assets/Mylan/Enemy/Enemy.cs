@@ -13,17 +13,19 @@ public class Enemy : MonoBehaviour
 
     public void SetEnemyStunned(bool _stunStatus)
     {
-        
+        Rigidbody rb = GetComponent<Rigidbody>();
         _isStun = _stunStatus;
         
         if(_isStun)
         {
             this.GetComponent<Renderer>().material = _stunMaterial;
+            rb.isKinematic = true;
             StartCoroutine(WaitStunTimer());
         }
         else if(!_isStun)
         {
             this.GetComponent<Renderer>().material = _originalMaterial;
+            rb.isKinematic = false;
         }
     }
 
@@ -52,7 +54,6 @@ public class Enemy : MonoBehaviour
                 {
                     if (hit.collider == GetComponent<Collider>() && hit.collider.gameObject.tag == "Enemy")
                     {
-                        print("With Enemy");
                         _bulletInstantiate.enemyTarget = hit.collider.gameObject;
                         _bulletInstantiate.CreateBullet("WithEnemy");
                     }
