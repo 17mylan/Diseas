@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ennemi : MonoBehaviour
+public class Ennemi1 : MonoBehaviour
 {
     public float detectionRange = 10f; // Portée de détection
     public NavMeshAgent _AI;
