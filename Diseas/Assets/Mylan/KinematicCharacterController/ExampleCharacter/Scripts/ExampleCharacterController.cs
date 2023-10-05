@@ -581,7 +581,6 @@ namespace KinematicCharacterController.Examples
                 }
             }
         }
-
         public void AddVelocity(Vector3 velocity)
         {
             switch (CurrentCharacterState)
