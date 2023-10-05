@@ -7,6 +7,7 @@ using UnityEngine.AI;
 
 public class CompanionAI : MonoBehaviour
 {
+    public bool CanFollowPlayerAnywhere = true;
     public NavMeshAgent _AI;
     public Transform _playerReference, _linkToPlayer;
     public NavMeshLink _navMeshLink;
@@ -14,20 +15,25 @@ public class CompanionAI : MonoBehaviour
 
     void Update()
     {
-
         _dest = _playerReference.position;
         _AI.destination = _dest;
-        
+
+        // Auto Jump de partout ou il y a du NavMeshAgent
+        if(CanFollowPlayerAnywhere)
+        {
+            if(!_navMeshLink.enabled)
+                _navMeshLink.enabled = true;
+
+            _linkToPlayer.transform.position = _playerReference.localPosition;
+            _navMeshLink.endPoint = _linkToPlayer.localPosition / 2;   
+        }
+        else if(!CanFollowPlayerAnywhere)
+        {
+            _navMeshLink.enabled = false;
+        }
         if(_AI.remainingDistance <= _AI.stoppingDistance)
         {
             //print("Companion do not move anymore.");
         }
-
-
-        //Auto jump du player qui fonctionne a moitié
-        //_linkToPlayer.transform.position = _playerReference.localPosition;
-        //_navMeshLink.endPoint = _linkToPlayer.localPosition;   
-        
-        
     }
 }
