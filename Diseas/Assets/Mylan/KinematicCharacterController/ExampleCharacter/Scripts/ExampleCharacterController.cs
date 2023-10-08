@@ -106,6 +106,7 @@ namespace KinematicCharacterController.Examples
         public BulletInstantiate _bulletInstantiate;
         [Header("Platforming Capacity")]
         public bool _hasPlatformingCapacity = false;
+        public TimerPlatforms _timerPlatforms;
         public List<GameObject> CapacityPlatforms = new List<GameObject>();
 
         private void Awake()
@@ -571,7 +572,15 @@ namespace KinematicCharacterController.Examples
                     
                     
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
-                    SetPlatformingCapacityState(true);
+                    // Si le monstre tué possède la capacité des plateformes
+                    if(!_hasPlatformingCapacity)
+                    {
+                        SetPlatformingCapacityState(true);
+                        if(!_timerPlatforms.isTimerStarted)
+                            _timerPlatforms.StartTimer();
+                    }
+                    else if(_hasPlatformingCapacity)
+                        _timerPlatforms.AddToTimer(30f);
                 }
             }
         }
@@ -606,6 +615,7 @@ namespace KinematicCharacterController.Examples
         {
             _enemy = FindObjectOfType<Enemy>();
             _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
+            _timerPlatforms = FindObjectOfType<TimerPlatforms>();
         }
         public void Update()
         {

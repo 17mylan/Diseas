@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2089770645340572158}
   - component: {fileID: 617195508321599125}
+  - component: {fileID: 2397567661087939946}
   - component: {fileID: 7619125153650244229}
   - component: {fileID: 1715125148085637190}
-  - component: {fileID: 2397567661087939946}
   - component: {fileID: 4748473428370941686}
   - component: {fileID: 7302742580849640772}
-  - component: {fileID: 7880658843998001859}
+  - component: {fileID: 1763282349574545493}
   m_Layer: 3
   m_Name: ExampleCharacter
   m_TagString: Player
@@ -62,6 +62,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &2397567661087939946
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112324739494797452}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &7619125153650244229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +141,7 @@ MonoBehaviour:
   _bulletInstantiate: {fileID: 0}
   _hasPlatformingCapacity: 0
   CapacityPlatforms: []
+  _timerPlatforms: {fileID: 0}
 --- !u!114 &1715125148085637190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,33 +184,6 @@ MonoBehaviour:
   CheckMovementInitialOverlaps: 1
   KillVelocityWhenExceedMaxMovementIterations: 1
   KillRemainingMovementWhenExceedMaxMovementIterations: 1
---- !u!54 &2397567661087939946
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112324739494797452}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4748473428370941686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,27 +215,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 0.2
---- !u!95 &7880658843998001859
-Animator:
-  serializedVersion: 5
+--- !u!114 &1763282349574545493
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112324739494797452}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: db1e9613536ecde459778e63bf2cdc6d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ad9359552ce114db29f227737d380f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTimerStarted: 0
+  currentTimer: 0
+  startingTimer: 30
+  currentTimerText: {fileID: 0}
+  currentTimerTextObject: {fileID: 0}
+  exampleCharacterController: {fileID: 0}
 --- !u!1 &1517409647282867283
 GameObject:
   m_ObjectHideFlags: 0
