@@ -213,7 +213,7 @@ namespace KinematicCharacterController.Examples
                             _shouldBeCrouching = false;
                         }*/
                         
-                        if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving)// || Input.GetMouseButtonDown(1) && _canDash)
+                        if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving && !_jumpRequested && !_jumpConsumed) 
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
@@ -415,30 +415,40 @@ namespace KinematicCharacterController.Examples
                         // Handle jumping
                         _jumpedThisFrame = false;
                         _timeSinceJumpRequested += deltaTime;
-                        if (_jumpRequested)
+                        if (_jumpRequested && !_isDashing)
                         {
                             // See if we actually are allowed to jump
                             if (!_jumpConsumed && ((AllowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || _timeSinceLastAbleToJump <= JumpPostGroundingGraceTime))
                             {
-                                // Calculate jump direction before ungrounding
-                                Vector3 jumpDirection = Motor.CharacterUp;
-                                if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
+                                //Ne pas pouvoir dash et sauter pour prendre de la velocitée
+                                if(_isDashing)
                                 {
-                                    jumpDirection = Motor.GroundingStatus.GroundNormal;
+                                    _dashTimer = _dashDuration;
+                                    Debug.LogWarning("Annulation du dash - Raison: Le joueur ne peut pas utiliser son dash et sauter en meme temps");
                                 }
+                                else
+                                {
+                                    // Calculate jump direction before ungrounding
+                                    Vector3 jumpDirection = Motor.CharacterUp;
+                                    if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
+                                    {
+                                        jumpDirection = Motor.GroundingStatus.GroundNormal;
+                                    }
 
-                                // Makes the character skip ground probing/snapping on its next update. 
-                                // If this line weren't here, the character would remain snapped to the ground when trying to jump. Try commenting this line out and see.
-                                Motor.ForceUnground();
+                                    // Makes the character skip ground probing/snapping on its next update. 
+                                    // If this line weren't here, the character would remain snapped to the ground when trying to jump. Try commenting this line out and see.
+                                    Motor.ForceUnground();
 
-                                // Add to the return velocity and reset jump state
-                                currentVelocity += (jumpDirection * JumpUpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
-                                currentVelocity += (_moveInputVector * JumpScalableForwardSpeed);
-                                _jumpRequested = false;
-                                _jumpConsumed = true;
-                                _jumpedThisFrame = true;
+                                    // Add to the return velocity and reset jump state
+                                    currentVelocity += (jumpDirection * JumpUpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+                                    currentVelocity += (_moveInputVector * JumpScalableForwardSpeed);
+                                    _jumpRequested = false;
+                                    _jumpConsumed = true;
+                                    _jumpedThisFrame = true;
 
-                                //print("Je saute");
+                                    //print("Je saute");
+
+                                }
 
                             }
                         }
@@ -546,28 +556,6 @@ namespace KinematicCharacterController.Examples
         public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
         }
-        public void Start()
-        {
-            _enemy = FindObjectOfType<Enemy>();
-            _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
-        }
-        public void Update()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if(_isAiming && hit.collider.gameObject.tag != "Enemy")
-                    {
-                        _bulletInstantiate.noEnemyTarget = hit.transform;
-                        _bulletInstantiate.CreateBullet("WithoutEnemy");
-                    }
-                }
-            }
-        }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
             RaycastHit hitInfo;
@@ -614,7 +602,28 @@ namespace KinematicCharacterController.Examples
         public void OnDiscreteCollisionDetected(Collider hitCollider)
         {
         }
+        public void Start()
+        {
+            _enemy = FindObjectOfType<Enemy>();
+            _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
+        }
+        public void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if(_isAiming && hit.collider.gameObject.tag != "Enemy")
+                    {
+                        _bulletInstantiate.noEnemyTarget = hit.transform;
+                        _bulletInstantiate.CreateBullet("WithoutEnemy");
+                    }
+                }
+            }
+        }
         public IEnumerator DashCooldown()
         {
             _canDash = false;
