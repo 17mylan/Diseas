@@ -99,8 +99,14 @@ namespace KinematicCharacterController.Examples
         private bool _shouldBeCrouching = false;
         private bool _isCrouching = false;
         public bool _isAiming = false;
+        public Texture2D cursorTexture;
         private Vector3 lastInnerNormal = Vector3.zero;
         private Vector3 lastOuterNormal = Vector3.zero;
+        public Enemy _enemy;
+        public BulletInstantiate _bulletInstantiate;
+        [Header("Platforming Capacity")]
+        public bool _hasPlatformingCapacity = false;
+        public List<GameObject> CapacityPlatforms = new List<GameObject>();
 
         private void Awake()
         {
@@ -191,7 +197,7 @@ namespace KinematicCharacterController.Examples
                         }
 
                         // Crouching input
-                        if (inputs.CrouchDown)
+                        /*if (inputs.CrouchDown)
                         {
                             _shouldBeCrouching = true;
                             if (!_isCrouching)
@@ -205,7 +211,7 @@ namespace KinematicCharacterController.Examples
                         else if (inputs.CrouchUp)
                         {
                             _shouldBeCrouching = false;
-                        }
+                        }*/
                         
                         if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving)// || Input.GetMouseButtonDown(1) && _canDash)
                         {
@@ -233,7 +239,6 @@ namespace KinematicCharacterController.Examples
                     }
             }
         }
-        public Texture2D cursorTexture;
         /// <summary>
         /// This is called every frame by the AI script in order to tell the character what its inputs are
         /// </summary>
@@ -541,9 +546,6 @@ namespace KinematicCharacterController.Examples
         public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
         }
-
-        public Enemy _enemy;
-        public BulletInstantiate _bulletInstantiate;
         public void Start()
         {
             _enemy = FindObjectOfType<Enemy>();
@@ -578,6 +580,10 @@ namespace KinematicCharacterController.Examples
                 {
                     Destroy(hitCollider.gameObject);
                     print("J'ai récupéré le pouvoir de l'énemie");
+                    
+                    
+                    // Determiner quel enemi est touché pour donner le pouvoir spécial
+                    SetPlatformingCapacityState(true);
                 }
             }
         }
@@ -614,6 +620,23 @@ namespace KinematicCharacterController.Examples
             _canDash = false;
             yield return new WaitForSeconds(_dashCooldown);
             _canDash = true;
+        }
+        public void SetPlatformingCapacityState(bool _State)
+        {
+            foreach (GameObject obj in CapacityPlatforms)
+            {
+                BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
+                if(_State)
+                {
+                    boxCollider.isTrigger = false;
+                    _hasPlatformingCapacity = true;
+                }
+                else
+                {
+                    boxCollider.isTrigger = true;
+                    _hasPlatformingCapacity = false;
+                }
+            }
         }
     }
 }
