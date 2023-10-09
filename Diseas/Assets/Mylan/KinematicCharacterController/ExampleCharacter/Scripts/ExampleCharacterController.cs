@@ -107,6 +107,8 @@ namespace KinematicCharacterController.Examples
         public Tuto tuto;
         public Teleportation teleportation;
         private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
+        [Header("Tuto Reference")]
+        public GameObject wallDashReference;
         [Header("Platforming Capacity")]
         public bool _hasPlatformingCapacity = false;
         public TimerPlatforms _timerPlatforms;
@@ -224,6 +226,8 @@ namespace KinematicCharacterController.Examples
                             _playerReference.GetComponent<Renderer>().material = _dashingPlayerMaterial;
                             //print("Je dash");
                             StartCoroutine(DashCooldown());
+                            if(tuto.isTutoEnabled && tuto.hasPassedColliderDetectorToDestroyWallForDash)
+                                tuto.DestroyWallWhenPlayerDashedOnTutoEnabled();
                         }
                         if(Input.GetMouseButtonDown(1))
                         {
@@ -561,11 +565,11 @@ namespace KinematicCharacterController.Examples
         {
             if(hitCollider.gameObject == tuto.teleporterToPart2)
             {
-                teleportation.TeleportPlayer();
+                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("Teleport1", 1f));
             }
             else if(hitCollider.gameObject == tuto.teleporterToPart3)
             {
-                teleportation.TeleportPlayer2();
+                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("Teleport2", 1f));
             }
         }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -592,6 +596,11 @@ namespace KinematicCharacterController.Examples
                     }
                     else if(_hasPlatformingCapacity)
                         _timerPlatforms.AddToTimer(30f);
+                }
+                if(hitCollider == tuto.colliderDetectorToDash)
+                {
+                    Destroy(tuto.colliderDetectorToDash);
+                    tuto.hasPassedColliderDetectorToDestroyWallForDash = true;
                 }
             }
         }

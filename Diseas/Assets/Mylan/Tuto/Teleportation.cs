@@ -13,35 +13,30 @@ public class Teleportation : MonoBehaviour
     {
         kinematicMotor = transform.GetComponent<KinematicCharacterController.KinematicCharacterMotor>();
     }
-    public void TeleportPlayer()
-    {
-        StartCoroutine(TeleportPlayerWithDelay());
-    }
-    public void TeleportPlayer2()
-    {
-        StartCoroutine(TeleportPlayerWithDelay2());
-    }
-    public IEnumerator TeleportPlayerWithDelay()
+    public IEnumerator TeleportPlayerWithDelay(string _string, float _timer)
     {
         if(!isTeleporting)
         {
             isTeleporting = true;
             FadeToBlack.SetActive(true);
-            yield return new WaitForSeconds(1f);
-            Vector3 tpPosition = tutoPart2Position.position;
-            kinematicMotor.SetPosition(tpPosition, true);
-            isTeleporting = false;
+            if(_string == "Teleport1")
+            {
+                yield return new WaitForSeconds(_timer);
+                Vector3 tpPosition = tutoPart2Position.position;
+                Quaternion newRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                kinematicMotor.SetPositionAndRotation(tpPosition, newRotation, true);
+                isTeleporting = false;
+            }
+            else if(_string == "Teleport2")
+            {
+                yield return new WaitForSeconds(_timer);
+                Vector3 tpPosition = tutoPart3Position.position;
+                Quaternion newRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                kinematicMotor.SetPositionAndRotation(tpPosition, newRotation, true);
+                isTeleporting = false;
+                yield return new WaitForSeconds(_timer);
+                companionReference.transform.position = tpPosition;
+            }
         }
-    }
-    public IEnumerator TeleportPlayerWithDelay2()
-    {
-        isTeleporting = true;
-        FadeToBlack.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        Vector3 tpPosition = tutoPart3Position.position;
-        kinematicMotor.SetPosition(tpPosition, true);
-        isTeleporting = false;
-        yield return new WaitForSeconds(1f);
-        companionReference.transform.position = tpPosition;
     }
 }

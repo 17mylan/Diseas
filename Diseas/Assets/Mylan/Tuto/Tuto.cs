@@ -1,30 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using KinematicCharacterController.Examples;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
+using TMPro;
 
 public class Tuto : MonoBehaviour
 {
+    [Header("GameObjects")]
+    public GameObject dashGameObjectWall;
+    public GameObject teleporterToPart2;
+    public GameObject teleporterToPart3;
+    public GameObject wallDash;
+    public GameObject companionReference;
+    public GameObject wallAfterSavecYourCompanion;
+    public GameObject dialogueTextObject;
+    public BoxCollider colliderDetectorToDash;
+    [Header("Boolean")]
     public bool isTutoEnabled = true;
-    public GameObject dashGameObjectWall, teleporterToPart2, teleporterToPart3;
-    public Transform teleportTransformPart2, teleportTransformPart3;
     public bool isTeleporting = false;
     public bool hasKilledAllEnemyAndSavedHisCompanion = false;
+    public bool hasPassedColliderDetectorToDestroyWallForDash = false;
+    [Header("Other")]
+    public TextMeshProUGUI dialogueText;
+    [TextArea]
+    public string dialogue1, dialogue2;
+    public Transform teleportTransformPart2;
+    public Transform teleportTransformPart3;
     public int numberOfEnemyKilled = 0;
     public int maxNumberOfEnemyKilled = 8;
-    public GameObject companionReference;
     public CompanionAI companionAI;
-    public GameObject wallAfterSavecYourCompanion;
     public void Start()
     {
         companionAI = FindObjectOfType<CompanionAI>();
-    }
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Destroy(dashGameObjectWall);
-        }
     }
     public IEnumerator SetTeleportingStatus()
     {
@@ -37,14 +46,31 @@ public class Tuto : MonoBehaviour
         numberOfEnemyKilled = numberOfEnemyKilled + _number;
         if(numberOfEnemyKilled >= maxNumberOfEnemyKilled)
         {
-            print("J'ai tué tout les enemies et j'ai libéré mon poto");
             companionAI.isCompanionFree = true;
             StartCoroutine(Dialogue());
         }
     }
     public IEnumerator Dialogue()
     {
-        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(TypeSentence(dialogue1, 0.05f));
+        yield return new WaitForSeconds(3f);
+        yield return StartCoroutine(TypeSentence(dialogue2, 0.05f));
+        yield return new WaitForSeconds(3f);
         Destroy(wallAfterSavecYourCompanion);
+        dialogueTextObject.SetActive(false);
+    }
+    public void DestroyWallWhenPlayerDashedOnTutoEnabled()
+    {
+        Destroy(wallDash);
+    }
+    public IEnumerator TypeSentence(string sentence, float typingSpeed)
+    {
+        dialogueTextObject.SetActive(true);
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
     }
 }
