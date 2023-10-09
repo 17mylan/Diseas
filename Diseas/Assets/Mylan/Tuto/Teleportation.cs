@@ -19,7 +19,7 @@ public class Teleportation : MonoBehaviour
         {
             isTeleporting = true;
             FadeToBlack.SetActive(true);
-            if(_string == "Teleport1")
+            if(_string == "TeleportationFromPart1toPart2")
             {
                 yield return new WaitForSeconds(_timer);
                 Vector3 tpPosition = tutoPart2Position.position;
@@ -27,12 +27,17 @@ public class Teleportation : MonoBehaviour
                 kinematicMotor.SetPositionAndRotation(tpPosition, newRotation, true);
                 isTeleporting = false;
             }
-            else if(_string == "Teleport2")
+            else if(_string == "TeleportationFromPart2toPart3")
             {
                 yield return new WaitForSeconds(_timer);
                 Vector3 tpPosition = tutoPart3Position.position;
                 Quaternion newRotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                 kinematicMotor.SetPositionAndRotation(tpPosition, newRotation, true);
+                Vector3 tpPositionCompanion = tutoPart3Position.position;
+                tpPositionCompanion.x -= 1f;
+                companionReference.SetActive(false);
+                companionReference.transform.position = tpPositionCompanion;
+                companionReference.SetActive(true);
                 isTeleporting = false;
                 yield return new WaitForSeconds(_timer);
                 companionReference.transform.position = tpPosition;

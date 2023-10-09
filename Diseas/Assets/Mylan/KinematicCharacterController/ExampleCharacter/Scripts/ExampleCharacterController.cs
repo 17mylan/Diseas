@@ -106,6 +106,7 @@ namespace KinematicCharacterController.Examples
         public BulletInstantiate _bulletInstantiate;
         public Tuto tuto;
         public Teleportation teleportation;
+        public CompanionAI companionAI;
         private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
         [Header("Tuto Reference")]
         public GameObject wallDashReference;
@@ -229,7 +230,7 @@ namespace KinematicCharacterController.Examples
                             if(tuto.isTutoEnabled && tuto.hasPassedColliderDetectorToDestroyWallForDash)
                                 tuto.DestroyWallWhenPlayerDashedOnTutoEnabled();
                         }
-                        if(Input.GetMouseButtonDown(1))
+                        if(Input.GetMouseButtonDown(1) && companionAI.isCompanionFree)
                         {
                             Cursor.lockState = CursorLockMode.None;
                             Cursor.visible = true;
@@ -565,11 +566,11 @@ namespace KinematicCharacterController.Examples
         {
             if(hitCollider.gameObject == tuto.teleporterToPart2)
             {
-                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("Teleport1", 1f));
+                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart1toPart2", 1f));
             }
             else if(hitCollider.gameObject == tuto.teleporterToPart3)
             {
-                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("Teleport2", 1f));
+                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart2toPart3", 1f));
             }
         }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -638,10 +639,11 @@ namespace KinematicCharacterController.Examples
             _timerPlatforms = FindObjectOfType<TimerPlatforms>();
             tuto = FindObjectOfType<Tuto>();
             teleportation = FindObjectOfType<Teleportation>();
+            companionAI = FindObjectOfType<CompanionAI>();
         }
         public void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && companionAI.isCompanionFree)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;

@@ -16,7 +16,6 @@ public class HeadEnemyDetector : MonoBehaviour
             Debug.DrawLine(playerPosition, hit.point, Color.red);
             if(hit.collider.tag == "EnemyHead")
             {
-                Debug.Log("J'ai touché la tete d'un enemie et je l'ai tué");
                 Destroy(hit.collider.transform.parent.gameObject);
                 if(tuto.isTutoEnabled)
                     tuto.TutoAddEnemyKilledToSaveHisCompanion(1);
