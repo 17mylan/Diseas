@@ -41,7 +41,7 @@ public class Teleportation : MonoBehaviour
         Vector3 tpPosition = tutoPart3Position.position;
         kinematicMotor.SetPosition(tpPosition, true);
         isTeleporting = false;
-        yield return new WaitForSeconds(0.2f);
-        companionReference.transform.position = tutoPart3Position.position;
+        yield return new WaitForSeconds(1f);
+        companionReference.transform.position = tpPosition;
     }
 }
