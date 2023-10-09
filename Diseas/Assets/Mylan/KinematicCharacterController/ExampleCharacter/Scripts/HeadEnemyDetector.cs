@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeadEnemyDetector : MonoBehaviour
 {
     public float raycastDistance;
+    public Tuto tuto;
     public void Update()
     {
         Vector3 playerPosition = transform.position;
@@ -17,7 +18,13 @@ public class HeadEnemyDetector : MonoBehaviour
             {
                 Debug.Log("J'ai touché la tete d'un enemie et je l'ai tué");
                 Destroy(hit.collider.transform.parent.gameObject);
+                if(tuto.isTutoEnabled)
+                    tuto.TutoAddEnemyKilledToSaveHisCompanion(1);
             }
         }
+    }
+    public void Start()
+    {
+        tuto = FindObjectOfType<Tuto>();
     }
 }

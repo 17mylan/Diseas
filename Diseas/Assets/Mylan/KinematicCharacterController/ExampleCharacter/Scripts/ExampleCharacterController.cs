@@ -563,6 +563,10 @@ namespace KinematicCharacterController.Examples
             {
                 teleportation.TeleportPlayer();
             }
+            else if(hitCollider.gameObject == tuto.teleporterToPart3)
+            {
+                teleportation.TeleportPlayer2();
+            }
         }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
