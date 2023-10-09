@@ -12,18 +12,12 @@ public class HeadEnemyDetector : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerPosition, raycastDirection, out hit, raycastDistance))
         {
-            // Le raycast a touché quelque chose
             Debug.DrawLine(playerPosition, hit.point, Color.red);
             if(hit.collider.tag == "EnemyHead")
             {
                 Debug.Log("J'ai touché la tete d'un enemie et je l'ai tué");
                 Destroy(hit.collider.transform.parent.gameObject);
             }
-        }
-        else
-        {
-            // Le raycast n'a rien touché
-            Debug.DrawRay(playerPosition, raycastDirection * raycastDistance, Color.green);
         }
     }
 }

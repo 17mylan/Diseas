@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1715125148085637190}
   - component: {fileID: 4748473428370941686}
   - component: {fileID: 7302742580849640772}
+  - component: {fileID: 5600104657438610067}
   - component: {fileID: 1763282349574545493}
   m_Layer: 3
   m_Name: ExampleCharacter
@@ -139,9 +140,11 @@ MonoBehaviour:
   cursorTexture: {fileID: 2800000, guid: 5ee18726c596cd2429935e7af2989d9d, type: 3}
   _enemy: {fileID: 0}
   _bulletInstantiate: {fileID: 0}
+  tuto: {fileID: 0}
+  teleportation: {fileID: 0}
   _hasPlatformingCapacity: 0
-  CapacityPlatforms: []
   _timerPlatforms: {fileID: 0}
+  CapacityPlatforms: []
 --- !u!114 &1715125148085637190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +218,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 0.2
+--- !u!114 &5600104657438610067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112324739494797452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4460e2603a181ad46bf7f72ed432169c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutoPart2Position: {fileID: 0}
+  FadeToBlack: {fileID: 0}
+  FadeToWhite: {fileID: 0}
 --- !u!114 &1763282349574545493
 MonoBehaviour:
   m_ObjectHideFlags: 0

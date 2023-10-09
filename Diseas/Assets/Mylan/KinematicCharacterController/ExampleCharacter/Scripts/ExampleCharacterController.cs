@@ -104,6 +104,9 @@ namespace KinematicCharacterController.Examples
         private Vector3 lastOuterNormal = Vector3.zero;
         public Enemy _enemy;
         public BulletInstantiate _bulletInstantiate;
+        public Tuto tuto;
+        public Teleportation teleportation;
+        private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
         [Header("Platforming Capacity")]
         public bool _hasPlatformingCapacity = false;
         public TimerPlatforms _timerPlatforms;
@@ -556,6 +559,10 @@ namespace KinematicCharacterController.Examples
 
         public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
+            if(hitCollider.gameObject == tuto.teleporterToPart2)
+            {
+                teleportation.TeleportPlayer();
+            }
         }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
@@ -616,6 +623,8 @@ namespace KinematicCharacterController.Examples
             _enemy = FindObjectOfType<Enemy>();
             _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
             _timerPlatforms = FindObjectOfType<TimerPlatforms>();
+            tuto = FindObjectOfType<Tuto>();
+            teleportation = FindObjectOfType<Teleportation>();
         }
         public void Update()
         {
