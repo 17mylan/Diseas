@@ -64,8 +64,6 @@ namespace KinematicCharacterController.Examples
         public float JumpPostGroundingGraceTime = 0f;
 
         [Header("Dashing")]
-        public Material _normalPlayerMaterial;
-        public Material _dashingPlayerMaterial;
         public GameObject _playerReference;
         public float _dashCooldown = 5f;
         public bool _isDashing = false;
@@ -107,12 +105,15 @@ namespace KinematicCharacterController.Examples
         public Tuto tuto;
         public Teleportation teleportation;
         public CompanionAI companionAI;
+        public ExampleCharacterCamera exampleCharacterCamera;
         private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
         [Header("Tuto Reference")]
         public GameObject wallDashReference;
         [Header("Platforming Capacity")]
         public bool _hasPlatformingCapacity = false;
         public TimerPlatforms _timerPlatforms;
+        public Material _dontHaveCapacity;
+        public Material _hasCapacity;
         public List<GameObject> CapacityPlatforms = new List<GameObject>();
 
         private void Awake()
@@ -224,9 +225,9 @@ namespace KinematicCharacterController.Examples
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
-                            _playerReference.GetComponent<Renderer>().material = _dashingPlayerMaterial;
                             //print("Je dash");
                             StartCoroutine(DashCooldown());
+                            StartCoroutine(DashCameraZoom());
                             if(tuto.isTutoEnabled && tuto.hasPassedColliderDetectorToDestroyWallForDash)
                                 tuto.DestroyWallWhenPlayerDashedOnTutoEnabled();
                         }
@@ -370,7 +371,6 @@ namespace KinematicCharacterController.Examples
                                 if (_dashTimer >= _dashDuration)
                                 {
                                     _isDashing = false;
-                                    _playerReference.GetComponent<Renderer>().material = _normalPlayerMaterial;
                                     //print("Je Dash plus");
                                 }
                             }
@@ -623,6 +623,10 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
+            if(_isDashing)
+            {
+                _isDashing = false;
+            }
         }
 
         protected void OnLeaveStableGround()
@@ -640,6 +644,7 @@ namespace KinematicCharacterController.Examples
             tuto = FindObjectOfType<Tuto>();
             teleportation = FindObjectOfType<Teleportation>();
             companionAI = FindObjectOfType<CompanionAI>();
+            exampleCharacterCamera = FindObjectOfType<ExampleCharacterCamera>();
         }
         public void Update()
         {
@@ -664,6 +669,17 @@ namespace KinematicCharacterController.Examples
             yield return new WaitForSeconds(_dashCooldown);
             _canDash = true;
         }
+        public IEnumerator DashCameraZoom()
+        {
+            print("Dash Camera");
+            exampleCharacterCamera.MaxDistance = exampleCharacterCamera.DashMinDistance;
+            exampleCharacterCamera.DefaultDistance = exampleCharacterCamera.MaxDistance;
+            exampleCharacterCamera.MinDistance = exampleCharacterCamera.DefaultDistance;
+            yield return new WaitForSeconds(_dashDuration);
+            exampleCharacterCamera.MaxDistance = exampleCharacterCamera.DashMaxDistance;
+            exampleCharacterCamera.DefaultDistance = exampleCharacterCamera.MaxDistance;
+            exampleCharacterCamera.MinDistance = exampleCharacterCamera.DefaultDistance;
+        }
         public void SetPlatformingCapacityState(bool _State)
         {
             foreach (GameObject obj in CapacityPlatforms)
@@ -671,11 +687,13 @@ namespace KinematicCharacterController.Examples
                 BoxCollider boxCollider = obj.GetComponent<BoxCollider>();
                 if(_State)
                 {
+                    obj.GetComponent<Renderer>().material = _hasCapacity;
                     boxCollider.isTrigger = false;
                     _hasPlatformingCapacity = true;
                 }
                 else
                 {
+                    obj.GetComponent<Renderer>().material = _dontHaveCapacity;
                     boxCollider.isTrigger = true;
                     _hasPlatformingCapacity = false;
                 }

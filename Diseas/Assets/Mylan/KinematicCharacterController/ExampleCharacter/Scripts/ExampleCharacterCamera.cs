@@ -16,6 +16,8 @@ namespace KinematicCharacterController.Examples
         public float DefaultDistance = 6f;
         public float MinDistance = 0f;
         public float MaxDistance = 10f;
+        public float DashMinDistance = 4f;
+        public float DashMaxDistance = 5f;
         public float DistanceMovementSpeed = 5f;
         public float DistanceMovementSharpness = 10f;
 

@@ -142,8 +142,13 @@ MonoBehaviour:
   _bulletInstantiate: {fileID: 0}
   tuto: {fileID: 0}
   teleportation: {fileID: 0}
+  companionAI: {fileID: 0}
+  exampleCharacterCamera: {fileID: 0}
+  wallDashReference: {fileID: 0}
   _hasPlatformingCapacity: 0
   _timerPlatforms: {fileID: 0}
+  _dontHaveCapacity: {fileID: 2100000, guid: 45a826dfd2cbfa543914c9b031ae7623, type: 2}
+  _hasCapacity: {fileID: 2100000, guid: 2f08ef6e366aa5746926964bb188f856, type: 2}
   CapacityPlatforms: []
 --- !u!114 &1715125148085637190
 MonoBehaviour:
@@ -218,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 0.2
+  tuto: {fileID: 0}
 --- !u!114 &5600104657438610067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,8 +237,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutoPart2Position: {fileID: 0}
+  tutoPart3Position: {fileID: 0}
+  tuto: {fileID: 0}
   FadeToBlack: {fileID: 0}
   FadeToWhite: {fileID: 0}
+  companionReference: {fileID: 0}
+  fadeTransition: {fileID: 0}
+  isTeleporting: 0
 --- !u!114 &1763282349574545493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -690,9 +701,9 @@ MonoBehaviour:
   Camera: {fileID: 2092019325151325316}
   FollowPointFraming: {x: 0, y: 0}
   FollowingSharpness: 1e+9
-  DefaultDistance: 6
+  DefaultDistance: 5
   MinDistance: 5
-  MaxDistance: 8
+  MaxDistance: 5
   DistanceMovementSpeed: 5
   DistanceMovementSharpness: 10
   InvertX: 0

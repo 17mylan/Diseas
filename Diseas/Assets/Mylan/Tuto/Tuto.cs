@@ -22,6 +22,7 @@ public class Tuto : MonoBehaviour
     public bool isTeleporting = false;
     public bool hasKilledAllEnemyAndSavedHisCompanion = false;
     public bool hasPassedColliderDetectorToDestroyWallForDash = false;
+    public bool isInPhaseToJumpInHeadOfEnemies = false;
     [Header("Other")]
     public TextMeshProUGUI dialogueText;
     [TextArea]
@@ -46,7 +47,6 @@ public class Tuto : MonoBehaviour
         numberOfEnemyKilled = numberOfEnemyKilled + _number;
         if(numberOfEnemyKilled >= maxNumberOfEnemyKilled)
         {
-            companionAI.isCompanionFree = true;
             StartCoroutine(Dialogue());
         }
     }
@@ -56,6 +56,7 @@ public class Tuto : MonoBehaviour
         yield return new WaitForSeconds(3f);
         yield return StartCoroutine(TypeSentence(dialogue2, 0.05f));
         yield return new WaitForSeconds(3f);
+        companionAI.isCompanionFree = true;
         Destroy(wallAfterSavecYourCompanion);
         dialogueTextObject.SetActive(false);
     }

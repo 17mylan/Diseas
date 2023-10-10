@@ -20867,6 +20867,7 @@ MonoBehaviour:
   isTeleporting: 0
   hasKilledAllEnemyAndSavedHisCompanion: 0
   hasPassedColliderDetectorToDestroyWallForDash: 0
+  isInPhaseToJumpInHeadOfEnemies: 0
   dialogueText: {fileID: 603994813}
   dialogue1: 'Vous:
 

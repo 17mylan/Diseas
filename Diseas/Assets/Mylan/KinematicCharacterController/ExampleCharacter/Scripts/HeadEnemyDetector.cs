@@ -17,7 +17,7 @@ public class HeadEnemyDetector : MonoBehaviour
             if(hit.collider.tag == "EnemyHead")
             {
                 Destroy(hit.collider.transform.parent.gameObject);
-                if(tuto.isTutoEnabled)
+                if(tuto.isTutoEnabled && tuto.isInPhaseToJumpInHeadOfEnemies)
                     tuto.TutoAddEnemyKilledToSaveHisCompanion(1);
             }
         }
