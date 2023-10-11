@@ -590,6 +590,7 @@ namespace KinematicCharacterController.Examples
     
                     
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
+                    // Ne pas oublier dans le script "Enemy" de faire la méthode pour donner les pouvoirs
 
                     if(hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
                     {
