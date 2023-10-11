@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 7339326218519358290}
   - component: {fileID: 7153393509282930754}
   - component: {fileID: 2503425932269526945}
+  - component: {fileID: 4328374205913396620}
   - component: {fileID: 7696643097519547381}
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy - Superpuissance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b8075f7971a75b41a666c5ac294c357, type: 2}
+  - {fileID: 2100000, guid: 92aded3b432fe4a47a149f750c3ebd82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,6 +88,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4328374205913396620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311389146360946717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece2eb7a224961f479b6d4623cb25f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -115,6 +115,9 @@ namespace KinematicCharacterController.Examples
         public Material _dontHaveCapacity;
         public Material _hasCapacity;
         public List<GameObject> CapacityPlatforms = new List<GameObject>();
+        [Header("Superpuissance Capacity")]
+        public bool _hasSuperpuissanceCapacity = false;
+        public TimerSuperpuissance _timerSuperpuissance;
 
         private void Awake()
         {
@@ -584,19 +587,19 @@ namespace KinematicCharacterController.Examples
                 if (hitObject.CompareTag("Enemy") && _isDashing && hitObject.GetComponent<Enemy>()._isStun)
                 {
                     Destroy(hitCollider.gameObject);
-                    print("J'ai récupéré le pouvoir de l'énemie");
-                    
+    
                     
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
-                    // Si le monstre tué possède la capacité des plateformes
-                    if(!_hasPlatformingCapacity)
+
+                    if(hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
                     {
-                        SetPlatformingCapacityState(true);
-                        if(!_timerPlatforms.isTimerStarted)
-                            _timerPlatforms.StartTimer();
+                        GiveCapacityToPlayer("Platforming");
                     }
-                    else if(_hasPlatformingCapacity)
-                        _timerPlatforms.AddToTimer(30f);
+                    else if(hitCollider.gameObject.GetComponent<EnemySuperpuissance>() != null)
+                    {
+                        GiveCapacityToPlayer("Superpuissance");
+                    }
+
                 }
                 if(hitCollider == tuto.colliderDetectorToDash)
                 {
@@ -641,6 +644,7 @@ namespace KinematicCharacterController.Examples
             _enemy = FindObjectOfType<Enemy>();
             _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
             _timerPlatforms = FindObjectOfType<TimerPlatforms>();
+            _timerSuperpuissance = FindObjectOfType<TimerSuperpuissance>();
             tuto = FindObjectOfType<Tuto>();
             teleportation = FindObjectOfType<Teleportation>();
             companionAI = FindObjectOfType<CompanionAI>();
@@ -697,6 +701,35 @@ namespace KinematicCharacterController.Examples
                     boxCollider.isTrigger = true;
                     _hasPlatformingCapacity = false;
                 }
+            }
+        }
+        public void GiveCapacityToPlayer(string _string)
+        {
+            if(_string == "Platforming")
+            {
+                print("J'ai récupéré la capacité: Platforming");
+                if(!_hasPlatformingCapacity)
+                {
+                    SetPlatformingCapacityState(true);
+                    if(!_timerPlatforms.isTimerStarted)
+                        _timerPlatforms.StartTimer();
+                }
+                else if(_hasPlatformingCapacity)
+                    _timerPlatforms.AddToTimer(30f);
+            }
+            else if(_string == "Superpuissance")
+            {
+                print("J'ai récupéré la capacityé: Superpuissance");
+                if(!_hasSuperpuissanceCapacity)
+                {
+                    if(!_timerSuperpuissance.isTimerStarted)
+                    {
+                        _timerSuperpuissance.StartTimer();
+                        _hasSuperpuissanceCapacity = true;
+                    }
+                }
+                else if(_hasSuperpuissanceCapacity)
+                    _timerSuperpuissance.AddToTimer(30f);
             }
         }
     }

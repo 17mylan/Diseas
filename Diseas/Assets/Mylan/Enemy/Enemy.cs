@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public Material _originalMaterial, _stunMaterial;
     public GameObject _enemyReference;
     public float _waitTimerStunBeforeBack = 20f;
+    public ExampleCharacterController exampleCharacterController;
 
     public void SetEnemyStunned(bool _stunStatus)
     {
@@ -28,7 +29,17 @@ public class Enemy : MonoBehaviour
             rb.isKinematic = false;
         }
     }
-
+    public void OnCollisionEnter(Collision hitCollider)
+    {
+        if(hitCollider.gameObject.tag == "Player" && _exampleCharacterController._isDashing && _exampleCharacterController._hasSuperpuissanceCapacity)
+        {
+            if(this.GetComponent<EnemyPlatforms>() != null)
+                _exampleCharacterController.GiveCapacityToPlayer("Platforming");
+            else if(this.GetComponent<EnemySuperpuissance>() != null)
+                _exampleCharacterController.GiveCapacityToPlayer("Superpuissance");
+            Destroy(this.gameObject);
+        }
+    }
     public IEnumerator WaitStunTimer()
     {
         yield return new WaitForSeconds(_waitTimerStunBeforeBack);
