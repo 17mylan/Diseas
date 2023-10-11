@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTimerStarted: 0
   currentTimer: 0
-  startingTimer: 30
+  startingTimer: 10
   currentTimerText: {fileID: 6524698510874444669}
   currentTimerTextObject: {fileID: 8262679667555324927}
   exampleCharacterController: {fileID: 0}

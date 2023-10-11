@@ -675,7 +675,6 @@ namespace KinematicCharacterController.Examples
         }
         public IEnumerator DashCameraZoom()
         {
-            print("Dash Camera");
             exampleCharacterCamera.MaxDistance = exampleCharacterCamera.DashMinDistance;
             exampleCharacterCamera.DefaultDistance = exampleCharacterCamera.MaxDistance;
             exampleCharacterCamera.MinDistance = exampleCharacterCamera.DefaultDistance;
@@ -719,7 +718,7 @@ namespace KinematicCharacterController.Examples
             }
             else if(_string == "Superpuissance")
             {
-                print("J'ai récupéré la capacityé: Superpuissance");
+                print("J'ai récupéré la capacité: Superpuissance");
                 if(!_hasSuperpuissanceCapacity)
                 {
                     if(!_timerSuperpuissance.isTimerStarted)
@@ -729,7 +728,7 @@ namespace KinematicCharacterController.Examples
                     }
                 }
                 else if(_hasSuperpuissanceCapacity)
-                    _timerSuperpuissance.AddToTimer(30f);
+                    _timerSuperpuissance.AddToTimer(5f);
             }
         }
     }
