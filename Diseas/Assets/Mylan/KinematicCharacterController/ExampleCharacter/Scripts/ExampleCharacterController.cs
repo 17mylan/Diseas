@@ -585,22 +585,26 @@ namespace KinematicCharacterController.Examples
                 GameObject hitObject = hitInfo.collider.gameObject;
                 
                 if (hitObject.CompareTag("Enemy") && _isDashing && hitObject.GetComponent<Enemy>()._isStun)
-                {
-                    Destroy(hitCollider.gameObject);
-    
-                    
+                {                    
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
                     // Ne pas oublier dans le script "Enemy" de faire la méthode pour donner les pouvoirs
 
                     if(hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
                     {
+                        Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("Platforming");
                     }
-                    else if(hitCollider.gameObject.GetComponent<EnemySuperpuissance>() != null)
+                    else if(hitCollider.gameObject.GetComponent<EnemySuperpuissance>() != null && _hasSuperpuissanceCapacity)
                     {
+                        Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("Superpuissance");
                     }
 
+                }
+                else if(hitObject.CompareTag("EnemyBack") && _isDashing && hitObject.transform.parent.gameObject.GetComponent<Enemy>()._isStun)
+                {
+                    Destroy(hitCollider.transform.parent.gameObject);
+                    GiveCapacityToPlayer("Superpuissance");
                 }
                 if(hitCollider == tuto.colliderDetectorToDash)
                 {
@@ -707,7 +711,6 @@ namespace KinematicCharacterController.Examples
         {
             if(_string == "Platforming")
             {
-                print("J'ai récupéré la capacité: Platforming");
                 if(!_hasPlatformingCapacity)
                 {
                     SetPlatformingCapacityState(true);
@@ -719,7 +722,6 @@ namespace KinematicCharacterController.Examples
             }
             else if(_string == "Superpuissance")
             {
-                print("J'ai récupéré la capacité: Superpuissance");
                 if(!_hasSuperpuissanceCapacity)
                 {
                     if(!_timerSuperpuissance.isTimerStarted)

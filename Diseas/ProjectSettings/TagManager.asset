@@ -8,6 +8,7 @@ TagManager:
   - Companion
   - Bullet
   - EnemyHead
+  - EnemyBack
   layers:
   - Default
   - TransparentFX
