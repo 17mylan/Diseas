@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour
                 {
                     if (hit.collider == GetComponent<Collider>() && hit.collider.gameObject.tag == "Enemy")
                     {
+                        print("J'ai tiré depuis Enemy");
                         _bulletInstantiate.enemyTarget = hit.collider.gameObject;
                         _bulletInstantiate.CreateBullet("WithEnemy");
                     }

@@ -94,7 +94,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c45fe17b232d5e409a2186403e85ed1, type: 2}
+  - {fileID: 2100000, guid: 7e8b128921c34d14da8ad89062b84853, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -202,7 +202,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 46b7830bb4faf5943b53105765cd6d87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,10 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6769a39778d5b4f987da8227693461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanFollowPlayerAnywhere: 1
   _AI: {fileID: 4375761274283528498}
   _playerReference: {fileID: 0}
   _linkToPlayer: {fileID: 0}
   _navMeshLink: {fileID: 0}
+  tuto: {fileID: 0}
+  isCompanionFree: 0
 --- !u!136 &2330213427556291024
 CapsuleCollider:
   m_ObjectHideFlags: 0

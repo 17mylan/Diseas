@@ -666,6 +666,7 @@ namespace KinematicCharacterController.Examples
                 {
                     if(_isAiming && hit.collider.gameObject.tag != "Enemy")
                     {
+                        print("J'ai tiré depuis ExampleCharacterController");
                         _bulletInstantiate.noEnemyTarget = hit.transform;
                         _bulletInstantiate.CreateBullet("WithoutEnemy");
                     }

@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b8075f7971a75b41a666c5ac294c357, type: 2}
+  - {fileID: 2100000, guid: cb6179247649bb84784f7f6c15b432d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,10 +134,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isStun: 0
-  _originalMaterial: {fileID: 2100000, guid: 0b8075f7971a75b41a666c5ac294c357, type: 2}
-  _stunMaterial: {fileID: 2100000, guid: 146eb6d59b743b3468e95fd796971cdf, type: 2}
+  _originalMaterial: {fileID: 2100000, guid: cb6179247649bb84784f7f6c15b432d6, type: 2}
+  _stunMaterial: {fileID: 2100000, guid: 0013e04f81a0364479e57c5433282f95, type: 2}
   _enemyReference: {fileID: 4311389146360946717}
   _waitTimerStunBeforeBack: 3
+  exampleCharacterController: {fileID: 0}
   _bulletInstantiate: {fileID: 0}
   _exampleCharacterController: {fileID: 0}
 --- !u!54 &7649972806040826539
@@ -229,7 +230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 46b7830bb4faf5943b53105765cd6d87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

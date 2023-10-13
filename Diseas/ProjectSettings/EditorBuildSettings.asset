@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: cf6b87d63cf70214bb73fd944fa7e2dd
-  - enabled: 1
-    path: Assets/Scenes/Mylan/Test_Mylan.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/OutdoorsScene.unity
+    guid: 8124e5870f4fd4c779e7a5f994e84ad1
   m_configObjects: {}
