@@ -27587,6 +27587,16 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e48c088fe08dfe843bc0812c1e46722b, type: 2}
     - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
+      propertyPath: _canDoubleJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: DoubleJumpUpSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
       propertyPath: _dontHaveCapacity
       value: 
       objectReference: {fileID: 2100000, guid: 9c2541d76c76d834cb542718e8829cb3, type: 2}

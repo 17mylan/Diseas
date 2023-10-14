@@ -59,9 +59,14 @@ namespace KinematicCharacterController.Examples
         [Header("Jumping")]
         public bool AllowJumpingWhenSliding = false;
         public float JumpUpSpeed = 10f;
+        public float DoubleJumpUpSpeed = 2f;
         public float JumpScalableForwardSpeed = 10f;
         public float JumpPreGroundingGraceTime = 0f;
         public float JumpPostGroundingGraceTime = 0f;
+        public bool canDoubleJump = false;
+        private bool _jumpRequested = false;
+        private bool _jumpConsumed = false;
+        private bool _jumpedThisFrame = false;
 
         [Header("Dashing")]
         public GameObject _playerReference;
@@ -88,9 +93,6 @@ namespace KinematicCharacterController.Examples
         private RaycastHit[] _probedHits = new RaycastHit[8];
         private Vector3 _moveInputVector;
         private Vector3 _lookInputVector;
-        private bool _jumpRequested = false;
-        private bool _jumpConsumed = false;
-        private bool _jumpedThisFrame = false;
         private float _timeSinceJumpRequested = Mathf.Infinity;
         private float _timeSinceLastAbleToJump = 0f;
         private Vector3 _internalVelocityAdd = Vector3.zero;
@@ -203,8 +205,18 @@ namespace KinematicCharacterController.Examples
                         // Jumping input
                         if (inputs.JumpDown)
                         {
-                            _timeSinceJumpRequested = 0f;
-                            _jumpRequested = true;
+                            //Detecter le double jump
+                            if(_jumpConsumed && canDoubleJump)
+                            {
+                                _jumpConsumed = false;
+                                Vector3 additionalVelocity = new Vector3(0f, JumpUpSpeed * DoubleJumpUpSpeed, 0f);
+                                AddVelocity(additionalVelocity);
+                            }
+                            else if(!_jumpedThisFrame)
+                            {
+                                _timeSinceJumpRequested = 0f;
+                                _jumpRequested = true;
+                            }
                         }
 
                         // Crouching input
@@ -457,11 +469,8 @@ namespace KinematicCharacterController.Examples
                                     _jumpRequested = false;
                                     _jumpConsumed = true;
                                     _jumpedThisFrame = true;
-
                                     //print("Je saute");
-
                                 }
-
                             }
                         }
 
@@ -657,6 +666,14 @@ namespace KinematicCharacterController.Examples
         }
         public void Update()
         {
+            /*if(Input.GetMouseButton(1) && companionAI.isCompanionFree)
+            {
+                exampleCharacterCamera.SetFollowTransform(companionAI.companionTransformCamera);
+            }
+            if(Input.GetMouseButtonUp(1) && companionAI.isCompanionFree)
+            {
+                exampleCharacterCamera.SetFollowTransform(CameraFollowPoint);
+            }*/
             if (Input.GetMouseButtonDown(0) && companionAI.isCompanionFree)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

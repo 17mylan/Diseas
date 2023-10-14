@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class CompanionAI : MonoBehaviour
 {
     public bool CanFollowPlayerAnywhere = true;
+    public Transform companionTransformCamera;
     public NavMeshAgent _AI;
     public Transform _playerReference, _linkToPlayer;
     public NavMeshLink _navMeshLink;
