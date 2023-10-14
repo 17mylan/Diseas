@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
   m_Name: graph_0
   m_EditorClassIdentifier: 
-  AssetPath: Assets/Alexis/JRO_BloodyGuts.sbsar
+  AssetPath: Assets/Alexis/textures/JRO_BloodyGuts.sbsar
   RawData: {fileID: -244192453324840774, guid: 025310fbd0424c2489455221e778768c, type: 3}
   Name: graph_0
   IsRoot: 1
@@ -26,14 +26,14 @@ MonoBehaviour:
   - rid: 6379542647908597763
   Output:
   - Index: 0
-    VirtualOutputIndex: 5
+    VirtualOutputIndex: 6
     Description:
       Identifier: basecolor
       Label: basecolor
       Index: 0
       Type: 8
       Channel: baseColor
-    OutputTexture: {fileID: 2800000, guid: f6dc3d2068c6a8c4fa4eb4b0e7a05d43, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 1
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -42,14 +42,14 @@ MonoBehaviour:
     Flags: 0
     MaterialTextureTarget: _BaseMap
   - Index: 1
-    VirtualOutputIndex: 6
+    VirtualOutputIndex: 7
     Description:
       Identifier: normal
       Label: normal
       Index: 1
       Type: 8
       Channel: normal
-    OutputTexture: {fileID: 2800000, guid: 372787234d09bfc4fa906985ca6830e7, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 0
     IsVirtual: 0
     IsAlphaAssignable: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
     Flags: 0
     MaterialTextureTarget: _BumpMap
   - Index: 2
-    VirtualOutputIndex: 7
+    VirtualOutputIndex: 8
     Description:
       Identifier: roughness
       Label: roughness
@@ -74,14 +74,14 @@ MonoBehaviour:
     Flags: 0
     MaterialTextureTarget: _RoughnessMap
   - Index: 3
-    VirtualOutputIndex: 8
+    VirtualOutputIndex: 9
     Description:
       Identifier: ambientOcclusion
       Label: ambientOcclusion
       Index: 3
       Type: 8
       Channel: ambientOcclusion
-    OutputTexture: {fileID: 2800000, guid: 1ab69e5218af729489c2a25f39098d9b, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 0
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -90,14 +90,14 @@ MonoBehaviour:
     Flags: 0
     MaterialTextureTarget: _OcclusionMap
   - Index: 4
-    VirtualOutputIndex: 9
+    VirtualOutputIndex: 10
     Description:
       Identifier: height
       Label: height
       Index: 4
       Type: 8
       Channel: height
-    OutputTexture: {fileID: 2800000, guid: 4d265e88e8739dd4eab2386573168629, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 1
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -105,6 +105,22 @@ MonoBehaviour:
     InvertAssignedAlpha: 0
     Flags: 0
     MaterialTextureTarget: _ParallaxMap
+  - Index: 5
+    VirtualOutputIndex: 5
+    Description:
+      Identifier: mask
+      Label: mask
+      Index: 5
+      Type: 8
+      Channel: mask
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 1
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 4
+    MaterialTextureTarget: _MaskMap
   HasPhysicalSize: 0
   PhysicalSize: {x: 0, y: 0, z: 0}
   EnablePhysicalSize: 0
@@ -120,7 +136,7 @@ MonoBehaviour:
   DefaultPreset: " <sbspreset pkgurl=\"pkg://Bloody_Guts\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"1522314422\" type=\"8\" value=\"10,10\" />\n
     </sbspreset>\n"
-  MaterialShader: Universal Render Pipeline/Lit
+  MaterialShader: Hidden/InternalErrorShader
   RenderTextures: 0
   OutputRemaped: 0
   Presets: []
