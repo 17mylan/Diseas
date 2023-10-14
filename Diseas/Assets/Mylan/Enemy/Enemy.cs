@@ -33,10 +33,12 @@ public class Enemy : MonoBehaviour
     {
         if(hitCollider.gameObject.tag == "Player" && _exampleCharacterController._isDashing && _exampleCharacterController._hasSuperpuissanceCapacity)
         {
-            if(this.GetComponent<EnemyPlatforms>() != null)
+            if (this.GetComponent<EnemyPlatforms>() != null)
                 _exampleCharacterController.GiveCapacityToPlayer("Platforming");
-            else if(this.GetComponent<EnemySuperpuissance>() != null)
+            else if (this.GetComponent<EnemySuperpuissance>() != null)
                 _exampleCharacterController.GiveCapacityToPlayer("Superpuissance");
+            else if (this.GetComponent<EnemyDoubleJump>() != null)
+                _exampleCharacterController.GiveCapacityToPlayer("DoubleJump");
             Destroy(this.gameObject);
         }
     }

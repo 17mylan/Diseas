@@ -120,6 +120,9 @@ namespace KinematicCharacterController.Examples
         [Header("Superpuissance Capacity")]
         public bool _hasSuperpuissanceCapacity = false;
         public TimerSuperpuissance _timerSuperpuissance;
+        [Header("Double Jump Capacity")]
+        public bool _hasDoubleJumpCapacity = false;
+        public TimerDoubleJump _timerDoubleJump;
 
         private void Awake()
         {
@@ -594,19 +597,24 @@ namespace KinematicCharacterController.Examples
                 GameObject hitObject = hitInfo.collider.gameObject;
                 
                 if (hitObject.CompareTag("Enemy") && _isDashing && hitObject.GetComponent<Enemy>()._isStun)
-                {                    
+                {
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
                     // Ne pas oublier dans le script "Enemy" de faire la méthode pour donner les pouvoirs
 
-                    if(hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
+                    if (hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
                     {
                         Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("Platforming");
                     }
-                    else if(hitCollider.gameObject.GetComponent<EnemySuperpuissance>() != null && _hasSuperpuissanceCapacity)
+                    else if (hitCollider.gameObject.GetComponent<EnemySuperpuissance>() != null && _hasSuperpuissanceCapacity)
                     {
                         Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("Superpuissance");
+                    }
+                    else if (hitCollider.gameObject.GetComponent<EnemyDoubleJump>() != null)
+                    {
+                        Destroy(hitCollider.gameObject);
+                        GiveCapacityToPlayer("DoubleJump");
                     }
 
                 }
@@ -659,6 +667,7 @@ namespace KinematicCharacterController.Examples
             _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
             _timerPlatforms = FindObjectOfType<TimerPlatforms>();
             _timerSuperpuissance = FindObjectOfType<TimerSuperpuissance>();
+            _timerDoubleJump = FindObjectOfType<TimerDoubleJump>();
             tuto = FindObjectOfType<Tuto>();
             teleportation = FindObjectOfType<Teleportation>();
             companionAI = FindObjectOfType<CompanionAI>();
@@ -749,6 +758,20 @@ namespace KinematicCharacterController.Examples
                 }
                 else if(_hasSuperpuissanceCapacity)
                     _timerSuperpuissance.AddToTimer(5f);
+            }
+            else if(_string == "DoubleJump")
+            {
+                if(!_hasDoubleJumpCapacity)
+                {
+                    if (!_timerDoubleJump.isTimerStarted)
+                    {
+                        _timerDoubleJump.StartTimer();
+                        _hasDoubleJumpCapacity = true;
+                        canDoubleJump = true;
+                    }
+                }
+                else if (_hasDoubleJumpCapacity)
+                    _timerDoubleJump.AddToTimer(5f);
             }
         }
     }
