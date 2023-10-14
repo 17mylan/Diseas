@@ -689,11 +689,7 @@ namespace KinematicCharacterController.Examples
                     if(_isAiming)
                     {
                         Vector3 targetPoint = hit.point;
-
-                        float maxDeviation = 0.0f;
-                        float randomX = Random.Range(-maxDeviation, maxDeviation);
-                        float randomY = Random.Range(-maxDeviation, maxDeviation);
-                        targetPoint += new Vector3(randomX, randomY, 0);
+                        targetPoint += new Vector3(0, 0, 0);
 
                         GameObject bullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
                         Vector3 direction = (targetPoint - spawnPoint.position).normalized;
