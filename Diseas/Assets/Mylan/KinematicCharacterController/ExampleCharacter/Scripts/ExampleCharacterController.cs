@@ -771,7 +771,7 @@ namespace KinematicCharacterController.Examples
                     }
                 }
                 else if (_hasDoubleJumpCapacity)
-                    _timerDoubleJump.AddToTimer(5f);
+                    _timerDoubleJump.AddToTimer(10f);
             }
         }
     }
