@@ -49,6 +49,7 @@ namespace KinematicCharacterController.Examples
         public float MaxStableMoveSpeed = 10f;
         public float StableMovementSharpness = 15f;
         public float OrientationSharpness = 10f;
+        public float velocityMagnitude;
         public OrientationMethod OrientationMethod = OrientationMethod.TowardsCamera;
 
         [Header("Air Movement")]
@@ -238,7 +239,6 @@ namespace KinematicCharacterController.Examples
                         {
                             _shouldBeCrouching = false;
                         }*/
-                        
                         if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving && !_jumpRequested && !_jumpConsumed) 
                         {
                             _isDashing = true;
@@ -442,38 +442,29 @@ namespace KinematicCharacterController.Examples
                         // Handle jumping
                         _jumpedThisFrame = false;
                         _timeSinceJumpRequested += deltaTime;
-                        if (_jumpRequested && !_isDashing)
+                        if (_jumpRequested && !_isDashing && velocityMagnitude < 10f)
                         {
                             // See if we actually are allowed to jump
                             if (!_jumpConsumed && ((AllowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || _timeSinceLastAbleToJump <= JumpPostGroundingGraceTime))
                             {
-                                //Ne pas pouvoir dash et sauter pour prendre de la velocitée
-                                if(_isDashing)
+                                // Calculate jump direction before ungrounding
+                                Vector3 jumpDirection = Motor.CharacterUp;
+                                if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
                                 {
-                                    _dashTimer = _dashDuration;
-                                    Debug.LogWarning("Annulation du dash - Raison: Le joueur ne peut pas utiliser son dash et sauter en meme temps");
+                                    jumpDirection = Motor.GroundingStatus.GroundNormal;
                                 }
-                                else
-                                {
-                                    // Calculate jump direction before ungrounding
-                                    Vector3 jumpDirection = Motor.CharacterUp;
-                                    if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
-                                    {
-                                        jumpDirection = Motor.GroundingStatus.GroundNormal;
-                                    }
 
-                                    // Makes the character skip ground probing/snapping on its next update. 
-                                    // If this line weren't here, the character would remain snapped to the ground when trying to jump. Try commenting this line out and see.
-                                    Motor.ForceUnground();
+                                // Makes the character skip ground probing/snapping on its next update. 
+                                // If this line weren't here, the character would remain snapped to the ground when trying to jump. Try commenting this line out and see.
+                                Motor.ForceUnground();
 
-                                    // Add to the return velocity and reset jump state
-                                    currentVelocity += (jumpDirection * JumpUpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
-                                    currentVelocity += (_moveInputVector * JumpScalableForwardSpeed);
-                                    _jumpRequested = false;
-                                    _jumpConsumed = true;
-                                    _jumpedThisFrame = true;
-                                    //print("Je saute");
-                                }
+                                // Add to the return velocity and reset jump state
+                                currentVelocity += (jumpDirection * JumpUpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
+                                currentVelocity += (_moveInputVector * JumpScalableForwardSpeed);
+                                _jumpRequested = false;
+                                _jumpConsumed = true;
+                                _jumpedThisFrame = true;
+                                //print("Je saute");
                             }
                         }
 
@@ -483,6 +474,7 @@ namespace KinematicCharacterController.Examples
                             currentVelocity += _internalVelocityAdd;
                             _internalVelocityAdd = Vector3.zero;
                         }
+                        velocityMagnitude = currentVelocity.magnitude;
                         break;
                     }
             }
