@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using KinematicCharacterController;
 using System;
 using Unity.VisualScripting;
@@ -79,6 +80,11 @@ namespace KinematicCharacterController.Examples
         public float _dashDuration = 0.2f;
         public float _dashTimer = 0f;
 
+        [Header("Bullet")]
+        public Transform spawnPoint;
+        public GameObject bulletPrefab;
+        public float bulletSpeed = 100f;
+
         [Header("Misc")]
         public List<Collider> IgnoredColliders = new List<Collider>();
         public BonusOrientationMethod BonusOrientationMethod = BonusOrientationMethod.None;
@@ -104,7 +110,6 @@ namespace KinematicCharacterController.Examples
         private Vector3 lastInnerNormal = Vector3.zero;
         private Vector3 lastOuterNormal = Vector3.zero;
         public Enemy _enemy;
-        public BulletInstantiate _bulletInstantiate;
         public Tuto tuto;
         public Teleportation teleportation;
         public CompanionAI companionAI;
@@ -656,7 +661,6 @@ namespace KinematicCharacterController.Examples
         public void Start()
         {
             _enemy = FindObjectOfType<Enemy>();
-            _bulletInstantiate = FindObjectOfType<BulletInstantiate>();
             _timerPlatforms = FindObjectOfType<TimerPlatforms>();
             _timerSuperpuissance = FindObjectOfType<TimerSuperpuissance>();
             _timerDoubleJump = FindObjectOfType<TimerDoubleJump>();
@@ -682,10 +686,18 @@ namespace KinematicCharacterController.Examples
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if(_isAiming && hit.collider.gameObject.tag != "Enemy")
+                    if(_isAiming)
                     {
-                        _bulletInstantiate.noEnemyTarget = hit.transform;
-                        _bulletInstantiate.CreateBullet("WithoutEnemy");
+                        Vector3 targetPoint = hit.point;
+
+                        float maxDeviation = 0.0f;
+                        float randomX = Random.Range(-maxDeviation, maxDeviation);
+                        float randomY = Random.Range(-maxDeviation, maxDeviation);
+                        targetPoint += new Vector3(randomX, randomY, 0);
+
+                        GameObject bullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
+                        Vector3 direction = (targetPoint - spawnPoint.position).normalized;
+                        bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
                     }
                 }
             }

@@ -3447,6 +3447,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &244448218 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7441224913629448710, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5218997446148523128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &252715338
 Mesh:
   m_ObjectHideFlags: 0
@@ -34964,8 +34970,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4748473428370941686, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748473428370941686, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
       propertyPath: bulletSpeed
-      value: 100
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748473428370941686, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5271421549763246831, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
@@ -35135,7 +35151,7 @@ PrefabInstance:
     - target: {fileID: 7441224913629448710, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.63
+      value: -2.31
       objectReference: {fileID: 0}
     - target: {fileID: 7579763571694045544, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
@@ -35144,9 +35160,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 244448218}
+    - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
       propertyPath: _hasCapacity
       value: 
       objectReference: {fileID: 2100000, guid: e48c088fe08dfe843bc0812c1e46722b, type: 2}
+    - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5374742621348116703, guid: ca11e959084a8904c9c7270d3224898a,
+        type: 3}
     - target: {fileID: 7619125153650244229, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: _dashCooldown
@@ -35319,7 +35351,7 @@ PrefabInstance:
       value: -0.0592041
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4128081783026963017, guid: 006bb7cd3714f4c4c87c847cb58eb3c3, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5130847491599473544, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
