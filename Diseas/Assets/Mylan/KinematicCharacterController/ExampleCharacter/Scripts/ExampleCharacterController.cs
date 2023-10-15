@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 using KinematicCharacterController;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 namespace KinematicCharacterController.Examples
 {
@@ -251,8 +252,11 @@ namespace KinematicCharacterController.Examples
                             //print("Je dash");
                             StartCoroutine(DashCooldown());
                             StartCoroutine(DashCameraZoom());
-                            if(tuto.isTutoEnabled && tuto.hasPassedColliderDetectorToDestroyWallForDash)
-                                tuto.DestroyWallWhenPlayerDashedOnTutoEnabled();
+                            if(SceneManager.GetActiveScene().name == "TutorialRoom")
+                            {
+                                if(tuto.isTutoEnabled && tuto.hasPassedColliderDetectorToDestroyWallForDash)
+                                    tuto.DestroyWallWhenPlayerDashedOnTutoEnabled();
+                            }
                         }
                         if(Input.GetMouseButtonDown(1) && companionAI.isCompanionFree)
                         {
@@ -576,13 +580,20 @@ namespace KinematicCharacterController.Examples
 
         public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
-            if(hitCollider.gameObject == tuto.teleporterToPart2)
+            if(SceneManager.GetActiveScene().name == "TutorialRoom")
             {
-                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart1toPart2", 1f));
-            }
-            else if(hitCollider.gameObject == tuto.teleporterToPart3)
-            {
-                teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart2toPart3", 1f));
+                if(hitCollider.gameObject == tuto.teleporterToPart2)
+                {
+                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart1toPart2", 1f));
+                }
+                else if(hitCollider.gameObject == tuto.teleporterToPart3)
+                {
+                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart2toPart3", 1f));
+                }
+                else if(hitCollider.gameObject == tuto.teleportToGymRoom)
+                {
+                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart3toGymRoom", 1f));
+                }
             }
         }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -620,10 +631,13 @@ namespace KinematicCharacterController.Examples
                     Destroy(hitCollider.transform.parent.gameObject);
                     GiveCapacityToPlayer("Superpuissance");
                 }
-                if(hitCollider == tuto.colliderDetectorToDash)
+                else if(SceneManager.GetActiveScene().name == "TutorialRoom")
                 {
-                    Destroy(tuto.colliderDetectorToDash);
-                    tuto.hasPassedColliderDetectorToDestroyWallForDash = true;
+                    if(hitCollider == tuto.colliderDetectorToDash)
+                    {
+                        Destroy(tuto.colliderDetectorToDash);
+                        tuto.hasPassedColliderDetectorToDestroyWallForDash = true;
+                    }
                 }
             }
         }

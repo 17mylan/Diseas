@@ -5,22 +5,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float _WaitSecondsBulletToDestroy = 5f;
     public void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if(collision.gameObject.tag == "Cible")
+        {
+            Destroy(collision.gameObject);
+        }
         if(collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().SetEnemyStunned(true);
         }
+        Destroy(gameObject);
     }
     public void Start()
     {
-        StartCoroutine(WaitBulletAndDestroy());
-    }
-    public float _WaitSecondsBulletToDestroy = 1f;
-    public IEnumerator WaitBulletAndDestroy()
-    {
-        yield return new WaitForSeconds(_WaitSecondsBulletToDestroy);
-        Destroy(gameObject);
+        Destroy(gameObject, _WaitSecondsBulletToDestroy);
     }
 }

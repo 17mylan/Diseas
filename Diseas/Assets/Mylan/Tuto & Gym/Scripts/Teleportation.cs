@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Teleportation : MonoBehaviour
 {
@@ -45,6 +47,11 @@ public class Teleportation : MonoBehaviour
                 isTeleporting = false;
                 yield return new WaitForSeconds(_timer);
                 companionReference.transform.position = tpPosition;
+            }
+            else if(_string == "TeleportationFromPart3toGymRoom")
+            {
+                yield return new WaitForSeconds(_timer);
+                SceneManager.LoadScene("GymRoom");
             }
         }
     }

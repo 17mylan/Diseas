@@ -12,6 +12,7 @@ public class Tuto : MonoBehaviour
     public GameObject dashGameObjectWall;
     public GameObject teleporterToPart2;
     public GameObject teleporterToPart3;
+    public GameObject teleportToGymRoom;
     public GameObject wallDash;
     public GameObject companionReference;
     public GameObject wallAfterSavecYourCompanion;

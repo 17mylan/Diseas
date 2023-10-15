@@ -25426,6 +25426,7 @@ MonoBehaviour:
   dashGameObjectWall: {fileID: 1067522283}
   teleporterToPart2: {fileID: 1510696897}
   teleporterToPart3: {fileID: 878110291}
+  teleportToGymRoom: {fileID: 657795630}
   wallDash: {fileID: 1067522283}
   companionReference: {fileID: 3703720138985325883}
   wallAfterSavecYourCompanion: {fileID: 1264513644}
@@ -34469,17 +34470,17 @@ PrefabInstance:
     - target: {fileID: 8938405877852135671, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8938405877852135671, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8938405877852135671, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
