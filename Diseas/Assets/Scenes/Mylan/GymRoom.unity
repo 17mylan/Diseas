@@ -5072,8 +5072,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stun and dash into enemies to get the Double Jump Capacity to train your
-    movements
+  m_text: Run into Molecul collectible to get them
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -20427,7 +20426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Training Double Jump Room
+  m_text: Training Collectible Room
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37816,7 +37815,7 @@ PrefabInstance:
     - target: {fileID: 6386157920376555495, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 11.779968
+      value: 11.780029
       objectReference: {fileID: 0}
     - target: {fileID: 7917257592881486942, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
