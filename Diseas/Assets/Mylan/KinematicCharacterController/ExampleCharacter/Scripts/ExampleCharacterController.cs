@@ -6,6 +6,7 @@ using KinematicCharacterController;
 using System;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace KinematicCharacterController.Examples
 {
@@ -130,6 +131,9 @@ namespace KinematicCharacterController.Examples
         [Header("Double Jump Capacity")]
         public bool _hasDoubleJumpCapacity = false;
         public TimerDoubleJump _timerDoubleJump;
+        [Header("Collectible")]
+        public int currentCollectibleNumber;
+        public TextMeshProUGUI currentCollectibleNumerText;
 
         private void Awake()
         {
@@ -655,6 +659,12 @@ namespace KinematicCharacterController.Examples
 
         public void ProcessHitStabilityReport(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, Vector3 atCharacterPosition, Quaternion atCharacterRotation, ref HitStabilityReport hitStabilityReport)
         {
+            if (hitCollider.gameObject.tag == "Collectible")
+            {
+                currentCollectibleNumber += 1;
+                currentCollectibleNumerText.text = currentCollectibleNumber.ToString();
+                Destroy(hitCollider.gameObject);
+            }
         }
 
         protected void OnLanded()
@@ -682,6 +692,9 @@ namespace KinematicCharacterController.Examples
             teleportation = FindObjectOfType<Teleportation>();
             companionAI = FindObjectOfType<CompanionAI>();
             exampleCharacterCamera = FindObjectOfType<ExampleCharacterCamera>();
+
+            currentCollectibleNumber = 0;
+            currentCollectibleNumerText.text = currentCollectibleNumber.ToString();
         }
         public void Update()
         {
