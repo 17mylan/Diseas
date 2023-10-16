@@ -104,6 +104,8 @@ MonoBehaviour:
   detectionRange: 10
   _AI: {fileID: 2266039829478333436}
   _playerReference: {fileID: 0}
+  _exampleCharacter: {fileID: 0}
+  canAiMove: 1
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0

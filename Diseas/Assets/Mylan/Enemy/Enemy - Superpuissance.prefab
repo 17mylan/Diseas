@@ -121,6 +121,8 @@ MonoBehaviour:
   detectionRange: 10
   _AI: {fileID: 2421369221748163647}
   _playerReference: {fileID: 0}
+  _exampleCharacter: {fileID: 0}
+  canAiMove: 1
 --- !u!1 &4311389146360946717
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +227,8 @@ MonoBehaviour:
   detectionRange: 15
   _AI: {fileID: 2421369221748163647}
   _playerReference: {fileID: 0}
+  _exampleCharacter: {fileID: 0}
+  canAiMove: 1
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0
