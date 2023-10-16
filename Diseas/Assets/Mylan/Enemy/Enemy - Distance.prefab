@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 7339326218519358290}
   - component: {fileID: 7153393509282930754}
   - component: {fileID: 2503425932269526945}
-  - component: {fileID: 3065948456349098597}
   - component: {fileID: 7696643097519547381}
+  - component: {fileID: 8875527892796127069}
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
-  - component: {fileID: 2266039829478333436}
+  - component: {fileID: 1363741953076486245}
   m_Layer: 0
-  m_Name: Enemy - DoubleJump
+  m_Name: Enemy - Distance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dd60fc6de6fae5140b396de43f9e4961, type: 2}
+  - {fileID: 2100000, guid: e53e3b4de5710874faa4c4b4702d97e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,21 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3065948456349098597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4311389146360946717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ced4fb6882e82ff42b49a21bab04a304, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRange: 10
-  _AI: {fileID: 2266039829478333436}
-  _playerReference: {fileID: 0}
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125,6 +110,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8875527892796127069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311389146360946717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04538386457c3b44e9df47926b323b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desiredDistance: 3
+  detectionRange: 10
+  _AI: {fileID: 1363741953076486245}
+  _playerReference: {fileID: 0}
 --- !u!114 &1389780180080781418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isStun: 0
-  _originalMaterial: {fileID: 2100000, guid: dd60fc6de6fae5140b396de43f9e4961, type: 2}
+  _originalMaterial: {fileID: 2100000, guid: cb6179247649bb84784f7f6c15b432d6, type: 2}
   _stunMaterial: {fileID: 2100000, guid: 0013e04f81a0364479e57c5433282f95, type: 2}
   _enemyReference: {fileID: 4311389146360946717}
   _waitTimerStunBeforeBack: 3
@@ -171,7 +172,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!195 &2266039829478333436
+--- !u!195 &1363741953076486245
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

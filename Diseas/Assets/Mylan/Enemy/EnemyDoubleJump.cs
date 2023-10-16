@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyDoubleJump : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float detectionRange = 10f; // Portée de détection
+    public NavMeshAgent _AI;
+    public Transform _playerReference;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerReference.position);
+
+        if (distanceToPlayer <= detectionRange)
+        {
+            // Le joueur est dans la plage de détection, déplacer l'ennemi vers le joueur
+            _AI.destination = _playerReference.position;
+        }
+        else
+        {
+            // Le joueur est en dehors de la plage de détection
+            _AI.destination = transform.position;
+        }
     }
 }
