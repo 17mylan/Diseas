@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 7596702110146567741}
   - component: {fileID: 8381042634574834438}
   - component: {fileID: 1665458919089724472}
+  - component: {fileID: 821457594362455564}
   m_Layer: 3
   m_Name: ExampleCharacter
   m_TagString: Player
@@ -1098,6 +1099,7 @@ MonoBehaviour:
   teleportation: {fileID: 0}
   companionAI: {fileID: 0}
   exampleCharacterCamera: {fileID: 0}
+  pauseMenu: {fileID: 0}
   wallDashReference: {fileID: 0}
   _hasPlatformingCapacity: 0
   _timerPlatforms: {fileID: 0}
@@ -1259,6 +1261,20 @@ MonoBehaviour:
   currentTimerText: {fileID: 5154440788313255037}
   currentTimerTextObject: {fileID: 2206590892895416446}
   exampleCharacterController: {fileID: 0}
+--- !u!114 &821457594362455564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3919990162007783028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07676bf4a61ca54bac7c0d1f14e8dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameIsPaused: 0
+  pauseMenuUI: {fileID: 0}
 --- !u!1 &4229065779366171513
 GameObject:
   m_ObjectHideFlags: 0

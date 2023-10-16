@@ -117,6 +117,7 @@ namespace KinematicCharacterController.Examples
         public CompanionAI companionAI;
         public ExampleCharacterCamera exampleCharacterCamera;
         private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
+        public PauseMenu pauseMenu;
         [Header("Tuto Reference")]
         public GameObject wallDashReference;
         [Header("Platforming Capacity")]
@@ -694,6 +695,7 @@ namespace KinematicCharacterController.Examples
             teleportation = FindObjectOfType<Teleportation>();
             companionAI = FindObjectOfType<CompanionAI>();
             exampleCharacterCamera = FindObjectOfType<ExampleCharacterCamera>();
+            pauseMenu = FindObjectOfType<PauseMenu>();
 
             currentCollectibleNumber = 0;
             currentCollectibleNumerText.text = currentCollectibleNumber.ToString();
@@ -708,7 +710,7 @@ namespace KinematicCharacterController.Examples
             {
                 exampleCharacterCamera.SetFollowTransform(CameraFollowPoint);
             }*/
-            if (Input.GetMouseButtonDown(0) && companionAI.isCompanionFree)
+            if (Input.GetMouseButtonDown(0) && companionAI.isCompanionFree && !pauseMenu.gameIsPaused)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
