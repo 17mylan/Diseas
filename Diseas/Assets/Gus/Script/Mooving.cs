@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyPlatforms : MonoBehaviour
+public class Mooving : MonoBehaviour
 {
-    [Range(1f, 50f)]
-    public float detectionRange = 10f;
+    public float detectionRange = 10f; // Portée de détection
     public NavMeshAgent _AI;
     public Transform _playerReference;
 
@@ -14,10 +13,8 @@ public class EnemyPlatforms : MonoBehaviour
 
         if (distanceToPlayer <= detectionRange)
         {
-            // Le joueur est dans la plage de détection, faire fuir l'ennemi
-            Vector3 directionToFlee = transform.position - _playerReference.position;
-            Vector3 destination = transform.position + directionToFlee.normalized * 10f; // 10f est la distance de fuite
-            _AI.destination = destination;
+            // Le joueur est dans la plage de détection, déplacer l'ennemi vers le joueur
+            _AI.destination = _playerReference.position;
         }
         else
         {

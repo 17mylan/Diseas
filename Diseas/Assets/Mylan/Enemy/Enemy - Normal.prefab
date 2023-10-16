@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 7339326218519358290}
   - component: {fileID: 7153393509282930754}
   - component: {fileID: 2503425932269526945}
-  - component: {fileID: 5996751879950691709}
   - component: {fileID: 7696643097519547381}
+  - component: {fileID: 5035532986528997758}
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
-  - component: {fileID: 1363741953076486245}
+  - component: {fileID: 3793926436602880928}
   m_Layer: 0
-  m_Name: Enemy - Platforms
+  m_Name: Enemy - Normal
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb6179247649bb84784f7f6c15b432d6, type: 2}
+  - {fileID: 2100000, guid: d9cd60270a8bf214fbfe37d37d170e58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,21 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5996751879950691709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4311389146360946717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cefa9dfcc3891a14eaf74f4a79b3b41d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRange: 10
-  _AI: {fileID: 0}
-  _playerReference: {fileID: 0}
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125,6 +110,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5035532986528997758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311389146360946717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b94bfd9ba332b4bbd1c6716c34b29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRange: 10
+  _AI: {fileID: 3793926436602880928}
+  _playerReference: {fileID: 0}
 --- !u!114 &1389780180080781418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isStun: 0
-  _originalMaterial: {fileID: 2100000, guid: cb6179247649bb84784f7f6c15b432d6, type: 2}
+  _originalMaterial: {fileID: 2100000, guid: d9cd60270a8bf214fbfe37d37d170e58, type: 2}
   _stunMaterial: {fileID: 2100000, guid: 0013e04f81a0364479e57c5433282f95, type: 2}
   _enemyReference: {fileID: 4311389146360946717}
   _waitTimerStunBeforeBack: 3
@@ -171,7 +171,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!195 &1363741953076486245
+--- !u!195 &3793926436602880928
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,11 +181,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 4
   m_Acceleration: 10000
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
