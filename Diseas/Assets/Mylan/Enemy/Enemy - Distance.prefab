@@ -122,10 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04538386457c3b44e9df47926b323b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredDistance: 3
-  detectionRange: 10
+  desiredDistance: 10
+  detectionRange: 15
+  shootingInterval: 2
+  bulletSpawnPoint: {fileID: 7339326218519358290}
+  bulletEnemyPrefab: {fileID: 5374742621348116703, guid: 028451ccd25103d408ed178bfeb4f92e,
+    type: 3}
   _AI: {fileID: 1363741953076486245}
-  _playerReference: {fileID: 0}
+  _playerReference: {fileID: 1436434785030362451, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+    type: 3}
+  _exampleCharacter: {fileID: 0}
+  canAiMove: 1
 --- !u!114 &1389780180080781418
 MonoBehaviour:
   m_ObjectHideFlags: 0

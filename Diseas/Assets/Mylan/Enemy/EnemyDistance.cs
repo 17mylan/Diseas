@@ -9,25 +9,32 @@ public class EnemyDistance : MonoBehaviour
     public Transform bulletSpawnPoint; // Point d'apparition des balles
     public GameObject bulletEnemyPrefab; // Prefab de la balle ennemie
     public NavMeshAgent _AI;
-    public Transform _playerReference;
-
+    public GameObject _playerReference;
     private float timeSinceLastShot = 0f;
+    public Transform _exampleCharacter;
+    public bool canAiMove = true;
+
+    public void Start()
+    {
+        _playerReference = GameObject.Find("ExampleCharacter");
+        _exampleCharacter = _playerReference.transform;
+    }
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, _playerReference.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
 
         if (distanceToPlayer <= detectionRange)
         {
             // Le joueur est dans la plage de détection
-            Vector3 directionToPlayer = _playerReference.position - transform.position;
-            Vector3 destination = _playerReference.position - directionToPlayer.normalized * desiredDistance;
+            Vector3 directionToPlayer = _exampleCharacter.position - transform.position;
+            Vector3 destination = _exampleCharacter.position - directionToPlayer.normalized * desiredDistance;
 
             // Déplacer l'ennemi vers la destination tout en maintenant la distance souhaitée
             _AI.destination = destination;
 
             // Ajuster la rotation pour faire face au joueur
-            transform.LookAt(_playerReference.position);
+            transform.LookAt(_exampleCharacter.position);
 
             // Tirer toutes les 2 secondes
             timeSinceLastShot += Time.deltaTime;
