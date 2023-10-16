@@ -102,8 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 10
-  _AI: {fileID: 0}
-  _playerReference: {fileID: 0}
+  _AI: {fileID: 1363741953076486245}
+  _playerReference: {fileID: 1436434785030362451, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+    type: 3}
+  _exampleCharacter: {fileID: 0}
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0
