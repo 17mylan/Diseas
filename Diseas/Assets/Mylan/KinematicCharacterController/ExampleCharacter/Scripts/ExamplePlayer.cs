@@ -16,9 +16,12 @@ namespace KinematicCharacterController.Examples
         private const string MouseScrollInput = "Mouse ScrollWheel";
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
+        public PauseMenu pauseMenu;
 
         private void Start()
         {
+            pauseMenu = FindObjectOfType<PauseMenu>();
+            
             Cursor.lockState = CursorLockMode.Locked;
 
             // Tell camera to follow transform
@@ -31,7 +34,7 @@ namespace KinematicCharacterController.Examples
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !pauseMenu.gameIsPaused)
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
