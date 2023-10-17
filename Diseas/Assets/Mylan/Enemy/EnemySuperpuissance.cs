@@ -10,6 +10,7 @@ public class EnemySuperpuissance : MonoBehaviour
     public GameObject _playerReference;
     public Transform _exampleCharacter;
     public bool canAiMove = true;
+    public bool overrideAiMovement = true;
 
     public void Start()
     {
@@ -18,34 +19,37 @@ public class EnemySuperpuissance : MonoBehaviour
     }
     void Update()
     {
-        if(canAiMove)
+        if(overrideAiMovement)
         {
-            if (!_AI.enabled)
+            if(canAiMove)
             {
-                _AI.enabled = true;
-            }
-            float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
+                if (!_AI.enabled)
+                {
+                    _AI.enabled = true;
+                }
+                float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
 
-            if (distanceToPlayer <= detectionRange)
-            {
-                if (!isMovingToPlayer)
+                if (distanceToPlayer <= detectionRange)
                 {
-                    Invoke("StartMovingToPlayer", 1.5f);
-                    isMovingToPlayer = true;
+                    if (!isMovingToPlayer)
+                    {
+                        Invoke("StartMovingToPlayer", 1.5f);
+                        isMovingToPlayer = true;
+                    }
+                }
+                else
+                {
+                    if (isMovingToPlayer)
+                    {
+                        CancelInvoke("StartMovingToPlayer");
+                        isMovingToPlayer = false;
+                    }
                 }
             }
-            else
+            else if(!canAiMove)
             {
-                if (isMovingToPlayer)
-                {
-                    CancelInvoke("StartMovingToPlayer");
-                    isMovingToPlayer = false;
-                }
+                _AI.enabled = false;
             }
-        }
-        else if(!canAiMove)
-        {
-            _AI.enabled = false;
         }
     }
 
