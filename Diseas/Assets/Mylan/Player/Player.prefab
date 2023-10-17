@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Character: {fileID: 5321501936385489836}
   CharacterCamera: {fileID: 7848903650542291525}
+  pauseMenu: {fileID: 0}
 --- !u!1 &471009310581374108
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +964,6 @@ GameObject:
   - component: {fileID: 8702415746861102719}
   - component: {fileID: 5321501936385489836}
   - component: {fileID: 6688723130409272276}
-  - component: {fileID: 3101692442763554817}
   - component: {fileID: 1840194841600731891}
   - component: {fileID: 1982602616207186586}
   - component: {fileID: 7596702110146567741}
@@ -1115,6 +1115,7 @@ MonoBehaviour:
   _timerDoubleJump: {fileID: 0}
   currentCollectibleNumber: 0
   currentCollectibleNumerText: {fileID: 8784187067230891004}
+  distanceDeDestruction: 4
 --- !u!114 &6688723130409272276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,20 +1158,6 @@ MonoBehaviour:
   CheckMovementInitialOverlaps: 1
   KillVelocityWhenExceedMaxMovementIterations: 1
   KillRemainingMovementWhenExceedMaxMovementIterations: 1
---- !u!114 &3101692442763554817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3919990162007783028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f629ca6417810654799b05b09cc49b64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  raycastDistance: 0.2
-  tuto: {fileID: 0}
 --- !u!114 &1840194841600731891
 MonoBehaviour:
   m_ObjectHideFlags: 0

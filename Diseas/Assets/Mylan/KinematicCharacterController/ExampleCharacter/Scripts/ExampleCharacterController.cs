@@ -135,6 +135,8 @@ namespace KinematicCharacterController.Examples
         [Header("Collectible")]
         public int currentCollectibleNumber;
         public TextMeshProUGUI currentCollectibleNumerText;
+        [Header("Enemy Head Detector")]
+        public float raycastDistance = 3f;
 
         private void Awake()
         {
@@ -702,6 +704,7 @@ namespace KinematicCharacterController.Examples
         }
         public void Update()
         {
+            HeadDetector();
             /*if(Input.GetMouseButton(1) && companionAI.isCompanionFree)
             {
                 exampleCharacterCamera.SetFollowTransform(companionAI.companionTransformCamera);
@@ -803,6 +806,22 @@ namespace KinematicCharacterController.Examples
                 }
                 else if (_hasDoubleJumpCapacity)
                     _timerDoubleJump.AddToTimer(10f);
+            }
+        }
+        public void HeadDetector()
+        {
+            Vector3 playerPosition = transform.position;
+            Vector3 raycastDirection = Vector3.down;
+            RaycastHit hit;
+            if (Physics.Raycast(playerPosition, raycastDirection, out hit, raycastDistance))
+            {
+                Debug.DrawLine(playerPosition, hit.point, Color.red);
+                if (hit.collider.tag == "EnemyHead")
+                {
+                    Destroy(hit.collider.transform.parent.gameObject);
+                    if (SceneManager.GetActiveScene().name == "TutorialRoom" && tuto.isTutoEnabled && tuto.isInPhaseToJumpInHeadOfEnemies)
+                        tuto.TutoAddEnemyKilledToSaveHisCompanion(1);
+                }
             }
         }
     }
