@@ -3,6 +3,6 @@ guid: 870c4e5e7f43c2246b30bca2dae4b706
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
-  userData: '{"GUIDArray":["0ad8bfbc4afbe7b448545419bbbb2a76","801b5a7e97b97fa4e89e8f8d1cd02b3f","",""],"withUV":[false,false,false,false]}'
+  userData: '{"GUIDArray":["0ad8bfbc4afbe7b448545419bbbb2a76","801b5a7e97b97fa4e89e8f8d1cd02b3f","",""],"withUV":[true,true,false,false]}'
   assetBundleName: 
   assetBundleVariant: 

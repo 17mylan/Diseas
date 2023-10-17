@@ -46,8 +46,9 @@ Material:
   m_ValidKeywords:
   - _HEIGHTMAP0
   - _HEIGHTMAP1
-  - _LAYEREDLIT_4_LAYERS
+  - _LAYEREDLIT_3_LAYERS
   - _LAYER_MASK_VERTEX_COLOR_MUL
+  - _MAIN_LAYER_INFLUENCE_MODE
   - _MASKMAP0
   - _MASKMAP1
   - _NORMALMAP0
@@ -84,11 +85,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap0:
         m_Texture: {fileID: 2800000, guid: a282a931386cc574490303f71c64c43d, type: 3}
-        m_Scale: {x: 5.41, y: 3}
-        m_Offset: {x: 20.14, y: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.96, y: 0}
     - _BaseColorMap1:
         m_Texture: {fileID: 2800000, guid: 37d17a179c5fee94989fc066d66e01fe, type: 3}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap2:
         m_Texture: {fileID: 0}
@@ -200,8 +201,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _LayerMaskMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 12.9, y: 3}
+        m_Offset: {x: 3, y: 3}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -357,7 +358,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AORemapMax: 1
-    - _AORemapMax0: 1
+    - _AORemapMax0: 0.99999994
     - _AORemapMax1: 1
     - _AORemapMax2: 1
     - _AORemapMax3: 1
@@ -369,7 +370,7 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
-    - _AlphaCutoff: 0.5
+    - _AlphaCutoff: 0.748
     - _AlphaCutoffEnable: 0
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
@@ -391,7 +392,7 @@ Material:
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0.748
     - _DepthOffsetEnable: 0
     - _DetailAlbedoScale: 1
     - _DetailAlbedoScale0: 1
@@ -418,8 +419,8 @@ Material:
     - _DiffusionProfileHash1: 0
     - _DiffusionProfileHash2: 0
     - _DiffusionProfileHash3: 0
-    - _DisplacementLockObjectScale: 1
-    - _DisplacementLockTilingScale: 1
+    - _DisplacementLockObjectScale: 0
+    - _DisplacementLockTilingScale: 0
     - _DisplacementMode: 3
     - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
@@ -434,33 +435,33 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _HeightAmplitude: 0.02
-    - _HeightAmplitude0: 10.162
-    - _HeightAmplitude1: 0.02
+    - _HeightAmplitude0: 0.283
+    - _HeightAmplitude1: 0.85999995
     - _HeightAmplitude2: 0.02
     - _HeightAmplitude3: 0.02
     - _HeightCenter: 0.5
-    - _HeightCenter0: 1.0023618
-    - _HeightCenter1: 0.5
+    - _HeightCenter0: 0.590106
+    - _HeightCenter1: 0.45734885
     - _HeightCenter2: 0.5
     - _HeightCenter3: 0.5
     - _HeightMapParametrization: 0
     - _HeightMapParametrization0: 1
-    - _HeightMapParametrization1: 0
+    - _HeightMapParametrization1: 1
     - _HeightMapParametrization2: 0
     - _HeightMapParametrization3: 0
     - _HeightMax: 1
-    - _HeightMax0: 2.32
+    - _HeightMax0: 67.1
     - _HeightMax1: 1
     - _HeightMax2: 1
     - _HeightMax3: 1
     - _HeightMin: -1
-    - _HeightMin0: -16.54
+    - _HeightMin0: 2.04
     - _HeightMin1: -1
     - _HeightMin2: -1
     - _HeightMin3: -1
     - _HeightOffset: 0
-    - _HeightOffset0: -2.4
-    - _HeightOffset1: 0
+    - _HeightOffset0: 11.6
+    - _HeightOffset1: 0.4
     - _HeightOffset2: 0
     - _HeightOffset3: 0
     - _HeightPoMAmplitude: 2
@@ -469,34 +470,34 @@ Material:
     - _HeightPoMAmplitude2: 2
     - _HeightPoMAmplitude3: 2
     - _HeightTessAmplitude: 2
-    - _HeightTessAmplitude0: 1016.2
-    - _HeightTessAmplitude1: 2
+    - _HeightTessAmplitude0: 28.3
+    - _HeightTessAmplitude1: 86
     - _HeightTessAmplitude2: 2
     - _HeightTessAmplitude3: 2
     - _HeightTessCenter: 0.5
     - _HeightTessCenter0: 1
-    - _HeightTessCenter1: 0.5
+    - _HeightTessCenter1: 0.462
     - _HeightTessCenter2: 0.5
     - _HeightTessCenter3: 0.5
     - _HeightTransition: 0
-    - _InheritBaseColor1: 0
+    - _InheritBaseColor1: 1
     - _InheritBaseColor2: 0
     - _InheritBaseColor3: 0
-    - _InheritBaseHeight1: 0
+    - _InheritBaseHeight1: 1
     - _InheritBaseHeight2: 0
     - _InheritBaseHeight3: 0
-    - _InheritBaseNormal1: 0
+    - _InheritBaseNormal1: 1
     - _InheritBaseNormal2: 0
     - _InheritBaseNormal3: 0
     - _InvTilingScale: 1
-    - _InvTilingScale0: 0.23781213
+    - _InvTilingScale0: 1
     - _InvTilingScale1: 1
     - _InvTilingScale2: 1
     - _InvTilingScale3: 1
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
-    - _LayerCount: 4
+    - _LayerCount: 3
     - _LinkDetailsWithBase: 1
     - _LinkDetailsWithBase0: 1
     - _LinkDetailsWithBase1: 1
@@ -581,9 +582,9 @@ Material:
     - _SurfaceType: 0
     - _TessellationBackFaceCullEpsilon: 0
     - _TessellationFactor: 64
-    - _TessellationFactorMaxDistance: 100
-    - _TessellationFactorMinDistance: 59.9
-    - _TessellationFactorTriangleSize: 124.1
+    - _TessellationFactorMaxDistance: 10
+    - _TessellationFactorMinDistance: 5
+    - _TessellationFactorTriangleSize: 10
     - _TessellationMode: 1
     - _TessellationObjectScale: 1
     - _TessellationShapeFactor: 1
@@ -628,7 +629,7 @@ Material:
     - _UseDensityMode: 0
     - _UseEmissiveIntensity: 0
     - _UseHeightBasedBlend: 0
-    - _UseMainLayerInfluence: 0
+    - _UseMainLayerInfluence: 1
     - _UseShadowThreshold: 0
     - _VertexColorMode: 1
     - _ZTestDepthEqualForOpaque: 3

@@ -34,7 +34,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _NormalMapSpace
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -177,14 +177,14 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _HeightAmplitude: 0.84599996
-    - _HeightCenter: 0.53081083
+    - _HeightAmplitude: 1.0259999
+    - _HeightCenter: 0.5378616
     - _HeightMapParametrization: 1
     - _HeightMax: 1
     - _HeightMin: -1
     - _HeightOffset: 3.4
     - _HeightPoMAmplitude: 2
-    - _HeightTessAmplitude: 84.6
+    - _HeightTessAmplitude: 102.6
     - _HeightTessCenter: 0.571
     - _InvTilingScale: 1
     - _Ior: 1.5
