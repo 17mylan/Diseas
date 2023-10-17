@@ -140,7 +140,9 @@ MonoBehaviour:
   EnablePhysicalSize: 0
   Thumbnail: 
   HasThumbnail: 0
-  CurrentStatePreset: 
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Substance_graph\" label=\"\" >\n 
+    <presetinput identifier=\"$outputsize\" uid=\"3795302352\" type=\"8\" value=\"12,12\"
+    />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -148,7 +150,7 @@ MonoBehaviour:
   DefaultPreset: " <sbspreset pkgurl=\"pkg://Substance_graph\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"3795302352\" type=\"8\" value=\"10,10\" />\n
     </sbspreset>\n"
-  MaterialShader: HDRP/Lit
+  MaterialShader: HDRP/LitTessellation
   RenderTextures: 0
   OutputRemaped: 0
   Presets: []
@@ -166,7 +168,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 5
           WidgetType: 0
-        Data: {x: 10, y: 10}
+        Data: {x: 12, y: 12}
         NumericalDescription:
           DefaultValue: {x: 8, y: 8}
           MinValue: {x: 0, y: 0}
