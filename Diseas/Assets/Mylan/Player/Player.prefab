@@ -1286,7 +1286,7 @@ MonoBehaviour:
   _timerDoubleJump: {fileID: 0}
   currentCollectibleNumber: 0
   currentCollectibleNumerText: {fileID: 8482114695443948876}
-  raycastDistance: 3
+  raycastDistance: 0.2
 --- !u!114 &6688723130409272276
 MonoBehaviour:
   m_ObjectHideFlags: 0
