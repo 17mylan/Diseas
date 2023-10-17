@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using KinematicCharacterController.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     public GameObject _enemyReference;
     public float _waitTimerStunBeforeBack = 20f;
     public ExampleCharacterController exampleCharacterController;
+    public float navMeshSpeed;
 
     public void SetEnemyStunned(bool _stunStatus)
     {
@@ -20,12 +22,15 @@ public class Enemy : MonoBehaviour
         if(_isStun)
         {
             this.GetComponent<Renderer>().material = _stunMaterial;
+            navMeshSpeed = this.GetComponent<NavMeshAgent>().speed;
+            this.GetComponent<NavMeshAgent>().speed = 0f;
             rb.isKinematic = true;
             StartCoroutine(WaitStunTimer());
         }
         else if(!_isStun)
         {
             this.GetComponent<Renderer>().material = _originalMaterial;
+            this.GetComponent<NavMeshAgent>().speed = navMeshSpeed;
             rb.isKinematic = false;
         }
     }

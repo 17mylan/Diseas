@@ -20,10 +20,6 @@ public class EnemyNormal : MonoBehaviour
     {
         if(canAiMove)
         {
-            if (!_AI.enabled)
-            {
-                _AI.enabled = true;
-            }
             float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
 
             if (distanceToPlayer <= detectionRange)
@@ -36,10 +32,6 @@ public class EnemyNormal : MonoBehaviour
                 // Le joueur est en dehors de la plage de détection
                 _AI.destination = transform.position;
             }
-        }
-        else if (!canAiMove)
-        {
-            _AI.enabled = false;
         }
     }
 }
