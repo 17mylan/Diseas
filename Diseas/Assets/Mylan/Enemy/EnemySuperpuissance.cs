@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemySuperpuissance : MonoBehaviour
 {
-    public float detectionRange = 10f; // Portée de détection
+    public float detectionRange = 10f;
     public NavMeshAgent _AI;
     private Vector3 lastKnownPlayerPosition;
     private bool isMovingToPlayer = false;
@@ -30,17 +30,15 @@ public class EnemySuperpuissance : MonoBehaviour
             {
                 if (!isMovingToPlayer)
                 {
-                    // Le joueur est dans la plage de détection, démarrez le délai avant de se déplacer
                     Invoke("StartMovingToPlayer", 1.5f);
                     isMovingToPlayer = true;
                 }
             }
             else
             {
-                // Le joueur est en dehors de la plage de détection, réinitialisez l'état si l'ennemi était en train de se déplacer
                 if (isMovingToPlayer)
                 {
-                    CancelInvoke("StartMovingToPlayer"); // Annulez le délai de déplacement si le joueur sort de la plage
+                    CancelInvoke("StartMovingToPlayer");
                     isMovingToPlayer = false;
                 }
             }
@@ -55,11 +53,8 @@ public class EnemySuperpuissance : MonoBehaviour
     {
         if (canAiMove)
         {
-            // Le délai est écoulé, enregistrez la dernière position connue du joueur et commencez à vous déplacer vers lui
             lastKnownPlayerPosition = _exampleCharacter.position;
             _AI.destination = lastKnownPlayerPosition;
-
-            // Définissez une autre fonction de rappel pour réinitialiser l'immobilité après le déplacement
             Invoke("StopMovingToPlayer", 1.5f);
         }
     }
@@ -68,7 +63,6 @@ public class EnemySuperpuissance : MonoBehaviour
     {
         if(canAiMove)
         {
-            // Réinitialisez la position de destination pour arrêter de se déplacer
             _AI.destination = transform.position;
             isMovingToPlayer = false;
         }

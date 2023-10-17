@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
   - component: {fileID: 1363741953076486245}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy - Distance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   _enemyReference: {fileID: 4311389146360946717}
   _waitTimerStunBeforeBack: 3
   exampleCharacterController: {fileID: 0}
+  navMeshSpeed: 0
   _exampleCharacterController: {fileID: 0}
 --- !u!54 &7649972806040826539
 Rigidbody:
@@ -213,7 +214,7 @@ GameObject:
   - component: {fileID: 1414828959507231977}
   - component: {fileID: 7073355858229091449}
   - component: {fileID: 4888057675931930721}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HeadDetector
   m_TagString: EnemyHead
   m_Icon: {fileID: 0}

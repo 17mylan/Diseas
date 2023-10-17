@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class BulletEnemy : MonoBehaviour
 {
-    public float bulletSpeed = 10f; // Vitesse de la balle
-
+    public float bulletSpeed = 10f;
+    public PlayerHealth playerHealth;
     void Start()
     {
-        // Appliquer une force vers l'avant dès le début
+        playerHealth = FindObjectOfType<PlayerHealth>();
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange);
-
-        // Détruire la balle après un certain délai (pour éviter les fuites)
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
     }
-
-    void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision collision)
     {
-        // Détruire la balle lorsqu'elle entre en collision avec un autre objet (par exemple, le joueur)
+        if (collision.gameObject.tag == "Player")
+        {
+            playerHealth.RemovePlayerHealth(5);
+        }
         Destroy(gameObject);
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyDoubleJump : MonoBehaviour
 {
-    public float detectionRange = 10f; // Portée de détection
+    public float detectionRange = 10f;
     public NavMeshAgent _AI;
     public GameObject _playerReference;
     public Transform _exampleCharacter;
@@ -27,12 +27,10 @@ public class EnemyDoubleJump : MonoBehaviour
 
             if (distanceToPlayer <= detectionRange)
             {
-                // Le joueur est dans la plage de détection, déplacer l'ennemi vers le joueur
                 _AI.destination = _exampleCharacter.position;
             }
             else
             {
-                // Le joueur est en dehors de la plage de détection
                 _AI.destination = transform.position;
             }
         }

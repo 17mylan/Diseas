@@ -40,4 +40,8 @@ public class PauseMenu : MonoBehaviour
         Resume();
         SceneManager.LoadScene(sceneName);
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

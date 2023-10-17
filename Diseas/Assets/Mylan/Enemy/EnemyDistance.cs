@@ -3,11 +3,11 @@ using UnityEngine.AI;
 
 public class EnemyDistance : MonoBehaviour
 {
-    public float desiredDistance = 5f; // Distance souhaitée
-    public float detectionRange = 10f; // Portée de détection
-    public float shootingInterval = 2f; // Intervalle entre les tirs
-    public Transform bulletSpawnPoint; // Point d'apparition des balles
-    public GameObject bulletEnemyPrefab; // Prefab de la balle ennemie
+    public float desiredDistance = 5f;
+    public float detectionRange = 10f;
+    public float shootingInterval = 2f;
+    public Transform bulletSpawnPoint;
+    public GameObject bulletEnemyPrefab;
     public NavMeshAgent _AI;
     public GameObject _playerReference;
     private float timeSinceLastShot = 0f;
@@ -26,17 +26,10 @@ public class EnemyDistance : MonoBehaviour
 
         if (distanceToPlayer <= detectionRange)
         {
-            // Le joueur est dans la plage de détection
             Vector3 directionToPlayer = _exampleCharacter.position - transform.position;
             Vector3 destination = _exampleCharacter.position - directionToPlayer.normalized * desiredDistance;
-
-            // Déplacer l'ennemi vers la destination tout en maintenant la distance souhaitée
             _AI.destination = destination;
-
-            // Ajuster la rotation pour faire face au joueur
-            transform.LookAt(_exampleCharacter.position);
-
-            // Tirer toutes les 2 secondes
+            transform.LookAt(_exampleCharacter.position + new Vector3(0, 1, 0));
             timeSinceLastShot += Time.deltaTime;
             if (timeSinceLastShot >= shootingInterval)
             {
@@ -46,14 +39,12 @@ public class EnemyDistance : MonoBehaviour
         }
         else
         {
-            // Le joueur est en dehors de la plage de détection
             _AI.destination = transform.position;
         }
     }
 
     void Shoot()
     {
-        // Instancier la balle ennemie au point d'apparition
         Instantiate(bulletEnemyPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 }

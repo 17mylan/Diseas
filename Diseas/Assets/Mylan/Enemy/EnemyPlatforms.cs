@@ -28,15 +28,12 @@ public class EnemyPlatforms : MonoBehaviour
 
             if (distanceToPlayer <= detectionRange)
             {
-                // Le joueur est dans la plage de détection, faire fuir l'ennemi
                 Vector3 directionToFlee = transform.position - _exampleCharacter.position;
-                Vector3 destination = transform.position + directionToFlee.normalized * 10f; // 10f est la distance de fuite
+                Vector3 destination = transform.position + directionToFlee.normalized * 10f;
                 _AI.destination = destination;
             }
             else
             {
-                // Le joueur est en dehors de la plage de détection, l'ennemi peut effectuer d'autres actions ici
-                // Par exemple, arrêter de se déplacer
                 _AI.destination = transform.position;
             }
         }

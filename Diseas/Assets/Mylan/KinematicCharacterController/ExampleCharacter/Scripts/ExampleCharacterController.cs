@@ -618,19 +618,18 @@ namespace KinematicCharacterController.Examples
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
                     // Ne pas oublier dans le script "Enemy" de faire la méthode pour donner les pouvoirs
 
+                    Destroy(hitCollider.gameObject);
+
                     if (hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
                     {
-                        Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("Platforming");
                     }
                     else if (hitCollider.gameObject.GetComponent<EnemySuperpuissance>() != null && _hasSuperpuissanceCapacity)
                     {
-                        Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("Superpuissance");
                     }
                     else if (hitCollider.gameObject.GetComponent<EnemyDoubleJump>() != null)
                     {
-                        Destroy(hitCollider.gameObject);
                         GiveCapacityToPlayer("DoubleJump");
                     }
 
