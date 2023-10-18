@@ -11,6 +11,7 @@ public class TimerSuperpuissance : MonoBehaviour
     public float currentTimer, startingTimer;
     public TextMeshProUGUI currentTimerText;
     public GameObject currentTimerTextObject;
+    public GameObject currentTimerIcon;
     public ExampleCharacterController exampleCharacterController;
     public void Start()
     {
@@ -21,10 +22,12 @@ public class TimerSuperpuissance : MonoBehaviour
         isTimerStarted = true;
         currentTimer = 0 + startingTimer;
         currentTimerTextObject.SetActive(true);
+        currentTimerIcon.SetActive(true);
     }
     public void StopTimer()
     {
         currentTimerTextObject.SetActive(false);
+        currentTimerIcon.SetActive(false);
         isTimerStarted = false;
         exampleCharacterController._hasSuperpuissanceCapacity = false;
     }

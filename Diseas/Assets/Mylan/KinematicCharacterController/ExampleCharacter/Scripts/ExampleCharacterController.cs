@@ -680,6 +680,7 @@ namespace KinematicCharacterController.Examples
             if(_isDashing)
             {
                 _isDashing = false;
+                playerAnimator.SetFloat("Dash", 0f);
             }
         }
 
