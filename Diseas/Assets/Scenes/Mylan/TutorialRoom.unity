@@ -15132,6 +15132,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &837066246 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1072059347344552329, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1037110118608887296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &841327897
 Mesh:
   m_ObjectHideFlags: 0
@@ -36231,6 +36237,16 @@ PrefabInstance:
       propertyPath: allowDynamicResolution
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 910855889057494712, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.060058594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292789263013764545, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.4830017
+      objectReference: {fileID: 0}
     - target: {fileID: 1436434785030362451, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_Name
@@ -36336,6 +36352,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5321501936385489836, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 837066246}
     - target: {fileID: 5321501936385489836, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: raycastDistance

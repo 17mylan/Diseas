@@ -95,7 +95,7 @@ namespace KinematicCharacterController.Examples
         public Transform MeshRoot;
         public Transform CameraFollowPoint;
         public float CrouchedCapsuleHeight = 1f;
-
+        public Animator playerAnimator;
         public CharacterState CurrentCharacterState { get; private set; }
 
         private Collider[] _probedColliders = new Collider[8];
@@ -389,14 +389,16 @@ namespace KinematicCharacterController.Examples
                             currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-StableMovementSharpness * deltaTime));
 
 
-                            if (currentVelocity.magnitude > 0f)
+                            if (currentVelocity.magnitude >= 1f)
                             {
                                 _canDashBecausePlayerIsMoving = true;
+                                playerAnimator.SetFloat("Speed", 1f);
                                 //print("Je marche");
                             }
-                            else
+                            else if(currentVelocity.magnitude < 1f)
                             {
                                 _canDashBecausePlayerIsMoving = false;
+                                playerAnimator.SetFloat("Speed", 0f);
                                 //print("Je suis a l'arrêt"); 
                             }
                             if (_isDashing)

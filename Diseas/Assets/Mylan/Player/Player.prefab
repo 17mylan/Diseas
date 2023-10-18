@@ -1263,6 +1263,7 @@ MonoBehaviour:
   MeshRoot: {fileID: 8091852866811260423}
   CameraFollowPoint: {fileID: 8404231456499862301}
   CrouchedCapsuleHeight: 1
+  playerAnimator: {fileID: 0}
   _isAiming: 0
   cursorTexture: {fileID: 2800000, guid: 5ee18726c596cd2429935e7af2989d9d, type: 3}
   _enemy: {fileID: 0}
@@ -3438,7 +3439,7 @@ PrefabInstance:
     - target: {fileID: 5370857628665020371, guid: f93307609dfa1844180516b330587e76,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.157
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5370857628665020371, guid: f93307609dfa1844180516b330587e76,
         type: 3}
