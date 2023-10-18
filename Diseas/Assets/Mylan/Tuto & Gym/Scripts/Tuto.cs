@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using KinematicCharacterController.Examples;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
 
@@ -26,6 +25,10 @@ public class Tuto : MonoBehaviour
     public bool isInPhaseToJumpInHeadOfEnemies = false;
     [Header("Other")]
     public TextMeshProUGUI dialogueText;
+    public GameObject imageDialogueReference;
+    public Image dialogueImage;
+    public Sprite dialoguePlayer;
+    public Sprite compagnonDialogue;
     [TextArea]
     public string dialogue1, dialogue2;
     public Transform teleportTransformPart2;
@@ -53,13 +56,17 @@ public class Tuto : MonoBehaviour
     }
     public IEnumerator Dialogue()
     {
+        imageDialogueReference.SetActive(true);
+        dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
         yield return StartCoroutine(TypeSentence(dialogue1, 0.05f));
         yield return new WaitForSeconds(3f);
+        dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
         yield return StartCoroutine(TypeSentence(dialogue2, 0.05f));
         yield return new WaitForSeconds(3f);
         companionAI.isCompanionFree = true;
         Destroy(wallAfterSavecYourCompanion);
         dialogueTextObject.SetActive(false);
+        imageDialogueReference.SetActive(false);
     }
     public void DestroyWallWhenPlayerDashedOnTutoEnabled()
     {

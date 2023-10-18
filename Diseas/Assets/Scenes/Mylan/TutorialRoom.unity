@@ -4989,6 +4989,24 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &361431519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3483298228081729409, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1037110118608887296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &361431521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7048821812390103012, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1037110118608887296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361431519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &379102427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26224,14 +26242,14 @@ MonoBehaviour:
   hasPassedColliderDetectorToDestroyWallForDash: 0
   isInPhaseToJumpInHeadOfEnemies: 0
   dialogueText: {fileID: 1163084948843737718}
+  imageDialogueReference: {fileID: 361431519}
+  dialogueImage: {fileID: 361431521}
+  dialoguePlayer: {fileID: 21300000, guid: 1e42abba26a36f84ea9a33040131b5f1, type: 3}
+  compagnonDialogue: {fileID: 21300000, guid: e3f69b33288cb7d4f9cd281f92e288a6, type: 3}
   dialogue1: 'YOU:
-
-
 
     HI ITS NINHO ! SWIPE UP FOR MY NEW MIXTAPE!'
   dialogue2: 'AMIGO:
-
-
 
     VODEVONDAVON HEEEEIN BOLLIDE ALLEMAND'
   teleportTransformPart2: {fileID: 437615828}
