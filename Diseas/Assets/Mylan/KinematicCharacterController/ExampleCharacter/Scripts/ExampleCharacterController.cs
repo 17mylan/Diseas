@@ -486,6 +486,7 @@ namespace KinematicCharacterController.Examples
                                 _jumpRequested = false;
                                 _jumpConsumed = true;
                                 _jumpedThisFrame = true;
+                                playerAnimator.SetFloat("Jump", 1f);
                                 //print("Je saute");
                             }
                         }
@@ -677,6 +678,7 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
+            playerAnimator.SetFloat("Jump", 0f);
             if(_isDashing)
             {
                 _isDashing = false;
