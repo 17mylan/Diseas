@@ -19,7 +19,7 @@ public class EnemyDoubleJump : MonoBehaviour
 
     void Update()
     {
-        if (canAiMove)
+        if (canAiMove && _AI.speed > 0)
         {
             if (!_AI.enabled)
             {
