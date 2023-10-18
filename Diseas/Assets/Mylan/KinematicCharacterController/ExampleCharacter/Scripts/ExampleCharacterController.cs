@@ -228,6 +228,8 @@ namespace KinematicCharacterController.Examples
                                 _jumpConsumed = false;
                                 Vector3 additionalVelocity = new Vector3(0f, JumpUpSpeed * DoubleJumpUpSpeed, 0f);
                                 AddVelocity(additionalVelocity);
+                                playerAnimator.SetFloat("Jump", 0f);
+                                playerAnimator.SetFloat("Jump", 1f);
                             }
                             else if(!_jumpedThisFrame)
                             {
