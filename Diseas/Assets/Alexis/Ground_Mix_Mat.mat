@@ -445,7 +445,7 @@ Material:
     - _HeightAmplitude3: 0.02
     - _HeightCenter: 0.5
     - _HeightCenter0: 0.87763715
-    - _HeightCenter1: 0.50586146
+    - _HeightCenter1: 0.8148615
     - _HeightCenter2: 501000000
     - _HeightCenter3: 0.5
     - _HeightMapParametrization: 0
@@ -480,7 +480,7 @@ Material:
     - _HeightTessAmplitude3: 2
     - _HeightTessCenter: 0.5
     - _HeightTessCenter0: 1
-    - _HeightTessCenter1: 0.491
+    - _HeightTessCenter1: 0.8
     - _HeightTessCenter2: 0
     - _HeightTessCenter3: 0.5
     - _HeightTransition: 0
@@ -530,7 +530,7 @@ Material:
     - _NormalMapSpace3: 0
     - _NormalScale: 1
     - _NormalScale0: 0.8
-    - _NormalScale1: 1
+    - _NormalScale1: 0.13
     - _NormalScale2: 1.5
     - _NormalScale3: 1
     - _ObjectScaleAffectTile: 0
