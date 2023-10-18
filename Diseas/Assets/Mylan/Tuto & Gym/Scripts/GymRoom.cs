@@ -6,6 +6,8 @@ public class GymRoom : MonoBehaviour
 {
     public Teleportation teleportation;
     public bool isReloadingGymRoom = false;
+    public GameObject teleportToBiome;
+    public GameObject teleportToGymRoom;
     public void Start()
     {
         teleportation = FindObjectOfType<Teleportation>();        

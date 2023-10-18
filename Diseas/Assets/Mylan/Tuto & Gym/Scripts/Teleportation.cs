@@ -53,6 +53,11 @@ public class Teleportation : MonoBehaviour
                 yield return new WaitForSeconds(_timer);
                 SceneManager.LoadScene("GymRoom");
             }
+            else if(_string == "TeleportationFromGymRoomToBiome")
+            {
+                yield return new WaitForSeconds(_timer);
+                SceneManager.LoadScene("Biome");
+            }
         }
     }
 }

@@ -115,6 +115,7 @@ namespace KinematicCharacterController.Examples
         public Tuto tuto;
         public Teleportation teleportation;
         public CompanionAI companionAI;
+        public GymRoom gymRoom;
         public ExampleCharacterCamera exampleCharacterCamera;
         private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
         public PauseMenu pauseMenu;
@@ -610,6 +611,11 @@ namespace KinematicCharacterController.Examples
                 {
                     teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart3toGymRoom", 1f));
                 }
+                else if(hitCollider.gameObject == gymRoom.teleportToBiome)
+                {
+                    print("Je me téléporte au biome");
+                    //teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromGymRoomToBiome", 1f));
+                }
             }
         }
         public void OnMovementHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
@@ -706,6 +712,7 @@ namespace KinematicCharacterController.Examples
             companionAI = FindObjectOfType<CompanionAI>();
             exampleCharacterCamera = FindObjectOfType<ExampleCharacterCamera>();
             pauseMenu = FindObjectOfType<PauseMenu>();
+            gymRoom = FindObjectOfType<GymRoom>();
 
             currentCollectibleNumber = 0;
             currentCollectibleNumerText.text = currentCollectibleNumber.ToString();
