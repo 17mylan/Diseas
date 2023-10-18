@@ -257,6 +257,7 @@ namespace KinematicCharacterController.Examples
                             _isDashing = true;
                             _dashTimer = 0f;
                             //print("Je dash");
+                            playerAnimator.SetFloat("Dash", 1f);
                             StartCoroutine(DashCooldown());
                             StartCoroutine(DashCameraZoom());
                             if(SceneManager.GetActiveScene().name == "TutorialRoom")
@@ -410,6 +411,7 @@ namespace KinematicCharacterController.Examples
                                 {
                                     _isDashing = false;
                                     //print("Je Dash plus");
+                                    playerAnimator.SetFloat("Dash", 0f);
                                 }
                             }
                         }
