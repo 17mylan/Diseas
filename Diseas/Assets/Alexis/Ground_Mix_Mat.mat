@@ -45,6 +45,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _DENSITY_MODE
   - _HEIGHTMAP0
   - _HEIGHTMAP1
   - _HEIGHTMAP2
@@ -88,7 +89,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap0:
         m_Texture: {fileID: 2800000, guid: a282a931386cc574490303f71c64c43d, type: 3}
-        m_Scale: {x: 1.86, y: 1.94}
+        m_Scale: {x: 3.65, y: 4.12}
         m_Offset: {x: 0.96, y: 0}
     - _BaseColorMap1:
         m_Texture: {fileID: 2800000, guid: 37d17a179c5fee94989fc066d66e01fe, type: 3}
@@ -444,7 +445,7 @@ Material:
     - _HeightAmplitude3: 0.02
     - _HeightCenter: 0.5
     - _HeightCenter0: 0.87763715
-    - _HeightCenter1: 0.46090925
+    - _HeightCenter1: 0.50586146
     - _HeightCenter2: 501000000
     - _HeightCenter3: 0.5
     - _HeightMapParametrization: 0
@@ -464,7 +465,7 @@ Material:
     - _HeightMin3: -1
     - _HeightOffset: 0
     - _HeightOffset0: 11.6
-    - _HeightOffset1: 0.4
+    - _HeightOffset1: -5.45
     - _HeightOffset2: -500
     - _HeightOffset3: 0
     - _HeightPoMAmplitude: 2
@@ -479,7 +480,7 @@ Material:
     - _HeightTessAmplitude3: 2
     - _HeightTessCenter: 0.5
     - _HeightTessCenter0: 1
-    - _HeightTessCenter1: 0.462
+    - _HeightTessCenter1: 0.491
     - _HeightTessCenter2: 0
     - _HeightTessCenter3: 0.5
     - _HeightTransition: 0
@@ -493,7 +494,7 @@ Material:
     - _InheritBaseNormal2: 1
     - _InheritBaseNormal3: 0
     - _InvTilingScale: 1
-    - _InvTilingScale0: 0.5263158
+    - _InvTilingScale0: 0.25740024
     - _InvTilingScale1: 1
     - _InvTilingScale2: 1
     - _InvTilingScale3: 1
@@ -536,7 +537,7 @@ Material:
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
     - _OpacityAsDensity0: 0
-    - _OpacityAsDensity1: 0
+    - _OpacityAsDensity1: 1
     - _OpacityAsDensity2: 0
     - _OpacityAsDensity3: 0
     - _OpaqueCullMode: 2
