@@ -39,6 +39,7 @@ Material:
   - _NORMALMAP_TANGENT_SPACE1
   - _NORMALMAP_TANGENT_SPACE2
   - _NORMALMAP_TANGENT_SPACE3
+  - _TESSELLATION_PHONG
   m_InvalidKeywords:
   - _NORMALMAP_TANGENT_SPACE
   m_LightmapFlags: 4
@@ -66,7 +67,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap0:
         m_Texture: {fileID: 2800000, guid: ea6c39772540e86489788ae34328468e, type: 3}
-        m_Scale: {x: 2.24, y: 2.41}
+        m_Scale: {x: 3.41, y: 2.92}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap1:
         m_Texture: {fileID: 2800000, guid: a4f1a6e39ebb0824f8ca9adb32b1fb8f, type: 3}
@@ -416,12 +417,12 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _HeightAmplitude: 0.02
-    - _HeightAmplitude0: 1.103
+    - _HeightAmplitude0: 1.2289
     - _HeightAmplitude1: 0.02
     - _HeightAmplitude2: 0.02
     - _HeightAmplitude3: 0.02
     - _HeightCenter: 0.5
-    - _HeightCenter0: 0.03653672
+    - _HeightCenter0: 0.032793555
     - _HeightCenter1: 0.5
     - _HeightCenter2: 0.5
     - _HeightCenter3: 0.5
@@ -451,7 +452,7 @@ Material:
     - _HeightPoMAmplitude2: 2
     - _HeightPoMAmplitude3: 2
     - _HeightTessAmplitude: 2
-    - _HeightTessAmplitude0: 110.3
+    - _HeightTessAmplitude0: 122.89
     - _HeightTessAmplitude1: 2
     - _HeightTessAmplitude2: 2
     - _HeightTessAmplitude3: 2
@@ -471,7 +472,7 @@ Material:
     - _InheritBaseNormal2: 0
     - _InheritBaseNormal3: 0
     - _InvTilingScale: 1
-    - _InvTilingScale0: 0.4301075
+    - _InvTilingScale0: 0.31595576
     - _InvTilingScale1: 0.6329114
     - _InvTilingScale2: 1
     - _InvTilingScale3: 1
@@ -538,7 +539,7 @@ Material:
     - _SmoothnessRemapMax2: 1
     - _SmoothnessRemapMax3: 1
     - _SmoothnessRemapMin: 0
-    - _SmoothnessRemapMin0: 0
+    - _SmoothnessRemapMin0: 0.5482835
     - _SmoothnessRemapMin1: 0
     - _SmoothnessRemapMin2: 0
     - _SmoothnessRemapMin3: 0
@@ -566,9 +567,9 @@ Material:
     - _TessellationFactorMaxDistance: 50
     - _TessellationFactorMinDistance: 20
     - _TessellationFactorTriangleSize: 100
-    - _TessellationMode: 0
+    - _TessellationMode: 1
     - _TessellationObjectScale: 1
-    - _TessellationShapeFactor: 0.75
+    - _TessellationShapeFactor: 0.739
     - _TessellationTilingScale: 1
     - _TexWorldScale: 1
     - _TexWorldScale0: 1
