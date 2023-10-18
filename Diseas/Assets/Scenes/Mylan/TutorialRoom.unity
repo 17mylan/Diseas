@@ -26224,15 +26224,16 @@ MonoBehaviour:
   hasPassedColliderDetectorToDestroyWallForDash: 0
   isInPhaseToJumpInHeadOfEnemies: 0
   dialogueText: {fileID: 1163084948843737718}
-  dialogue1: 'Vous:
+  dialogue1: 'YOU:
 
-    Salut c''est Ninho, swipe up pour ma nouvelle mixtape !'
-  dialogue2: 'Compagnon:
 
-    Et c''est parti pour le show! et c''est parti le stade
-    est chaud!
 
-'
+    HI ITS NINHO ! SWIPE UP FOR MY NEW MIXTAPE!'
+  dialogue2: 'AMIGO:
+
+
+
+    VODEVONDAVON HEEEEIN BOLLIDE ALLEMAND'
   teleportTransformPart2: {fileID: 437615828}
   teleportTransformPart3: {fileID: 700202657}
   numberOfEnemyKilled: 0
@@ -36244,8 +36245,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1292789263013764545, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.6229248
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292789263013764545, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.4830017
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327371715921867307, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1436434785030362451, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
@@ -36296,6 +36307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.059326172
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536561016589544154, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0390625
       objectReference: {fileID: 0}
     - target: {fileID: 3536561016589544154, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
@@ -36387,6 +36403,11 @@ PrefabInstance:
       propertyPath: CapacityPlatforms.Array.data[2]
       value: 
       objectReference: {fileID: 851243768}
+    - target: {fileID: 5584651979046448973, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.30004883
+      objectReference: {fileID: 0}
     - target: {fileID: 5711145640696380751, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -36397,6 +36418,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5711145640696380751, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711145640696380751, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000015258789
+      objectReference: {fileID: 0}
     - target: {fileID: 6106006004188652053, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -36406,6 +36437,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325385103204732071, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.099975586
       objectReference: {fileID: 0}
     - target: {fileID: 6386157920376555495, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
@@ -36446,6 +36482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AllowDynamicResolution
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068374591759340815, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.32080078
       objectReference: {fileID: 0}
     - target: {fileID: 8068374591759340815, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}

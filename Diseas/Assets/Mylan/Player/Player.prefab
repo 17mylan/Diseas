@@ -500,10 +500,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9136058846297272250}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.026520833, y: 0.13262875}
-  m_AnchorMax: {x: 0.5094792, y: 0.33366826}
-  m_AnchoredPosition: {x: -0.049926758, y: -0.5}
-  m_SizeDelta: {x: -1.3781128, y: -4.651596}
+  m_AnchorMin: {x: 0.026520833, y: 0.41185188}
+  m_AnchorMax: {x: 0.50962514, y: 0.6157037}
+  m_AnchoredPosition: {x: -0.049926758, y: -1}
+  m_SizeDelta: {x: -1.3781128, y: -8.651611}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7864983177484376187
 CanvasRenderer:
@@ -533,12 +533,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player:
+  m_text: 'PLAYER:
 
-    Sample Text'
+    SAMPLE TEXT'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5ec4013231dd044f9d61c70998688c7, type: 2}
+  m_sharedMaterial: {fileID: 9085094878196016341, guid: f5ec4013231dd044f9d61c70998688c7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -562,8 +563,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20.91
+  m_fontSizeBase: 20.91
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
