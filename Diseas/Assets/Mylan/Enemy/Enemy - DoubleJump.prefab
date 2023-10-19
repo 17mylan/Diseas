@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRange: 10
-  jumpHeight: 2
-  jumpSpeed: 5
+  jumpHeight: 2.3
+  jumpSpeed: 6.5
   _AI: {fileID: 2266039829478333436}
   _playerReference: {fileID: 0}
   _exampleCharacter: {fileID: 0}
