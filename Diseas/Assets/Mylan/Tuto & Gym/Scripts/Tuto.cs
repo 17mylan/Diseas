@@ -31,6 +31,7 @@ public class Tuto : MonoBehaviour
     public Sprite dialoguePlayer;
     public Sprite compagnonDialogue;
     public float typingSpeed = 0.03f;
+    public float waitTimerWhenDialogueIsFinished = 3f;
     [TextArea]
     public string dialogue1, dialogue2, dialogue3, dialogue4;
     public Transform teleportTransformPart2;
@@ -62,16 +63,12 @@ public class Tuto : MonoBehaviour
         imageDialogueReference.SetActive(true);
         dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
         yield return StartCoroutine(TypeSentence(dialogue1, typingSpeed));
-        yield return new WaitForSeconds(3f);
         dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
         yield return StartCoroutine(TypeSentence(dialogue2, typingSpeed));
-        yield return new WaitForSeconds(3f);
         dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
         yield return StartCoroutine(TypeSentence(dialogue3, typingSpeed));
-        yield return new WaitForSeconds(3f);
         dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
         yield return StartCoroutine(TypeSentence(dialogue4, typingSpeed));
-        yield return new WaitForSeconds(3f);
         Destroy(wallAfterSavecYourCompanion);
         dialogueBackground.SetActive(false);
         companionAI.isCompanionFree = true;
@@ -91,5 +88,6 @@ public class Tuto : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        yield return new WaitForSeconds(waitTimerWhenDialogueIsFinished);
     }
 }
