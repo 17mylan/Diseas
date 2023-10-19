@@ -56,7 +56,7 @@ public class Teleportation : MonoBehaviour
             else if(_string == "TeleportationFromGymRoomToBiome")
             {
                 yield return new WaitForSeconds(_timer);
-                SceneManager.LoadScene("Biome");
+                SceneManager.LoadScene("Menu");
             }
         }
     }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
   - component: {fileID: 1363741953076486245}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Enemy - Distance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isStun: 0
-  _originalMaterial: {fileID: 2100000, guid: cb6179247649bb84784f7f6c15b432d6, type: 2}
+  _originalMaterial: {fileID: 2100000, guid: e53e3b4de5710874faa4c4b4702d97e7, type: 2}
   _stunMaterial: {fileID: 2100000, guid: 0013e04f81a0364479e57c5433282f95, type: 2}
   _enemyReference: {fileID: 4311389146360946717}
   _waitTimerStunBeforeBack: 3
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 8772578881454970100}
   - component: {fileID: 7226270358515196317}
   - component: {fileID: 4629657222541632624}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 1414828959507231977}
   - component: {fileID: 7073355858229091449}
   - component: {fileID: 4888057675931930721}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: HeadDetector
   m_TagString: EnemyHead
   m_Icon: {fileID: 0}

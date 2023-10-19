@@ -19,43 +19,32 @@ public class EnemySuperpuissance : MonoBehaviour
     }
     void Update()
     {
-        if(overrideAiMovement)
+        if (canAiMove && _AI.isActiveAndEnabled)
         {
-            if(canAiMove)
-            {
-                if (!_AI.enabled)
-                {
-                    _AI.enabled = true;
-                }
-                float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
 
-                if (distanceToPlayer <= detectionRange)
+            if (distanceToPlayer <= detectionRange)
+            {
+                if (!isMovingToPlayer)
                 {
-                    if (!isMovingToPlayer)
-                    {
-                        Invoke("StartMovingToPlayer", 1.5f);
-                        isMovingToPlayer = true;
-                    }
-                }
-                else
-                {
-                    if (isMovingToPlayer)
-                    {
-                        CancelInvoke("StartMovingToPlayer");
-                        isMovingToPlayer = false;
-                    }
+                    Invoke("StartMovingToPlayer", 1.5f);
+                    isMovingToPlayer = true;
                 }
             }
-            else if(!canAiMove)
+            else
             {
-                _AI.enabled = false;
+                if (isMovingToPlayer)
+                {
+                    CancelInvoke("StartMovingToPlayer");
+                    isMovingToPlayer = false;
+                }
             }
         }
     }
 
     public void StartMovingToPlayer()
     {
-        if (canAiMove)
+        if (canAiMove && _AI.isActiveAndEnabled)
         {
             lastKnownPlayerPosition = _exampleCharacter.position;
             _AI.destination = lastKnownPlayerPosition;
@@ -65,7 +54,7 @@ public class EnemySuperpuissance : MonoBehaviour
 
     public void StopMovingToPlayer()
     {
-        if(canAiMove)
+        if (canAiMove && _AI.isActiveAndEnabled)
         {
             _AI.destination = transform.position;
             isMovingToPlayer = false;

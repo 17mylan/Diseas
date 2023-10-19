@@ -597,24 +597,26 @@ namespace KinematicCharacterController.Examples
 
         public void OnGroundHit(Collider hitCollider, Vector3 hitNormal, Vector3 hitPoint, ref HitStabilityReport hitStabilityReport)
         {
-            if(SceneManager.GetActiveScene().name == "TutorialRoom")
+            if (SceneManager.GetActiveScene().name == "TutorialRoom")
             {
-                if(hitCollider.gameObject == tuto.teleporterToPart2)
+                if (hitCollider.gameObject == tuto.teleporterToPart2)
                 {
                     teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart1toPart2", 1f));
                 }
-                else if(hitCollider.gameObject == tuto.teleporterToPart3)
+                else if (hitCollider.gameObject == tuto.teleporterToPart3)
                 {
                     teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart2toPart3", 1f));
                 }
-                else if(hitCollider.gameObject == tuto.teleportToGymRoom)
+                else if (hitCollider.gameObject == tuto.teleportToGymRoom)
                 {
                     teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart3toGymRoom", 1f));
                 }
-                else if(hitCollider.gameObject == gymRoom.teleportToBiome)
+            }
+            else if (SceneManager.GetActiveScene().name == "GymRoom")
+            {
+                if (hitCollider.gameObject == gymRoom.teleportToBiome)
                 {
-                    print("Je me téléporte au biome");
-                    //teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromGymRoomToBiome", 1f));
+                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromGymRoomToBiome", 1f));
                 }
             }
         }

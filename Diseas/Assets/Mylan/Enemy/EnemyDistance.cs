@@ -45,6 +45,7 @@ public class EnemyDistance : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(bulletEnemyPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        if(_AI.speed > 0)
+            Instantiate(bulletEnemyPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 }

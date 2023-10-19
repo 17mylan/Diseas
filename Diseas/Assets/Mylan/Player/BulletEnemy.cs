@@ -15,7 +15,8 @@ public class BulletEnemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerHealth.RemovePlayerHealth(5);
+            //Désactivé pour la Gym Room
+            //playerHealth.RemovePlayerHealth(5);
         }
         Destroy(gameObject);
     }
