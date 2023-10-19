@@ -206,7 +206,7 @@ Material:
     - _HeightTessAmplitude: 60.4
     - _HeightTessCenter: 0
     - _InvTilingScale: 1
-    - _Ior: 1.5
+    - _Ior: 1
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 1
