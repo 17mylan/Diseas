@@ -18,22 +18,22 @@ MonoBehaviour:
     m_Value: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.344
+    m_Value: 0.338
   smoothness:
     m_OverrideState: 1
     m_Value: 0.17
   roundness:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.254
   rounded:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   mask:
     m_OverrideState: 0
     m_Value: {fileID: 0}
@@ -61,13 +61,13 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.61
+    m_Value: 0.27
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0.909
   radius:
     m_OverrideState: 1
-    m_Value: 0.86
+    m_Value: 0.95
   spatialBilateralAggressiveness:
     m_OverrideState: 0
     m_Value: 0.15
@@ -102,7 +102,7 @@ MonoBehaviour:
     m_Value: 1
   m_MaximumRadiusInPixels:
     m_OverrideState: 1
-    m_Value: 86
+    m_Value: 80
   m_BilateralUpsample:
     m_OverrideState: 1
     m_Value: 1
@@ -142,10 +142,10 @@ MonoBehaviour:
     m_Value: {fileID: 0}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.234
+    m_Value: 0.174
   m_MaxSamples:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: 7
 --- !u!114 &-3364972949467307175
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -164,7 +164,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.284
+    m_Value: 0.146
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d877ec3e844f2ca46830012e8e79319b, type: 3}
   m_Name: PhysicallyBasedSky
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   rotation:
     m_OverrideState: 0
     m_Value: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   type:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   sphericalMode:
     m_OverrideState: 1
     m_Value: 1
@@ -454,10 +454,10 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 5.201155
+    m_Value: 6.482759
   compensation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -0.1
   limitMin:
     m_OverrideState: 0
     m_Value: 0.82538605
@@ -596,7 +596,7 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 0.542
+    m_Value: 0.391
   cropToFit:
     m_OverrideState: 1
     m_Value: 1
@@ -652,7 +652,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 8
+    m_Value: -12
   tint:
     m_OverrideState: 1
-    m_Value: 11
+    m_Value: -0
