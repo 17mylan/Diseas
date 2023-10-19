@@ -17,6 +17,7 @@ public class Tuto : MonoBehaviour
     public GameObject wallAfterSavecYourCompanion;
     public GameObject dialogueTextObject;
     public BoxCollider colliderDetectorToDash;
+    public GameObject dialogueBackground;
     [Header("Boolean")]
     public bool isTutoEnabled = true;
     public bool isTeleporting = false;
@@ -29,8 +30,9 @@ public class Tuto : MonoBehaviour
     public Image dialogueImage;
     public Sprite dialoguePlayer;
     public Sprite compagnonDialogue;
+    public float typingSpeed = 0.03f;
     [TextArea]
-    public string dialogue1, dialogue2;
+    public string dialogue1, dialogue2, dialogue3, dialogue4;
     public Transform teleportTransformPart2;
     public Transform teleportTransformPart3;
     public int numberOfEnemyKilled = 0;
@@ -56,15 +58,23 @@ public class Tuto : MonoBehaviour
     }
     public IEnumerator Dialogue()
     {
+        dialogueBackground.SetActive(true);
         imageDialogueReference.SetActive(true);
+        dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
+        yield return StartCoroutine(TypeSentence(dialogue1, typingSpeed));
+        yield return new WaitForSeconds(3f);
         dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
-        yield return StartCoroutine(TypeSentence(dialogue1, 0.05f));
+        yield return StartCoroutine(TypeSentence(dialogue2, typingSpeed));
         yield return new WaitForSeconds(3f);
         dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
-        yield return StartCoroutine(TypeSentence(dialogue2, 0.05f));
+        yield return StartCoroutine(TypeSentence(dialogue3, typingSpeed));
         yield return new WaitForSeconds(3f);
-        companionAI.isCompanionFree = true;
+        dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
+        yield return StartCoroutine(TypeSentence(dialogue4, typingSpeed));
+        yield return new WaitForSeconds(3f);
         Destroy(wallAfterSavecYourCompanion);
+        dialogueBackground.SetActive(false);
+        companionAI.isCompanionFree = true;
         dialogueTextObject.SetActive(false);
         imageDialogueReference.SetActive(false);
     }

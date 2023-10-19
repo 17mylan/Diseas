@@ -4144,9 +4144,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your companion is in danger!
+  m_text: 'Someone is being attacked !
 
-    Jump on enemies''s head to kill them.'
+    <b><color=red>Jump</color=red></b> on
+    enemies''s <b><color=red>head</color=red></b> to kill them.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4463,9 +4464,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use "ZQSD" to move.
+  m_text: 'Use "<b><color="red">ZQSD</color="red"></b>" to <b><color="red">move</b></color="red">
 
-    Use this mechanic to explore the world.'
+    around
+    and explore the world.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11315,13 +11317,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SuperPower
+  m_text: '<b><u>SuperPower</u></b>
 
 
-    The capacity of theses enemies gives you the opportunity
-    to just dash on enemies and get directly the enemi''s mechanics without stunning
-    them. To get the mechanic, you have to stun them and dash them in the back. This
-    mechanics is very limited of time using.'
+    The capicity of these enemies allows you
+    to <b><color=red>directly dash at enemies</b></color=red> to get their abilities
+    <b><color=red>without stunning them.</b></color=red> To get this mechanic, you
+    need to <b><color=red>stun them and dash behind their backs.</b></color=red>
+    This mechanic is <b><color=red>very limited in time.</b></color=red>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12667,7 +12670,7 @@ Transform:
   m_GameObject: {fileID: 748409064}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 167, y: 1, z: 0}
+  m_LocalPosition: {x: 167, y: 1, z: -0.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15204,12 +15207,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use "R" while running to dash.
-
-    Use this mechanic to upgrade your
-    velocity.
-
-'
+  m_text: Use "<b>R</b>" while running to <b>dash</b> and cover more distance in
+    a short time
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17690,17 +17689,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Platforming
+  m_text: '<b><u>Platforming</u></b>
 
 
-    You can''t walk on theses platforms if you don''t have
-    the special capacity.
+    You <b><color=red>can''t walk</color=red></b>
+    on theses platforms if you <b><color=red>don''t have the special capacity.</color=red></b>
 
-    To get the capacity, you have to aim with "Right Click"
-    and shoot with "Left Click" on theses enemies.
+    To
+    get the capacity, you have to <b><color=red>aim with the target "Right Click"</color=red></b>
+    and <b><color=red>shoot with "Left Click" </color=red></b>on theses enemies
 
-    Once your target is stuned,
-    use your dash to get his capacity for a limited time.'
+    Once
+    your target is<b><color=red> stuned</color=red></b>, use your <b><color=red>dash
+    "R"</color=red></b> on them to get his capacity <b><color=red>for a limited time.</color=red></b>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24364,11 +24365,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Double Jump
+  m_text: '<b><u>Double Jump</u></b>
 
 
-    The capacity of theses enemies gives you the opportunity
-    to use a double jump capacity to access to some inaccesible point.'
+    These enemies'' ability allows you to
+    use a <b><color=red>double jump</color=red></b> to access a point <b><color=red>inaccessible
+    for a normal jump.</color=red></b>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28071,9 +28073,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use "Space" to jump.
+  m_text: 'Use "<b><color="red">Space</b></color="red">" to jump
 
-    Use this mechanic to get access at some location.'
+    and reach inaccessible
+    high places'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -33080,6 +33083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3536561016589544154, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536561016589544154, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.07946777
       objectReference: {fileID: 0}
@@ -33162,6 +33170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325385103204732071, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.099975586
       objectReference: {fileID: 0}
     - target: {fileID: 6386157920376555495, guid: 006bb7cd3714f4c4c87c847cb58eb3c3,
         type: 3}
