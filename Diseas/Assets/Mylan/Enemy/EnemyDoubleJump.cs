@@ -4,8 +4,8 @@ using UnityEngine.AI;
 public class EnemyDoubleJump : MonoBehaviour
 {
     public float detectionRange = 10f;
-    public float jumpHeight = 2f; // Hauteur des sauts
-    public float jumpSpeed = 5f; // Vitesse des sauts
+    public float jumpHeight = 2.3f; // Hauteur des sauts
+    public float jumpSpeed = 6.5f; // Vitesse des sauts
     public NavMeshAgent _AI;
     public GameObject _playerReference;
     public Transform _exampleCharacter;
