@@ -39,9 +39,11 @@ public class Tuto : MonoBehaviour
     public int numberOfEnemyKilled = 0;
     public int maxNumberOfEnemyKilled = 8;
     public CompanionAI companionAI;
+    public AudioVoices audioVoices;
     public void Start()
     {
         companionAI = FindObjectOfType<CompanionAI>();
+        audioVoices = FindObjectOfType<AudioVoices>();
     }
     public IEnumerator SetTeleportingStatus()
     {
@@ -61,14 +63,23 @@ public class Tuto : MonoBehaviour
     {
         dialogueBackground.SetActive(true);
         imageDialogueReference.SetActive(true);
+
+        audioVoices.audioSource.PlayOneShot(audioVoices.C_First);
         dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
         yield return StartCoroutine(TypeSentence(dialogue1, typingSpeed));
+
+        audioVoices.audioSource.PlayOneShot(audioVoices.SH_First);
         dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
         yield return StartCoroutine(TypeSentence(dialogue2, typingSpeed));
+
+        audioVoices.audioSource.PlayOneShot(audioVoices.C_Last);
         dialogueImage.GetComponent<Image>().sprite = compagnonDialogue;
         yield return StartCoroutine(TypeSentence(dialogue3, typingSpeed));
+
+        audioVoices.audioSource.PlayOneShot(audioVoices.SH_Last);
         dialogueImage.GetComponent<Image>().sprite = dialoguePlayer;
         yield return StartCoroutine(TypeSentence(dialogue4, typingSpeed));
+        
         Destroy(wallAfterSavecYourCompanion);
         dialogueBackground.SetActive(false);
         companionAI.isCompanionFree = true;

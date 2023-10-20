@@ -13524,10 +13524,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2056934558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.358, y: 0.5912445}
-  m_AnchorMax: {x: 0.64400005, y: 0.79600006}
-  m_AnchoredPosition: {x: 0, y: 0.4106598}
-  m_SizeDelta: {x: -1.9309387, y: -0.8213}
+  m_AnchorMin: {x: 0.34300002, y: 0.5912445}
+  m_AnchorMax: {x: 0.65900004, y: 0.79600006}
+  m_AnchoredPosition: {x: -1.920105, y: -0.41062927}
+  m_SizeDelta: {x: -0.8398018, y: -0.8213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341300857
 MonoBehaviour:
@@ -13549,7 +13549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DISEAS
+  m_text: DISEASE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d38541efeb3cf914888e8d870c3c1a33, type: 2}
   m_sharedMaterial: {fileID: 5089243592510229511, guid: d38541efeb3cf914888e8d870c3c1a33,
@@ -32518,7 +32518,8 @@ MonoBehaviour:
   m_text: Resume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 226d94bee6be9de428fb47a2b5c1adca, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -4814995993994011287, guid: 226d94bee6be9de428fb47a2b5c1adca,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -40363,7 +40364,8 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 226d94bee6be9de428fb47a2b5c1adca, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -4814995993994011287, guid: 226d94bee6be9de428fb47a2b5c1adca,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -54614,7 +54616,8 @@ MonoBehaviour:
   m_text: Quit Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 226d94bee6be9de428fb47a2b5c1adca, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -4814995993994011287, guid: 226d94bee6be9de428fb47a2b5c1adca,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
