@@ -609,7 +609,7 @@ namespace KinematicCharacterController.Examples
                 }
                 else if (hitCollider.gameObject == tuto.teleportToGymRoom)
                 {
-                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromPart3toGymRoom", 1f));
+                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationToGymRoom", 1f));
                 }
             }
             else if (SceneManager.GetActiveScene().name == "GymRoom")
@@ -617,6 +617,13 @@ namespace KinematicCharacterController.Examples
                 if (hitCollider.gameObject == gymRoom.teleportToBiome)
                 {
                     teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromGymRoomToBiome", 1f));
+                }
+            }
+            else if(SceneManager.GetActiveScene().name == "BiomeMap")
+            {
+                if (hitCollider.gameObject == gymRoom.teleportToGymRoom)
+                {
+                    teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationToGymRoom", 1f));
                 }
             }
         }

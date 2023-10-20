@@ -48,7 +48,7 @@ public class Teleportation : MonoBehaviour
                 yield return new WaitForSeconds(_timer);
                 companionReference.transform.position = tpPosition;
             }
-            else if(_string == "TeleportationFromPart3toGymRoom")
+            else if(_string == "TeleportationToGymRoom")
             {
                 yield return new WaitForSeconds(_timer);
                 SceneManager.LoadScene("GymRoom");
@@ -56,7 +56,7 @@ public class Teleportation : MonoBehaviour
             else if(_string == "TeleportationFromGymRoomToBiome")
             {
                 yield return new WaitForSeconds(_timer);
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("BiomeMap");
             }
         }
     }
