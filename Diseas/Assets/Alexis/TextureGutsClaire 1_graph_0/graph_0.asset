@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
   m_Name: graph_0
   m_EditorClassIdentifier: 
-  AssetPath: Assets/Alexis/TextureGutssombre.sbsar
+  AssetPath: Assets/Alexis/TextureGutssombre_graph_0/TextureGutssombre.sbsar
   RawData: {fileID: -244192453324840774, guid: 71de0d9e8d09a274281decaabbddcae2, type: 3}
   Name: graph_0
   IsRoot: 1
