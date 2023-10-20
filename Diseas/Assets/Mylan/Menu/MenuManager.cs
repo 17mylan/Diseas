@@ -15,6 +15,10 @@ public class MenuManager : MonoBehaviour
         if(!hasStartedLoadScene)
             StartCoroutine(StartGameWithDelay());
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     IEnumerator StartGameWithDelay()
     {
         fadeToBlack.SetActive(true);
