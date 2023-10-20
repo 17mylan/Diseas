@@ -619,7 +619,7 @@ namespace KinematicCharacterController.Examples
                     teleportation.StartCoroutine(teleportation.TeleportPlayerWithDelay("TeleportationFromGymRoomToBiome", 1f));
                 }
             }
-            else if(SceneManager.GetActiveScene().name == "BiomeMap")
+            else if(SceneManager.GetActiveScene().name == "Biome")
             {
                 if (hitCollider.gameObject == gymRoom.teleportToGymRoom)
                 {
