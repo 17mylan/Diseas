@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 357728049602399648}
   - component: {fileID: 7273337480024349307}
   - component: {fileID: 7046702584232904965}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BackDetector
   m_TagString: EnemyBack
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
   - component: {fileID: 2421369221748163647}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy - Superpuissance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 2222720533018001875}
   - component: {fileID: 451144973298999641}
   - component: {fileID: 6392645762612686959}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

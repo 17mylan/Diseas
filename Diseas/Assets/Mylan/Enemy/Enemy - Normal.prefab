@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3035796545734115972}
   - component: {fileID: 730859287357482212}
   - component: {fileID: 7763047855568068149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
   - component: {fileID: 3793926436602880928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy - Normal
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 1414828959507231977}
   - component: {fileID: 7073355858229091449}
   - component: {fileID: 4888057675931930721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeadDetector
   m_TagString: EnemyHead
   m_Icon: {fileID: 0}

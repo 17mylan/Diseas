@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1389780180080781418}
   - component: {fileID: 7649972806040826539}
   - component: {fileID: 2266039829478333436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy - DoubleJump
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 1414828959507231977}
   - component: {fileID: 7073355858229091449}
   - component: {fileID: 4888057675931930721}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HeadDetector
   m_TagString: EnemyHead
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 8818230870778726315}
   - component: {fileID: 6944587234835078902}
   - component: {fileID: 3720953612202047832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 8476814350815355216}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.257, z: 0.487}
+  m_LocalPosition: {x: 0, y: 0.257, z: 0.495}
   m_LocalScale: {x: 0.62875, y: 0.2595, z: 0.13829}
   m_ConstrainProportionsScale: 0
   m_Children: []
