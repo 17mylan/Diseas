@@ -104,11 +104,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionRange: 10
   jumpHeight: 2.3
-  jumpSpeed: 6.5
+  jumpSpeed: 6.8
   _AI: {fileID: 2266039829478333436}
   _playerReference: {fileID: 0}
   _exampleCharacter: {fileID: 0}
   canAiMove: 1
+  amplitude: 0.75
+  frequency: 0
+  speed: 1.5
 --- !u!65 &7696643097519547381
 BoxCollider:
   m_ObjectHideFlags: 0

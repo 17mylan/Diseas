@@ -11,6 +11,10 @@ public class EnemyDoubleJump : MonoBehaviour
     public Transform _exampleCharacter;
     public bool canAiMove = true;
 
+    public float amplitude = 1.0f;
+    public float frequency = 1.0f;
+    public float speed = 1.0f;
+
     private float originalY;
 
     public void Start()
@@ -42,8 +46,12 @@ public class EnemyDoubleJump : MonoBehaviour
                 float step = jumpSpeed * Time.deltaTime;
                 transform.position = Vector3.MoveTowards(transform.position, _exampleCharacter.position, step);
 
-                // Faites en sorte que le cube saute avec une courbe sinusoidale
-                float newY = originalY + Mathf.Sin(Time.time * jumpSpeed) * jumpHeight;
+                // Faites en sorte que le cube saute avec une courbe plus arrondie
+                float pingPongValue = Mathf.PingPong(Time.time * speed, 1.0f);
+                float sinusValue = Mathf.Sin(pingPongValue * Mathf.PI);
+                float curvedValue = sinusValue * amplitude;
+
+                float newY = originalY + curvedValue * jumpHeight;
 
                 // Correction de la position verticale pour éviter l'enfoncement dans le sol
                 RaycastHit hit;
