@@ -4,71 +4,152 @@ using UnityEngine.AI;
 public class EnemyDoubleJump : MonoBehaviour
 {
     public float detectionRange = 10f;
+    public float attackRange = 2f;
     public float jumpHeight = 2.3f;
-    public float jumpSpeed = 6.5f;
+    public float jumpSpeed = 5f;
+    public float attackCooldown = 1f;
     public NavMeshAgent _AI;
     public GameObject _playerReference;
     public Transform _exampleCharacter;
     public bool canAiMove = true;
 
-    public float amplitude = 1.0f;
-    public float frequency = 1.0f;
-    public float speed = 1.0f;
+    public float amplitude = 0.5f;
+    public float frequency = 0f;
+    public float speed = 1.2f;
 
     private float originalY;
 
-    public void Start()
+    private enum EnemyState
+    {
+        Neutre,
+        Chasse,
+        Attaque
+    }
+
+    private EnemyState currentState;
+    private float attackTimer;
+    private Vector3 attackTargetPosition;
+
+    private void Start()
     {
         _playerReference = GameObject.Find("ExampleCharacter");
         _exampleCharacter = _playerReference.transform;
 
         originalY = transform.position.y;
+
+        currentState = EnemyState.Neutre;
+        attackTimer = 0f;
     }
 
-    void Update()
+    private void Update()
     {
-        if (canAiMove && _AI.speed > 0)
+        switch (currentState)
         {
-            if (!_AI.enabled)
+            case EnemyState.Neutre:
+                UpdateNeutreState();
+                break;
+            case EnemyState.Chasse:
+                UpdateChasseState();
+                break;
+            case EnemyState.Attaque:
+                UpdateAttaqueState();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateNeutreState()
+    {
+        Debug.Log("Ennemi dans l'état Neutre");
+
+        float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
+
+        if (distanceToPlayer <= detectionRange)
+        {
+            if (distanceToPlayer <= attackRange)
             {
-                _AI.enabled = true;
-            }
-
-            float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
-
-            if (distanceToPlayer <= detectionRange)
-            {
-                // Rotation de l'ennemi pour faire face au joueur
-                Vector3 lookAtPlayer = new Vector3(_exampleCharacter.position.x, transform.position.y, _exampleCharacter.position.z);
-                transform.LookAt(lookAtPlayer);
-
-                // Déplacement du cube vers le joueur avec des petits sauts
-                float step = jumpSpeed * Time.deltaTime;
-                transform.position = Vector3.MoveTowards(transform.position, _exampleCharacter.position, step);
-
-                // Faites en sorte que le cube saute avec une courbe plus arrondie
-                float pingPongValue = Mathf.PingPong(Time.time * speed, 1.0f);
-                float sinusValue = Mathf.Sin(pingPongValue * Mathf.PI);
-                float curvedValue = sinusValue * amplitude;
-
-                float newY = originalY + curvedValue * jumpHeight;
-
-                // Correction de la position verticale pour éviter l'enfoncement dans le sol
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
-                {
-                    float groundHeight = hit.point.y + GetComponent<Collider>().bounds.extents.y;
-                    transform.position = new Vector3(transform.position.x, Mathf.Max(newY, groundHeight), transform.position.z);
-                }
+                currentState = EnemyState.Attaque;
+                attackTimer = attackCooldown;
+                attackTargetPosition = _exampleCharacter.position;
+                Debug.Log("Joueur dans la plage d'attaque. Passage à l'état Attaque.");
             }
             else
             {
-                _AI.destination = transform.position;
+                currentState = EnemyState.Chasse;
+                Debug.Log("Joueur dans la plage de détection mais pas dans la plage d'attaque. Passage à l'état Chasse.");
             }
+            return;
         }
-        else if (!canAiMove)
+
+        // Logique pour l'état Neutre
+        // ...
+    }
+
+    private void UpdateChasseState()
+    {
+        Debug.Log("Ennemi dans l'état Chasse");
+
+        float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
+
+        if (distanceToPlayer > detectionRange)
         {
-            _AI.enabled = false;
+            currentState = EnemyState.Neutre;
+            Debug.Log("Joueur hors de portée. Passage à l'état Neutre.");
+            return;
         }
+
+        if (distanceToPlayer <= attackRange)
+        {
+            currentState = EnemyState.Attaque;
+            attackTimer = attackCooldown;
+            attackTargetPosition = _exampleCharacter.position;
+            Debug.Log("Joueur dans la plage d'attaque. Passage à l'état Attaque.");
+            return;
+        }
+
+        Vector3 lookAtPlayer = new Vector3(_exampleCharacter.position.x, transform.position.y, _exampleCharacter.position.z);
+        transform.LookAt(lookAtPlayer);
+
+        float step = jumpSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, _exampleCharacter.position, step);
+
+        float pingPongValue = Mathf.PingPong(Time.time * speed, 1.0f);
+        float sinusValue = Mathf.Sin(pingPongValue * Mathf.PI);
+        float curvedValue = sinusValue * amplitude;
+
+        float newY = originalY + curvedValue * jumpHeight;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
+        {
+            float groundHeight = hit.point.y + GetComponent<Collider>().bounds.extents.y;
+            transform.position = new Vector3(transform.position.x, Mathf.Max(newY, groundHeight), transform.position.z);
+        }
+    }
+
+    private void UpdateAttaqueState()
+   {
+        Debug.Log("Ennemi dans l'état Attaque");
+
+        if (attackTimer > 0f)
+        {
+            attackTimer -= Time.deltaTime;
+            // Pause avant l'attaque
+            Debug.Log("Pause avant l'attaque : " + attackTimer.ToString("F2") + "s");
+        }
+        else
+        {
+            // Attaque
+            JumpToAttackPosition();
+        }
+    }
+
+    private void JumpToAttackPosition()
+    {
+        currentState = EnemyState.Neutre;
+        Debug.Log("Attaque terminée. Passage à l'état Neutre.");
+        // Implémentez la logique pour l'attaque (par exemple, sauter sur la position du joueur enregistrée)
+        transform.position = attackTargetPosition;
     }
 }
