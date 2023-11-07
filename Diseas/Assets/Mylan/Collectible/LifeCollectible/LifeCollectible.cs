@@ -8,9 +8,9 @@ public class LifeCollectible : MonoBehaviour
 {
     public GameObject _playerReference;
     public Transform _exampleCharacter;
-    public float detectionRange = 10f;
-    public float minSpeed = 0.05f;
-    public float maxSpeed = 0.2f;
+    public float detectionRange = 7f;
+    public float minSpeed = 7f;
+    public float maxSpeed = 15f;
 
     private PlayerHealth playerHealth; // Référence vers le script PlayerHealth
     private float currentSpeed; // Variable pour stocker la vitesse actuelle
