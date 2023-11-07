@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -16,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
         playerHealth = maxPlayerHealth;
         UpdateUI();
     }
+
     public void RemovePlayerHealth(float _removedHealth)
     {
         playerHealth = playerHealth - _removedHealth;
