@@ -119,6 +119,7 @@ namespace KinematicCharacterController.Examples
         public ExampleCharacterCamera exampleCharacterCamera;
         private KinematicCharacterController.KinematicCharacterMotor kinematicMotor;
         public PauseMenu pauseMenu;
+        public PlayerSoundsEffects playerSoundsEffects;
         [Header("Tuto Reference")]
         public GameObject wallDashReference;
         [Header("Platforming Capacity")]
@@ -490,6 +491,7 @@ namespace KinematicCharacterController.Examples
                                 _jumpConsumed = true;
                                 _jumpedThisFrame = true;
                                 playerAnimator.SetFloat("Jump", 1f);
+                                playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.jumpSound);
                                 //print("Je saute");
                             }
                         }
@@ -695,6 +697,7 @@ namespace KinematicCharacterController.Examples
 
         protected void OnLanded()
         {
+            playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.landingSound);
             playerAnimator.SetFloat("Jump", 0f);
             if(_isDashing)
             {
@@ -722,6 +725,7 @@ namespace KinematicCharacterController.Examples
             exampleCharacterCamera = FindObjectOfType<ExampleCharacterCamera>();
             pauseMenu = FindObjectOfType<PauseMenu>();
             gymRoom = FindObjectOfType<GymRoom>();
+            playerSoundsEffects = FindObjectOfType<PlayerSoundsEffects>();
 
             currentCollectibleNumber = 0;
             currentCollectibleNumerText.text = currentCollectibleNumber.ToString();
