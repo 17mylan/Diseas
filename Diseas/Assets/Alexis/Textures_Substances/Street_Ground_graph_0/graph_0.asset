@@ -140,7 +140,9 @@ MonoBehaviour:
   EnablePhysicalSize: 0
   Thumbnail: 
   HasThumbnail: 0
-  CurrentStatePreset: 
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Street_Ground\" label=\"\" >\n 
+    <presetinput identifier=\"$outputsize\" uid=\"1795338001\" type=\"8\" value=\"11,11\"
+    />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -148,7 +150,7 @@ MonoBehaviour:
   DefaultPreset: " <sbspreset pkgurl=\"pkg://Street_Ground\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"1795338001\" type=\"8\" value=\"10,10\" />\n
     </sbspreset>\n"
-  MaterialShader: HDRP/Lit
+  MaterialShader: HDRP/LitTessellation
   RenderTextures: 0
   OutputRemaped: 0
   Presets: []
@@ -166,7 +168,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 5
           WidgetType: 0
-        Data: {x: 10, y: 10}
+        Data: {x: 11, y: 11}
         NumericalDescription:
           DefaultValue: {x: 8, y: 8}
           MinValue: {x: 0, y: 0}
