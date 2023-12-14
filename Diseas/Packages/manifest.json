@@ -8,6 +8,7 @@
     "com.unity.postprocessing": "3.2.2",
     "com.unity.probuilder": "5.1.1",
     "com.unity.render-pipelines.high-definition": "14.0.8",
+    "com.unity.rendering.denoising": "1.0.2",
     "com.unity.splines": "2.4.0",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.5",
