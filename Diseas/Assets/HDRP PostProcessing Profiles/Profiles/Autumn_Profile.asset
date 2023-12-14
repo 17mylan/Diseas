@@ -554,10 +554,10 @@ MonoBehaviour:
     m_Value: 1
   rayTracing:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 1.4
+    m_Value: 1.25
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0.61
@@ -641,7 +641,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.373
+    m_Value: 0.685
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
