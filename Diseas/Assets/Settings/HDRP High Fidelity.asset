@@ -61,7 +61,7 @@ MonoBehaviour:
     supportProbeVolumeStreaming: 0
     probeVolumeSHBands: 2
     supportRayTracing: 1
-    supportedRayTracingMode: 2
+    supportedRayTracingMode: 1
     lightLoopSettings:
       cookieAtlasSize: 512
       cookieFormat: 74
@@ -138,8 +138,8 @@ MonoBehaviour:
       enabled: 1
       useMipBias: 0
       enableDLSS: 1
-      DLSSPerfQualitySetting: 0
-      DLSSInjectionPoint: 0
+      DLSSPerfQualitySetting: 3
+      DLSSInjectionPoint: 2
       DLSSUseOptimalSettings: 0
       DLSSSharpness: 0
       fsrOverrideSharpness: 0
