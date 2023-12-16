@@ -165,7 +165,7 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _BumpScale: 1
-    - _CoatMask: 0.852
+    - _CoatMask: 0.087
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -246,7 +246,7 @@ Material:
     - _StencilWriteMaskDepth: 9
     - _StencilWriteMaskGBuffer: 15
     - _StencilWriteMaskMV: 41
-    - _SubsurfaceMask: 0.143
+    - _SubsurfaceMask: 0.372
     - _SupportDecals: 1
     - _SurfaceType: 0
     - _TexWorldScale: 1

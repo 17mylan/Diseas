@@ -19,7 +19,7 @@ MonoBehaviour:
   m_RenderingPathDefaultCameraFrameSettings:
     bitDatas:
       data1: 72198260625768269
-      data2: 13763000511710068760
+      data2: 18374686530137456664
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -63,7 +63,8 @@ MonoBehaviour:
     materialQuality: 0
   m_RenderPipelineResources: {fileID: 11400000, guid: 3ce144cff5783da45aa5d4fdc2da14b7,
     type: 2}
-  m_RenderPipelineRayTracingResources: {fileID: 0}
+  m_RenderPipelineRayTracingResources: {fileID: 11400000, guid: ba6e7f30e5cffc249a8bf7ee5756c196,
+    type: 2}
   beforeTransparentCustomPostProcesses: []
   beforePostProcessCustomPostProcesses: []
   afterPostProcessBlursCustomPostProcesses: []
@@ -98,10 +99,55 @@ MonoBehaviour:
   autoRegisterDiffusionProfiles: 0
   apvScenesData:
     serializedBounds: []
-    serializedHasVolumes: []
-    serializedProfiles: []
-    serializedBakeSettings: []
-    serializedBakingSets: []
+    serializedHasVolumes:
+    - sceneGUID: ee023d27e9735c54a8f2b0a84a929f1c
+      hasProbeVolumes: 0
+    serializedProfiles:
+    - sceneGUID: ee023d27e9735c54a8f2b0a84a929f1c
+      profile: {fileID: 11400000, guid: 55cd629fc2b58a448b6231845aa7fae7, type: 2}
+    serializedBakeSettings:
+    - sceneGUID: ee023d27e9735c54a8f2b0a84a929f1c
+      settings:
+        m_Version: 1
+        dilationSettings:
+          enableDilation: 1
+          dilationDistance: 1
+          dilationValidityThreshold: 0.25
+          dilationIterations: 1
+          squaredDistWeighting: 1
+        virtualOffsetSettings:
+          useVirtualOffset: 1
+          outOfGeoOffset: 0.01
+          searchMultiplier: 0.2
+          rayOriginBias: -0.001
+          maxHitsPerRay: 10
+          collisionMask:
+            serializedVersion: 2
+            m_Bits: 4294967291
+    serializedBakingSets:
+    - name: New Baking Set 1
+      sceneGUIDs:
+      - ee023d27e9735c54a8f2b0a84a929f1c
+      settings:
+        m_Version: 1
+        dilationSettings:
+          enableDilation: 1
+          dilationDistance: 1
+          dilationValidityThreshold: 0.25
+          dilationIterations: 1
+          squaredDistWeighting: 1
+        virtualOffsetSettings:
+          useVirtualOffset: 1
+          outOfGeoOffset: 0.01
+          searchMultiplier: 0.2
+          rayOriginBias: -0.001
+          maxHitsPerRay: 10
+          collisionMask:
+            serializedVersion: 2
+            m_Bits: 4294967291
+      profile: {fileID: 11400000, guid: 55cd629fc2b58a448b6231845aa7fae7, type: 2}
+      lightingScenarios:
+      - Default
     m_LightingScenario: Default
   m_Version: 5
   m_ShaderVariantLogLevel: 0

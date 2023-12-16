@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddcec8a8eb2d684d833ac8f5d26aebd, type: 3}
   m_Name: HDShadowSettings
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   maxShadowDistance:
-    m_OverrideState: 0
-    m_Value: 501.76
+    m_OverrideState: 1
+    m_Value: 409.9
   directionalTransmissionMultiplier:
     m_OverrideState: 1
     m_Value: 1
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 1
     m_Value: 1
@@ -272,6 +272,7 @@ MonoBehaviour:
   - {fileID: -1149245117529344109}
   - {fileID: 4447185125696675432}
   - {fileID: 7587334849546703178}
+  - {fileID: 4846703264554621359}
 --- !u!114 &396278178000043239
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   quality:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3
   enable:
     m_OverrideState: 1
@@ -317,25 +318,25 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 3
   depthBufferThickness:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.23
   fullResolutionSS:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   m_MaxRaySteps:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 64
   m_DenoiseSS:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   m_HalfResolutionDenoiserSS:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   m_DenoiserRadiusSS:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.5
   m_SecondDenoiserPassSS:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   lastBounceFallbackHierarchy:
     m_OverrideState: 0
@@ -356,7 +357,7 @@ MonoBehaviour:
     m_Value: 50
   m_ClampValue:
     m_OverrideState: 1
-    m_Value: 0.92
+    m_Value: 0.86
   mode:
     m_OverrideState: 0
     m_Value: 2
@@ -373,10 +374,10 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   m_HalfResolutionDenoiser:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   m_DenoiserRadius:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.6
   m_SecondDenoiserPass:
     m_OverrideState: 0
@@ -405,16 +406,16 @@ MonoBehaviour:
     m_Value: 0.58
   contrast:
     m_OverrideState: 1
-    m_Value: 11.2
+    m_Value: 43.7
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 3.5
   saturation:
     m_OverrideState: 1
-    m_Value: 13.8
+    m_Value: 31.4
 --- !u!114 &4391882333948339598
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -509,7 +510,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   m_Denoise:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 1
@@ -553,7 +554,47 @@ MonoBehaviour:
     m_Value: {r: 1, g: 0.995283, b: 0.995283, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -11.5
+    m_Value: -13
+--- !u!114 &4846703264554621359
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d877a03bef431a847adca8ab343db3e1, type: 3}
+  m_Name: RayTracingSettings
+  m_EditorClassIdentifier: 
+  active: 0
+  rayBias:
+    m_OverrideState: 0
+    m_Value: 0
+  distantRayBias:
+    m_OverrideState: 0
+    m_Value: 0.1
+  extendShadowCulling:
+    m_OverrideState: 1
+    m_Value: 1
+  extendCameraCulling:
+    m_OverrideState: 0
+    m_Value: 0
+  directionalShadowRayLength:
+    m_OverrideState: 1
+    m_Value: 1000
+  directionalShadowFallbackIntensity:
+    m_OverrideState: 0
+    m_Value: 1
+  buildMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cullingMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cullingDistance:
+    m_OverrideState: 0
+    m_Value: 1000
 --- !u!114 &4903034229380556349
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -657,22 +698,22 @@ MonoBehaviour:
     m_Value: 1
   meteringMode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 4
   luminanceSource:
     m_OverrideState: 0
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 8.5
+    m_Value: 14.167084
   compensation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1.4
   limitMin:
-    m_OverrideState: 0
-    m_Value: -10
+    m_OverrideState: 1
+    m_Value: 6
   limitMax:
     m_OverrideState: 1
-    m_Value: 10.204064
+    m_Value: 12.879608
   curveMap:
     m_OverrideState: 0
     m_Value:
@@ -854,7 +895,7 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 1
   rayTracing:
     m_OverrideState: 1
     m_Value: 1
@@ -919,7 +960,7 @@ MonoBehaviour:
     m_Value: 1
   m_DenoiserRadius:
     m_OverrideState: 1
-    m_Value: 0.849
+    m_Value: 0.5
 --- !u!114 &8711377374188185572
 MonoBehaviour:
   m_ObjectHideFlags: 3
