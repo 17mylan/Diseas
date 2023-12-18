@@ -31,10 +31,10 @@ MonoBehaviour:
     waterCPUSimulation: 0
     supportDistortion: 1
     supportTransparentBackface: 1
-    supportTransparentDepthPrepass: 1
-    supportTransparentDepthPostpass: 1
+    supportTransparentDepthPrepass: 0
+    supportTransparentDepthPostpass: 0
     colorBufferFormat: 48
-    supportCustomPass: 1
+    supportCustomPass: 0
     customBufferFormat: 12
     supportedLitShaderMode: 1
     planarReflectionResolution:
@@ -60,7 +60,7 @@ MonoBehaviour:
     probeVolumeBlendingMemoryBudget: 128
     supportProbeVolumeStreaming: 0
     probeVolumeSHBands: 2
-    supportRayTracing: 1
+    supportRayTracing: 0
     supportedRayTracingMode: 1
     lightLoopSettings:
       cookieAtlasSize: 512
@@ -137,7 +137,7 @@ MonoBehaviour:
     dynamicResolutionSettings:
       enabled: 1
       useMipBias: 0
-      enableDLSS: 1
+      enableDLSS: 0
       DLSSPerfQualitySetting: 3
       DLSSInjectionPoint: 2
       DLSSUseOptimalSettings: 0
