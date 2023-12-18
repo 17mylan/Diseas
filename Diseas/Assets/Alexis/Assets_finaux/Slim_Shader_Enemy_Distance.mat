@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slim_shader
+  m_Name: Slim_Shader_Enemy_Distance
   m_Shader: {fileID: -6465566751694194690, guid: 5c0e6b0ee78911c46a988055956b008a,
     type: 3}
   m_Parent: {fileID: 0}
@@ -98,12 +98,12 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color_Fresnel: {r: 3.4136126, g: 3.3818269, b: 0, a: 0.57254905}
+    - _Color_Fresnel: {r: 0, g: 3.2407372, b: 4.1274934, a: 0.57254905}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Fresnel_power: {r: 1, g: 1, b: 0, a: 0}
     - _GlowSpread: {r: 1.31, g: 0.1, b: 0, a: 0}
-    - _InteriorColor: {r: 1, g: 1, b: 1, a: 0}
+    - _InteriorColor: {r: 0.110137045, g: 0.27022943, b: 0.9339623, a: 0}
     - _Interior_position: {r: 0.94, g: 0.13, b: -1.26, a: 0}
     - _Vector3: {r: 0.01, g: 0, b: 0, a: 0}
     - _WoobleSpeed: {r: 7.85, g: 9.65, b: 0, a: 0}

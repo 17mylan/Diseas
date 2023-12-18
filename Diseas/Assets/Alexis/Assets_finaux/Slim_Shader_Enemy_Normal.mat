@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slim_shader
+  m_Name: Slim_Shader_Enemy_Normal
   m_Shader: {fileID: -6465566751694194690, guid: 5c0e6b0ee78911c46a988055956b008a,
     type: 3}
   m_Parent: {fileID: 0}
@@ -98,7 +98,7 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color_Fresnel: {r: 3.4136126, g: 3.3818269, b: 0, a: 0.57254905}
+    - _Color_Fresnel: {r: 2.128239, g: 0, b: 1.2945777, a: 0.57254905}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Fresnel_power: {r: 1, g: 1, b: 0, a: 0}
