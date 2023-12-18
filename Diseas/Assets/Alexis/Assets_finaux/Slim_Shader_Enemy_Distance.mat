@@ -98,12 +98,12 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - _Color_Fresnel: {r: 0, g: 3.2407372, b: 4.1274934, a: 0.57254905}
+    - _Color_Fresnel: {r: 0, g: 1.4161147, b: 7.310215, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Fresnel_power: {r: 1, g: 1, b: 0, a: 0}
-    - _GlowSpread: {r: 1.31, g: 0.1, b: 0, a: 0}
-    - _InteriorColor: {r: 0.110137045, g: 0.27022943, b: 0.9339623, a: 0}
+    - _GlowSpread: {r: 68.94, g: 0.1, b: 0, a: 0}
+    - _InteriorColor: {r: 0.08877712, g: 0.035, b: 0.990566, a: 0}
     - _Interior_position: {r: 0.94, g: 0.13, b: -1.26, a: 0}
     - _Vector3: {r: 0.01, g: 0, b: 0, a: 0}
     - _WoobleSpeed: {r: 7.85, g: 9.65, b: 0, a: 0}
