@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 0642f90bdb8c65442a49ae4e53dfc861, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a84e73bc3034dc43a744354ec9a1265, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -89,15 +89,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 0642f90bdb8c65442a49ae4e53dfc861, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a84e73bc3034dc43a744354ec9a1265, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: 1b76bd3eeb3dde249be3479ae2cbb9a6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9f630c5fb1035b14d8829d93272f686e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 9f29e450c9c5d9440991a4b22f8fc2f8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5e5dbc0e98ee68440b5d961126ec5b0c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -147,7 +147,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AORemapMax: 1
-    - _AORemapMin: 1
+    - _AORemapMin: 0.28872257
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
@@ -163,7 +163,7 @@ Material:
     - _Anisotropy: 0
     - _BlendMode: 0
     - _BumpScale: 1
-    - _CoatMask: 0.319
+    - _CoatMask: 0.445
     - _CullMode: 2
     - _CullModeForward: 2
     - _Cutoff: 0.5
@@ -212,7 +212,7 @@ Material:
     - _MetallicRemapMin: 0
     - _Mode: 0
     - _NormalMapSpace: 0
-    - _NormalScale: 1
+    - _NormalScale: 0.01
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
     - _OcclusionStrength: 1

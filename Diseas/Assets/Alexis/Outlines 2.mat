@@ -63,7 +63,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _OpaqueCullMode: 2
     - _RenderQueueType: 4
-    - _Scale: 1.009
+    - _Scale: 1.015
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 1
