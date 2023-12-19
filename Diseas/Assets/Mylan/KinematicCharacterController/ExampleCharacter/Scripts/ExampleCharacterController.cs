@@ -135,6 +135,7 @@ namespace KinematicCharacterController.Examples
         public bool _hasDoubleJumpCapacity = false;
         public TimerDoubleJump _timerDoubleJump;
         [Header("Collectible")]
+        public GameObject viePrefab;
         public int currentCollectibleNumber;
         public TextMeshProUGUI currentCollectibleNumerText;
         [Header("Enemy Head Detector")]
@@ -637,11 +638,13 @@ namespace KinematicCharacterController.Examples
             {
                 GameObject hitObject = hitInfo.collider.gameObject;
                 
+                
                 if (hitObject.CompareTag("Enemy") && _isDashing && hitObject.GetComponent<Enemy>()._isStun)
                 {
                     // Determiner quel enemi est touché pour donner le pouvoir spécial
                     // Ne pas oublier dans le script "Enemy" de faire la méthode pour donner les pouvoirs
-
+                    Debug.Log("Enemy is dead");
+                    GameObject vie = Instantiate(viePrefab, hitObject.transform.position, Quaternion.identity);
                     Destroy(hitCollider.gameObject);
 
                     if (hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
