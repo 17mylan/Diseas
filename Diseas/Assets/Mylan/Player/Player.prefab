@@ -1632,6 +1632,7 @@ MonoBehaviour:
   _timerSuperpuissance: {fileID: 0}
   _hasDoubleJumpCapacity: 0
   _timerDoubleJump: {fileID: 0}
+  viePrefab: {fileID: 0}
   currentCollectibleNumber: 0
   currentCollectibleNumerText: {fileID: 8482114695443948876}
   raycastDistance: 0.2
@@ -3682,6 +3683,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3082046372264396231, guid: f93307609dfa1844180516b330587e76,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082046372264396231, guid: f93307609dfa1844180516b330587e76,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 88b1965df9e81f041b4b98d42be72c4f, type: 2}
+    - target: {fileID: 3082046372264396231, guid: f93307609dfa1844180516b330587e76,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c7eb17b352f753b4ea4386dbae0c92d5, type: 2}
     - target: {fileID: 3154792051496372090, guid: f93307609dfa1844180516b330587e76,
         type: 3}
       propertyPath: m_Layer
