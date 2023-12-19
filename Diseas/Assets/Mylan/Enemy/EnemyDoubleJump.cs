@@ -61,7 +61,7 @@ public class EnemyDoubleJump : MonoBehaviour
 
     private void UpdateNeutreState()
     {
-        Debug.Log("Ennemi dans l'état Neutre");
+        
 
         float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
 
@@ -72,12 +72,11 @@ public class EnemyDoubleJump : MonoBehaviour
                 currentState = EnemyState.Attaque;
                 attackTimer = attackCooldown;
                 attackTargetPosition = _exampleCharacter.position;
-                Debug.Log("Joueur dans la plage d'attaque. Passage à l'état Attaque.");
+                
             }
             else
             {
                 currentState = EnemyState.Chasse;
-                Debug.Log("Joueur dans la plage de détection mais pas dans la plage d'attaque. Passage à l'état Chasse.");
             }
             return;
         }
@@ -88,14 +87,14 @@ public class EnemyDoubleJump : MonoBehaviour
 
     private void UpdateChasseState()
     {
-        Debug.Log("Ennemi dans l'état Chasse");
+        
 
         float distanceToPlayer = Vector3.Distance(transform.position, _exampleCharacter.position);
 
         if (distanceToPlayer > detectionRange)
         {
             currentState = EnemyState.Neutre;
-            Debug.Log("Joueur hors de portée. Passage à l'état Neutre.");
+            
             return;
         }
 
@@ -104,7 +103,7 @@ public class EnemyDoubleJump : MonoBehaviour
             currentState = EnemyState.Attaque;
             attackTimer = attackCooldown;
             attackTargetPosition = _exampleCharacter.position;
-            Debug.Log("Joueur dans la plage d'attaque. Passage à l'état Attaque.");
+            
             return;
         }
 
@@ -130,13 +129,13 @@ public class EnemyDoubleJump : MonoBehaviour
 
     private void UpdateAttaqueState()
    {
-        Debug.Log("Ennemi dans l'état Attaque");
+        
 
         if (attackTimer > 0f)
         {
             attackTimer -= Time.deltaTime;
             // Pause avant l'attaque
-            Debug.Log("Pause avant l'attaque : " + attackTimer.ToString("F2") + "s");
+           
         }
         else
         {
@@ -148,7 +147,7 @@ public class EnemyDoubleJump : MonoBehaviour
     private void JumpToAttackPosition()
     {
         currentState = EnemyState.Neutre;
-        Debug.Log("Attaque terminée. Passage à l'état Neutre.");
+        
         // Implémentez la logique pour l'attaque (par exemple, sauter sur la position du joueur enregistrée)
         transform.position = attackTargetPosition;
     }
