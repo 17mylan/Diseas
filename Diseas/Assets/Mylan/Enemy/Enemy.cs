@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public GameObject _enemyReference;
     public float _waitTimerStunBeforeBack = 20f;
     public ExampleCharacterController exampleCharacterController;
+    public GameObject lifePrefab;
     public float navMeshSpeed;
 
     public void SetEnemyStunned(bool _stunStatus)
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
                 _exampleCharacterController.GiveCapacityToPlayer("Superpuissance");
             else if (this.GetComponent<EnemyDoubleJump>() != null)
                 _exampleCharacterController.GiveCapacityToPlayer("DoubleJump");
+                GameObject vie = Instantiate(lifePrefab, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
