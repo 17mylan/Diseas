@@ -24,10 +24,10 @@ MonoBehaviour:
     m_Value: 4
   cascadeShadowSplit0:
     m_OverrideState: 1
-    m_Value: 0.1509998
+    m_Value: 0.23119418
   cascadeShadowSplit1:
     m_OverrideState: 1
-    m_Value: 0.23119418
+    m_Value: 0.359
   cascadeShadowSplit2:
     m_OverrideState: 1
     m_Value: 0.5387995
@@ -58,13 +58,13 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.95, y: 0.995, z: 1, w: -0.045558088}
+    m_Value: {x: 0.95, y: 0.995, z: 1, w: -0.17312074}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.91833335, z: 0.9, w: 0.13211845}
+    m_Value: {x: 1, y: 0.91833335, z: 0.9, w: 0.29612756}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.99883336, z: 0.93, w: 0.31169525}
+    m_Value: {x: 1, y: 0.99883336, z: 0.93, w: 0.5941554}
 --- !u!114 &-7781743556554490276
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -86,21 +86,21 @@ MonoBehaviour:
     m_Value: 0
   toeStrength:
     m_OverrideState: 1
-    m_Value: 0.243
+    m_Value: 0.36
   toeLength:
     m_OverrideState: 1
     m_Value: 0.48
   shoulderStrength:
     m_OverrideState: 1
-    m_Value: 0.109
+    m_Value: 1
   shoulderLength:
-    m_OverrideState: 0
-    m_Value: 0.5
+    m_OverrideState: 1
+    m_Value: 1.7
   shoulderAngle:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   gamma:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   lutTexture:
     m_OverrideState: 1
@@ -160,6 +160,52 @@ MonoBehaviour:
   m_MaxSamples:
     m_OverrideState: 1
     m_Value: 6
+--- !u!114 &-1321495913370223174
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf384b154398e341b6b29969c078198, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 5.06
+  maximumVelocity:
+    m_OverrideState: 0
+    m_Value: 200
+  minimumVelocity:
+    m_OverrideState: 0
+    m_Value: 2
+  cameraMotionBlur:
+    m_OverrideState: 0
+    m_Value: 1
+  specialCameraClampMode:
+    m_OverrideState: 0
+    m_Value: 0
+  cameraVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraTranslationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.05
+  cameraRotationVelocityClamp:
+    m_OverrideState: 0
+    m_Value: 0.03
+  depthComparisonExtent:
+    m_OverrideState: 0
+    m_Value: 1
+  m_SampleCount:
+    m_OverrideState: 0
+    m_Value: 8
 --- !u!114 &-1149245117529344109
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -178,23 +224,7 @@ MonoBehaviour:
     m_Value: 1
   opacity:
     m_OverrideState: 1
-    m_Value: 0.421
---- !u!114 &-586069940513525588
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f1984a7ac01bf84b86559f7595cdc68, type: 3}
-  m_Name: LightCluster
-  m_EditorClassIdentifier: 
-  active: 1
-  cameraClusterRange:
-    m_OverrideState: 1
-    m_Value: 10
+    m_Value: 0.712
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,11 +246,11 @@ MonoBehaviour:
   - {fileID: 717478089710182019}
   - {fileID: -8047976194976872282}
   - {fileID: -8615648779554783649}
-  - {fileID: -586069940513525588}
   - {fileID: -1149245117529344109}
   - {fileID: 4447185125696675432}
   - {fileID: 7587334849546703178}
   - {fileID: 1743864562606347190}
+  - {fileID: -1321495913370223174}
 --- !u!114 &396278178000043239
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -239,7 +269,7 @@ MonoBehaviour:
     m_Value: -56.7
   tint:
     m_OverrideState: 1
-    m_Value: -34.3
+    m_Value: -15.6
 --- !u!114 &717478089710182019
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -258,16 +288,16 @@ MonoBehaviour:
     m_Value: 0.58
   contrast:
     m_OverrideState: 1
-    m_Value: 31
+    m_Value: 38.3
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     m_OverrideState: 1
-    m_Value: 3.5
+    m_Value: 7.1
   saturation:
     m_OverrideState: 1
-    m_Value: 31.4
+    m_Value: 30.4
 --- !u!114 &1743864562606347190
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -289,13 +319,13 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 2.18
+    m_Value: 2.91
   directLightingStrength:
     m_OverrideState: 1
-    m_Value: 0.268
+    m_Value: 0.53
   radius:
     m_OverrideState: 1
-    m_Value: 1.21
+    m_Value: 1.99
   spatialBilateralAggressiveness:
     m_OverrideState: 0
     m_Value: 0.15
@@ -330,7 +360,7 @@ MonoBehaviour:
     m_Value: 1
   m_MaximumRadiusInPixels:
     m_OverrideState: 1
-    m_Value: 80
+    m_Value: 99
   m_BilateralUpsample:
     m_OverrideState: 1
     m_Value: 1
@@ -370,7 +400,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 0.995283, b: 0.995283, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -75.5
+    m_Value: -62
 --- !u!114 &4903034229380556349
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -386,13 +416,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.97183335, z: 0.87, w: 0.76082003}
+    m_Value: {x: 1, y: 0.97183335, z: 0.87, w: 0.70615035}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.92800003, z: 0.88, w: 0.14876881}
+    m_Value: {x: 1, y: 0.92800003, z: 0.88, w: 0.19432689}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 0.89, y: 0.956, z: 1, w: -0.3904924}
+    m_Value: {x: 0.89, y: 0.956, z: 1, w: -0.6879271}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -438,7 +468,7 @@ MonoBehaviour:
     m_Value: -0.045871437
   limitMax:
     m_OverrideState: 1
-    m_Value: 12.879608
+    m_Value: 13.337478
   curveMap:
     m_OverrideState: 0
     m_Value:
@@ -583,7 +613,7 @@ MonoBehaviour:
     m_Value: 0.67
   distanceScaleFactor:
     m_OverrideState: 1
-    m_Value: 0.493
+    m_Value: 0.69
   maxDistance:
     m_OverrideState: 0
     m_Value: 50
