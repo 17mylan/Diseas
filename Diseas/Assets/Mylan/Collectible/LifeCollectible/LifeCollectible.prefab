@@ -146,8 +146,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee7179840ac41a4f850a32cd6acedca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceSaut: 7
+  sideImpulseRange: 2
   _playerReference: {fileID: 0}
   _exampleCharacter: {fileID: 0}
   detectionRange: 7
   minSpeed: 5
   maxSpeed: 15
+  delayBeforeCollecting: 1

@@ -154,6 +154,8 @@ MonoBehaviour:
   _enemyReference: {fileID: 4311389146360946717}
   _waitTimerStunBeforeBack: 3
   exampleCharacterController: {fileID: 0}
+  lifePrefab: {fileID: 298185202182863274, guid: 680d31cd9ca3b174ca870a15e9779a24,
+    type: 3}
   navMeshSpeed: 0
   _exampleCharacterController: {fileID: 0}
 --- !u!54 &7649972806040826539
