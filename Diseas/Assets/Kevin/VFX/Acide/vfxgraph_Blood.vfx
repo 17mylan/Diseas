@@ -17,9 +17,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 536
+    x: 527
     y: -190
-    width: 1511
+    width: 1520
     height: 2780
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -1781,7 +1781,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661614613}
     - outputSlot: {fileID: 8926484042661614611}
       inputSlot: {fileID: 8926484042661614620}
-    position: {x: 576, y: -72}
+    position: {x: 527, y: 0}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614611
@@ -2030,7 +2030,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661614614}
     - outputSlot: {fileID: 8926484042661614618}
       inputSlot: {fileID: 8926484042661614622}
-    position: {x: 577, y: -36}
+    position: {x: 528, y: 36}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614618
@@ -3082,7 +3082,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.09719812870025635,"g":0.7547169923782349,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":1.6542072296142579,"g":12.844468116760254,"b":0.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: _Color
@@ -4105,7 +4105,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.AABox, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"center":{"x":0.0,"y":0.0,"z":0.0},"size":{"x":50.0,"y":10.100000381469727,"z":50.0}}'
+      m_SerializableObject: '{"center":{"x":0.0,"y":0.0,"z":0.0},"size":{"x":50.0,"y":0.10000000149011612,"z":50.0}}'
     m_Space: 1
   m_Property:
     name: box
@@ -5596,7 +5596,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.09758736193180084,"g":0.7529424428939819,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":12.491182327270508,"g":96.37663269042969,"b":0.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: _Color
@@ -6880,8 +6880,8 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 743, y: 595}
-  m_UICollapsed: 0
+  m_UIPosition: {x: 745, y: 593}
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614895}
@@ -6916,7 +6916,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: -15
     m_Space: 2147483647
   m_Property:
     name: min
@@ -6950,7 +6950,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: 15
     m_Space: 2147483647
   m_Property:
     name: max
