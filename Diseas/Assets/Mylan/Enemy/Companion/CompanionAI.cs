@@ -15,6 +15,10 @@ public class CompanionAI : MonoBehaviour
     Vector3 _dest;
     public Tuto tuto;
     public bool isCompanionFree = false;
+
+    public Animator sideKickAnimator;
+    public float AnimatorRunSpeed = 1.7f;
+    public float AnimatorIdleSpeed = 1f;
     public void Start()
     {
         tuto = FindObjectOfType<Tuto>();
@@ -40,9 +44,16 @@ public class CompanionAI : MonoBehaviour
             {
                 _navMeshLink.enabled = false;
             }
-            if(_AI.remainingDistance <= _AI.stoppingDistance)
+            if(_AI.remainingDistance > _AI.stoppingDistance)
+            {
+                sideKickAnimator.SetFloat("Run", 1);
+                sideKickAnimator.speed = AnimatorRunSpeed;
+            }
+            else if(_AI.remainingDistance <= _AI.stoppingDistance)
             {
                 //print("Companion do not move anymore.");
+                sideKickAnimator.SetFloat("Run", 0);
+                sideKickAnimator.speed = AnimatorIdleSpeed;
             }
         }
     }
