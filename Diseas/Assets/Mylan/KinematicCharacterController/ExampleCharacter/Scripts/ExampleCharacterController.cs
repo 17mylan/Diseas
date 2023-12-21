@@ -7,6 +7,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.VFX;
 
 namespace KinematicCharacterController.Examples
 {
@@ -86,7 +87,8 @@ namespace KinematicCharacterController.Examples
         public Transform spawnPoint;
         public GameObject bulletPrefab;
         public float bulletSpeed = 100f;
-
+        public VisualEffect muzzleFlashShoot;
+        public GameObject CompanionSoftReference;
         [Header("Misc")]
         public List<Collider> IgnoredColliders = new List<Collider>();
         public BonusOrientationMethod BonusOrientationMethod = BonusOrientationMethod.None;
@@ -732,7 +734,10 @@ namespace KinematicCharacterController.Examples
 
             currentCollectibleNumber = 0;
             currentCollectibleNumerText.text = currentCollectibleNumber.ToString();
+
+            muzzleFlashShoot.Stop();
         }
+
         public void Update()
         {
             HeadDetector();
@@ -759,9 +764,18 @@ namespace KinematicCharacterController.Examples
                         GameObject bullet = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
                         Vector3 direction = (targetPoint - spawnPoint.position).normalized;
                         bullet.GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
+
+                        CompanionSoftReference.transform.LookAt(targetPoint);
+                        StartCoroutine(MuzzleFlashDelay());
                     }
                 }
             }
+        }
+        public IEnumerator MuzzleFlashDelay()
+        {
+            muzzleFlashShoot.Play();
+            yield return new WaitForSeconds(0.2f);
+            muzzleFlashShoot.Stop();
         }
         public IEnumerator DashCooldown()
         {
