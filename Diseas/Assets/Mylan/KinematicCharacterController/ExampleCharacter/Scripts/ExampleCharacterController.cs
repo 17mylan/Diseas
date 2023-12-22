@@ -265,6 +265,7 @@ namespace KinematicCharacterController.Examples
                             _dashTimer = 0f;
                             //print("Je dash");
                             playerAnimator.SetFloat("Dash", 1f);
+                            playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.dashSound);
                             StartCoroutine(DashCooldown());
                             StartCoroutine(DashCameraZoom());
                             if(SceneManager.GetActiveScene().name == "TutorialRoom")
@@ -648,6 +649,7 @@ namespace KinematicCharacterController.Examples
                     Debug.Log("Enemy is dead");
                     GameObject vie = Instantiate(viePrefab, hitObject.transform.position, Quaternion.identity);
                     Destroy(hitCollider.gameObject);
+                    playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.eatSound);
 
                     if (hitCollider.gameObject.GetComponent<EnemyPlatforms>() != null)
                     {
@@ -675,6 +677,14 @@ namespace KinematicCharacterController.Examples
                         Destroy(tuto.colliderDetectorToDash);
                         tuto.hasPassedColliderDetectorToDestroyWallForDash = true;
                     }
+                }
+                else if(hitObject.CompareTag("RespawnTag"))
+                {
+                    SceneManager.LoadScene("Biome");
+                }
+                else if(hitObject.CompareTag("Collectible"))
+                {
+                    playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.pickupSound);
                 }
             }
         }
@@ -767,6 +777,8 @@ namespace KinematicCharacterController.Examples
 
                         CompanionSoftReference.transform.LookAt(targetPoint);
                         StartCoroutine(MuzzleFlashDelay());
+
+                        playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.shootSound);
                     }
                 }
             }

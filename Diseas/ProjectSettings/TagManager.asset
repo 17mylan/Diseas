@@ -12,6 +12,7 @@ TagManager:
   - Cible
   - Collectible
   - EnemyBullet
+  - RespawnTag
   layers:
   - Default
   - TransparentFX

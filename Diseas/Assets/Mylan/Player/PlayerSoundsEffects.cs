@@ -10,4 +10,9 @@ public class PlayerSoundsEffects : MonoBehaviour
     [Header("Sounds List")]
     public AudioClip jumpSound;
     public AudioClip landingSound;
+    public AudioClip shootSound;
+    public AudioClip stunSound;
+    public AudioClip eatSound;
+    public AudioClip dashSound;
+    public AudioClip pickupSound;
 }
