@@ -13,7 +13,7 @@ public class BiomeIntrocution : MonoBehaviour
     public float typingSpeed = 0.03f, waitingTime = 4f;
     public TextMeshProUGUI dialogueText;
     [TextArea]
-    public string dialogue1, dialogue2, dialogue3, dialogue4, dialogue5, dialogue6;
+    public string dialogue1, dialogue2, dialogue3, dialogue4, dialogue5, dialogue6, dialogue7;
 
     public void Start()
     {
@@ -30,16 +30,17 @@ public class BiomeIntrocution : MonoBehaviour
         yield return StartCoroutine(TypeSentence(dialogue1, typingSpeed));
 
         yield return StartCoroutine(TypeSentence(dialogue2, typingSpeed));
-
         yield return StartCoroutine(TypeSentence(dialogue3, typingSpeed));
 
         yield return StartCoroutine(TypeSentence(dialogue4, typingSpeed));
 
-        waitingTime = 6f;
         yield return StartCoroutine(TypeSentence(dialogue5, typingSpeed));
 
-        waitingTime = waitingTime;
+        waitingTime = 6f;
         yield return StartCoroutine(TypeSentence(dialogue6, typingSpeed));
+
+        waitingTime = waitingTime;
+        yield return StartCoroutine(TypeSentence(dialogue7, typingSpeed));
 
         Destroy(WallAfterBiomeIntroduction);
         Destroy(WallAfterBiomeIntroduction2);

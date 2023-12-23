@@ -259,7 +259,7 @@ namespace KinematicCharacterController.Examples
                         {
                             _shouldBeCrouching = false;
                         }*/
-                        if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving && !_jumpRequested && !_jumpConsumed) 
+                        if (Input.GetKeyDown(KeyCode.R) && _canDash && _canDashBecausePlayerIsMoving && !_jumpRequested && !_jumpConsumed || Input.GetKeyDown(KeyCode.LeftShift) && _canDash && _canDashBecausePlayerIsMoving && !_jumpRequested && !_jumpConsumed) 
                         {
                             _isDashing = true;
                             _dashTimer = 0f;
@@ -685,6 +685,10 @@ namespace KinematicCharacterController.Examples
                 else if(hitObject.CompareTag("Collectible"))
                 {
                     playerSoundsEffects.playerSoundsEffectAudioSource.PlayOneShot(playerSoundsEffects.pickupSound);
+                }
+                else if(hitObject.CompareTag("EndGame"))
+                {
+                    SceneManager.LoadScene("Menu");
                 }
             }
         }
