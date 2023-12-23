@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000008, guid: 164f2d655f42ee142a2cd6923241be25,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1972,6 +1973,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1542427315
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1542427317}
+  - component: {fileID: 1542427316}
+  m_Layer: 0
+  m_Name: ProbeVolumePerSceneData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1542427316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542427315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83d2f7ae04ab6f4f99b0d85377be998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asset: {fileID: 0}
+  cellSharedDataAsset: {fileID: 0}
+  cellSupportDataAsset: {fileID: 0}
+  serializedScenarios: []
+--- !u!4 &1542427317
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542427315}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544010757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,18 +2050,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4c03c126407994c93ecc488eb25be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSoundsEffects: {fileID: 0}
   WallAfterBiomeIntroduction: {fileID: 351537649}
+  WallAfterBiomeIntroduction2: {fileID: 0}
   dialogueTextObject: {fileID: 428068148}
   imageDialogueReference: {fileID: 469510555}
   dialogueBackground: {fileID: 1847970250}
   compagnonDialogue: {fileID: 21300000, guid: e3f69b33288cb7d4f9cd281f92e288a6, type: 3}
   dialogueImage: {fileID: 469510557}
   typingSpeed: 0.03
+  waitingTime: 4
   dialogueText: {fileID: 428068150}
   dialogue1: Salut les filles
   dialogue2: Ca va les filles
   dialogue3: Je vais bien les filles
   dialogue4: Merci a vous aussi
+  dialogue5: 
+  dialogue6: 
+  dialogue7: 
 --- !u!4 &1544010759
 Transform:
   m_ObjectHideFlags: 0
@@ -2260,3 +2315,4 @@ SceneRoots:
   - {fileID: 956442963}
   - {fileID: 1544010759}
   - {fileID: 351537653}
+  - {fileID: 1542427317}

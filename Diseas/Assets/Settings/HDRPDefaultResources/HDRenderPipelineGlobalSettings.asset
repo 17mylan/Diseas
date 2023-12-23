@@ -100,21 +100,41 @@ MonoBehaviour:
     serializedBounds:
     - sceneGUID: ee023d27e9735c54a8f2b0a84a929f1c
       bounds:
-        m_Center: {x: 0, y: 0, z: 135}
-        m_Extent: {x: 81, y: 81, z: 81}
+        m_Center: {x: 0, y: 0, z: 81}
+        m_Extent: {x: 81, y: 81, z: 162}
+    - sceneGUID: f131288d6b7b5bf42846ca4f13cbf848
+      bounds:
+        m_Center: {x: 0, y: 0, z: 81}
+        m_Extent: {x: 81, y: 81, z: 162}
+    - sceneGUID: 9a39e26c76aeb72429f87ce80372452b
+      bounds:
+        m_Center: {x: 0, y: 0, z: 81}
+        m_Extent: {x: 81, y: 81, z: 162}
+    - sceneGUID: ba140be0607f8b3429bad9a84a4547ba
+      bounds:
+        m_Center: {x: 0, y: 0, z: 81}
+        m_Extent: {x: 81, y: 81, z: 162}
+    - sceneGUID: e19d98c03cd19934289f87c47ef37930
+      bounds:
+        m_Center: {x: 0, y: 0, z: 81}
+        m_Extent: {x: 81, y: 81, z: 162}
+    - sceneGUID: 2a08581c466eacb4fb81c7f6fb237775
+      bounds:
+        m_Center: {x: 0, y: 0, z: 81}
+        m_Extent: {x: 81, y: 81, z: 162}
     serializedHasVolumes:
     - sceneGUID: ee023d27e9735c54a8f2b0a84a929f1c
       hasProbeVolumes: 1
     - sceneGUID: f131288d6b7b5bf42846ca4f13cbf848
-      hasProbeVolumes: 0
+      hasProbeVolumes: 1
     - sceneGUID: 9a39e26c76aeb72429f87ce80372452b
-      hasProbeVolumes: 0
+      hasProbeVolumes: 1
     - sceneGUID: ba140be0607f8b3429bad9a84a4547ba
-      hasProbeVolumes: 0
+      hasProbeVolumes: 1
     - sceneGUID: e19d98c03cd19934289f87c47ef37930
-      hasProbeVolumes: 0
+      hasProbeVolumes: 1
     - sceneGUID: 2a08581c466eacb4fb81c7f6fb237775
-      hasProbeVolumes: 0
+      hasProbeVolumes: 1
     serializedProfiles:
     - sceneGUID: ee023d27e9735c54a8f2b0a84a929f1c
       profile: {fileID: 11400000, guid: 55cd629fc2b58a448b6231845aa7fae7, type: 2}
