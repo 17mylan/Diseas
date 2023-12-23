@@ -15,4 +15,5 @@ public class PlayerSoundsEffects : MonoBehaviour
     public AudioClip eatSound;
     public AudioClip dashSound;
     public AudioClip pickupSound;
+    public AudioClip destroySound;
 }
