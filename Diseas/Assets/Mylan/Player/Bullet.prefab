@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _WaitSecondsBulletToDestroy: 0.5
+  playerSoundsEffects: {fileID: 0}
 --- !u!135 &1193012483840911542
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -164,17 +165,17 @@ PrefabInstance:
     - target: {fileID: 2726571838281060266, guid: b729a95ea4bcc3241861f7d0797da6c1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9546
+      value: 6.360073
       objectReference: {fileID: 0}
     - target: {fileID: 2726571838281060266, guid: b729a95ea4bcc3241861f7d0797da6c1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9546
+      value: 6.360073
       objectReference: {fileID: 0}
     - target: {fileID: 2726571838281060266, guid: b729a95ea4bcc3241861f7d0797da6c1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9546
+      value: 6.360073
       objectReference: {fileID: 0}
     - target: {fileID: 2726571838281060266, guid: b729a95ea4bcc3241861f7d0797da6c1,
         type: 3}
